@@ -25,22 +25,10 @@ const personalInfo = [
 
 const experience = [
   {
-    period: "2022 - Present",
-    role: "Senior Developer",
-    company: "TechFlow Solutions",
-    description: "Lead development of customer-facing web applications using React and Node.js. Collaborated with design teams to implement responsive interfaces and optimize user experience. Mentored junior developers and established coding standards for the team."
-  },
-  {
-    period: "2021 - 2022",
-    role: "Full-Stack Developer",
-    company: "StartupHub Inc.",
-    description: "Developed and maintained multiple web applications from concept to deployment. Built RESTful APIs, implemented database designs, and created responsive front-end interfaces. Worked closely with stakeholders to define requirements and deliver solutions."
-  },
-  {
-    period: "2020 - 2021",
-    role: "Junior Developer",
-    company: "WebCraft Agency",
-    description: "Started my professional journey building websites for small businesses and startups. Gained experience with modern web technologies and best practices. Contributed to team projects and learned from senior developers."
+    period: "Present",
+    role: "Developer",
+    company: "Lorem ipsum",
+    description: "Lorem ipsum"
   }
 ];
 
