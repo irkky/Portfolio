@@ -4,22 +4,22 @@ const personalInfo = [
   {
     icon: GraduationCap,
     title: "Education",
-    content: "BS Computer Science\nStanford University"
+    content: "BTech in Information Technology\nDr. A. P. J. Abdul Kalam Technical University"
   },
   {
     icon: Briefcase,
     title: "Experience",
-    content: "3+ Years\nFull-Stack Development"
+    content: "1+ Years\nAI/ML Development"
   },
   {
     icon: MapPin,
     title: "Location",
-    content: "San Francisco, CA\nRemote Available"
+    content: "Varanasi, India\nRemote Available"
   },
   {
     icon: Languages,
     title: "Languages",
-    content: "English (Native)\nSpanish (Conversational)"
+    content: "Hindi (Native)\nEnglish (Fluent)"
   }
 ];
 
@@ -60,7 +60,7 @@ export default function Profile() {
           <div>
             <img 
               src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=800" 
-              alt="John Smith - Full-Stack Developer" 
+              alt="Rishabh Kannaujiya - AI/ML Developer" 
               className="rounded-2xl shadow-2xl w-full max-w-md mx-auto lg:mx-0"
             />
           </div>
@@ -69,14 +69,10 @@ export default function Profile() {
             <div>
               <h3 className="text-2xl font-semibold text-secondary-custom mb-4">My Journey</h3>
               <p className="text-slate-600 leading-relaxed mb-4">
-                My journey into web development started during my Computer Science studies at Stanford University. 
-                What began as curiosity about how websites work evolved into a passion for creating digital experiences 
-                that solve real-world problems.
+                My journey into AI and machine learning began during my B.Tech in Information Technology at Dr. A. P. J. Abdul Kalam Technical University, where I discovered how powerful algorithms could transform raw data into actionable insights. What started as a keen interest in Python scripting soon grew into a passion for designing end‑to‑end AI solutions—from automating legal document analysis to building real‑time accident detection systems for smart cities.
               </p>
               <p className="text-slate-600 leading-relaxed">
-                Over the past 3 years, I've worked with startups and established companies, building everything 
-                from e-commerce platforms to complex data visualization tools. I believe in writing clean, 
-                maintainable code and creating interfaces that users love to interact with.
+                 Over the past few years, both as a Python Development Intern at Techtitude Tribe and through my own projects, I’ve honed my skills with TensorFlow, LangChain, Hugging Face, and cloud platforms like GCP. I believe in writing clean, maintainable code, architecting scalable pipelines, and creating user‑centric interfaces that bring sophisticated AI capabilities into real‑world applications.
               </p>
             </div>
             
