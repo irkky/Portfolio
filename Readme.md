@@ -107,5 +107,3 @@ Preferred communication style: Simple, everyday language.
 - `npm run build`: Build both frontend and backend for production
 - `npm run start`: Start production server
 - `npm run db:push`: Push database schema changes
-
-The application is designed to work seamlessly in Replit environment with proper development tooling and can be easily deployed to production environments that support Node.js and PostgreSQL.
