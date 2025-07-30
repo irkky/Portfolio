@@ -25,7 +25,7 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
             <Link href="/">
-              <h1 className="text-xl font-bold text-secondary-custom">John Smith</h1>
+              <h1 className="text-xl font-bold text-secondary-custom">Rishabh's Portfolio</h1>
             </Link>
           </div>
           
