@@ -18,7 +18,7 @@ export default function Home() {
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-3xl mx-auto">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-secondary-custom mb-6">
-              Hi, I'm <span className="text-primary-custom">Rishabh Kumar Kannaujiya</span>
+              Hi, I'm <span className="text-primary-custom">Rishabh Kannaujiya</span>
             </h1>
             <h2 className="text-xl sm:text-2xl lg:text-3xl text-slate-600 mb-8 font-light">
               GenAI Developer & AI/ML Engineer
