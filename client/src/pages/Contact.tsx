@@ -28,12 +28,12 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    value: "rishabh.kannaujiya@example.com"
+    value: "rishabhkrkannaujiya@gmail.com"
   },
   {
     icon: Phone,
     title: "Phone",
-    value: "+91 01234-56789"
+    value: "+91 92649-25693"
   },
   {
     icon: MapPin,
