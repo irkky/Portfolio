@@ -28,26 +28,26 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    value: "john.smith@example.com"
+    value: "rishabh.kannaujiya@example.com"
   },
   {
     icon: Phone,
     title: "Phone",
-    value: "+1 (555) 123-4567"
+    value: "+91 01234-56789"
   },
   {
     icon: MapPin,
     title: "Location",
-    value: "San Francisco, CA"
+    value: "Delhi, India"
   }
 ];
 
 const socialLinks = [
-  { icon: Linkedin, href: "https://linkedin.com", color: "bg-blue-600 hover:bg-blue-700" },
-  { icon: Github, href: "https://github.com", color: "bg-slate-800 hover:bg-slate-900" },
-  { icon: Twitter, href: "https://twitter.com", color: "bg-blue-400 hover:bg-blue-500" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/rishabh-kr-kannaujiya/", color: "bg-blue-600 hover:bg-blue-700" },
+  { icon: Github, href: "https://github.com/irkky", color: "bg-slate-800 hover:bg-slate-900" },
+  { icon: Twitter, href: "https://x.com/i_rkky", color: "bg-blue-400 hover:bg-blue-500" },
   { icon: Youtube, href: "https://youtube.com", color: "bg-red-600 hover:bg-red-700" },
-  { icon: Instagram, href: "https://instagram.com", color: "bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700" },
+  { icon: Instagram, href: "https://www.instagram.com/i_rkky/", color: "bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700" },
 ];
 
 export default function Contact() {
@@ -164,7 +164,7 @@ export default function Contact() {
                       <FormItem>
                         <FormLabel>First Name</FormLabel>
                         <FormControl>
-                          <Input placeholder="John" {...field} />
+                          <Input placeholder="Rishabh" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -177,7 +177,7 @@ export default function Contact() {
                       <FormItem>
                         <FormLabel>Last Name</FormLabel>
                         <FormControl>
-                          <Input placeholder="Doe" {...field} />
+                          <Input placeholder="Kannaujiya" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -192,7 +192,7 @@ export default function Contact() {
                     <FormItem>
                       <FormLabel>Email Address</FormLabel>
                       <FormControl>
-                        <Input type="email" placeholder="john.doe@example.com" {...field} />
+                        <Input type="email" placeholder="rishabh.kumar@example.com" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
