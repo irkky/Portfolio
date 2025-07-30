@@ -2,9 +2,9 @@ import { Link } from "wouter";
 import { Github, Linkedin, Twitter } from "lucide-react";
 
 const socialLinks = [
-  { icon: Github, href: "https://github.com", label: "GitHub" },
-  { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-  { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
+  { icon: Github, href: "https://github.com/irkky", label: "GitHub" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/rishabh-kr-kannaujiya/", label: "LinkedIn" },
+  { icon: Twitter, href: "https://x.com/i_rkky", label: "X formally-Twitter" },
 ];
 
 const quickLinks = [
@@ -27,10 +27,10 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
-            <h3 className="text-xl font-bold mb-4">John Smith</h3>
+            <h3 className="text-xl font-bold mb-4">Rishabh Kumar Kannaujiya</h3>
             <p className="text-slate-300 leading-relaxed mb-6">
-              Full-Stack Developer passionate about creating exceptional digital experiences 
-              that make a positive impact on users and businesses.
+              AI/ML Developer passionate about harnessing the power of data and advanced machine learning techniques to 
+              build intelligent solutions that drive business innovation and deliver impactful, user‑centric experiences.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social) => {
@@ -79,7 +79,7 @@ export default function Footer() {
         
         <div className="border-t border-slate-700 mt-8 pt-8 text-center">
           <p className="text-slate-300">
-            © 2024 John Smith. All rights reserved. Built with ❤️ using React and Tailwind CSS.
+            © 2024 Rishabh Kumar Kannaujiya. All rights reserved.
           </p>
         </div>
       </div>
