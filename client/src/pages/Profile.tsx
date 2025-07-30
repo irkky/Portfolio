@@ -59,7 +59,7 @@ export default function Profile() {
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
           <div>
             <img 
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=800" 
+              src="https://photos.fife.usercontent.google.com/pw/AP1GczOjGVDPqWJstLdInL72kfIzTWLOS1_6g0v6KgevLau7bgc91pYsJ24vDw=w831-h1108-s-no-gm?authuser=0" 
               alt="Rishabh Kannaujiya - AI/ML Developer" 
               className="rounded-2xl shadow-2xl w-full max-w-md mx-auto lg:mx-0"
             />
