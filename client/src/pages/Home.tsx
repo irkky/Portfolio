@@ -3,8 +3,8 @@ import { Code, Mail, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const stats = [
-  { value: "50+", label: "Projects Completed" },
-  { value: "3+", label: "Years Experience" },
+  { value: "15+", label: "Projects Completed" },
+  { value: "1+", label: "Years Experience" },
   { value: "25+", label: "Happy Clients" },
   { value: "15+", label: "Technologies" },
 ];
@@ -18,14 +18,14 @@ export default function Home() {
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="max-w-3xl mx-auto">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-secondary-custom mb-6">
-              Hi, I'm <span className="text-primary-custom">John Smith</span>
+              Hi, I'm <span className="text-primary-custom">Rishabh Kumar Kannaujiya</span>
             </h1>
             <h2 className="text-xl sm:text-2xl lg:text-3xl text-slate-600 mb-8 font-light">
-              Full-Stack Developer & UI/UX Engineer
+              GenAI Developer & AI/ML Engineer
             </h2>
             <p className="text-lg text-slate-600 mb-12 max-w-2xl mx-auto leading-relaxed">
-              Crafting exceptional digital experiences with modern technologies. 
-              Passionate about creating scalable applications that make a difference.
+              Crafting cutting‑edge AI/ML solutions with modern generative intelligence frameworks.
+              Passionate about developing scalable GenAI applications that deliver meaningful impact.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
