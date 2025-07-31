@@ -12,6 +12,9 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { useToast } from "@/hooks/use-toast";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
+import { motion } from "framer-motion";
+import AnimatedSection from "@/components/AnimatedSection";
+import PageTransition from "@/components/PageTransition";
 
 const contactSchema = z.object({
   firstName: z.string().min(1, "First name is required"),
@@ -96,193 +99,275 @@ export default function Contact() {
   };
 
   return (
-    <div className="py-16 bg-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-secondary-custom mb-4">Get In Touch</h2>
-          <div className="w-24 h-1 bg-primary-custom mx-auto mb-8"></div>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            Ready to collaborate or have a question? I'd love to hear from you. Let's create something amazing together.
-          </p>
-        </div>
-        
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Information */}
-          <div>
-            <h3 className="text-2xl font-semibold text-secondary-custom mb-8">Let's Connect</h3>
-            
-            <div className="space-y-6 mb-12">
-              {contactInfo.map((info, index) => {
-                const Icon = info.icon;
-                return (
-                  <div key={index} className="flex items-center">
-                    <div className="w-12 h-12 bg-primary-custom/10 rounded-lg flex items-center justify-center mr-4">
-                      <Icon className="text-primary-custom" size={20} />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-secondary-custom">{info.title}</div>
-                      <div className="text-slate-600">{info.value}</div>
-                    </div>
-                  </div>
-                );
-              })}
+    <PageTransition>
+      <div className="py-16 bg-background">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <AnimatedSection>
+            <div className="text-center mb-16">
+              <motion.h2 
+                className="text-3xl md:text-4xl font-bold text-foreground mb-4"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+              >
+                Get In Touch
+              </motion.h2>
+              <motion.div 
+                className="w-24 h-1 bg-primary mx-auto mb-8"
+                initial={{ width: 0 }}
+                animate={{ width: 96 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+              />
+              <motion.p 
+                className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
+                Ready to collaborate or have a question? I'd love to hear from you. Let's create something amazing together.
+              </motion.p>
             </div>
-            
-            {/* Social Links */}
-            <div>
-              <h4 className="text-lg font-semibold text-secondary-custom mb-6">Follow Me</h4>
-              <div className="flex flex-wrap gap-4">
-                {socialLinks.map((social, index) => {
-                  const Icon = social.icon;
-                  return (
-                    <a
-                      key={index}
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`${social.color} text-white w-12 h-12 rounded-lg flex items-center justify-center transition-colors duration-200`}
-                    >
-                      <Icon size={20} />
-                    </a>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
+          </AnimatedSection>
           
-          {/* Contact Form */}
-          <div>
-            <h3 className="text-2xl font-semibold text-secondary-custom mb-8">Send Message</h3>
-            
-            <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <FormField
-                    control={form.control}
-                    name="firstName"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>First Name</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Rishabh" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="lastName"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Last Name</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Kannaujiya" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Contact Information */}
+            <AnimatedSection delay={0.2}>
+              <div>
+                <motion.h3 
+                  className="text-2xl font-semibold text-foreground mb-8"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6 }}
+                >
+                  Let's Connect
+                </motion.h3>
+                
+                <div className="space-y-6 mb-12">
+                  {contactInfo.map((info, index) => {
+                    const Icon = info.icon;
+                    return (
+                      <motion.div 
+                        key={index} 
+                        className="flex items-center group"
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.6, delay: index * 0.1 }}
+                        whileHover={{ scale: 1.02 }}
+                      >
+                        <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4 group-hover:bg-primary/20 transition-colors duration-200">
+                          <Icon className="text-primary" size={20} />
+                        </div>
+                        <div>
+                          <div className="font-semibold text-foreground">{info.title}</div>
+                          <div className="text-muted-foreground">{info.value}</div>
+                        </div>
+                      </motion.div>
+                    );
+                  })}
                 </div>
                 
-                <FormField
-                  control={form.control}
-                  name="email"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Email Address</FormLabel>
-                      <FormControl>
-                        <Input type="email" placeholder="rishabh.kumar@example.com" {...field} />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                
-                <FormField
-                  control={form.control}
-                  name="subject"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Subject</FormLabel>
-                      <Select onValueChange={field.onChange} defaultValue={field.value}>
-                        <FormControl>
-                          <SelectTrigger>
-                            <SelectValue placeholder="Select a subject" />
-                          </SelectTrigger>
-                        </FormControl>
-                        <SelectContent>
-                          <SelectItem value="project">Project Inquiry</SelectItem>
-                          <SelectItem value="collaboration">Collaboration</SelectItem>
-                          <SelectItem value="job">Job Opportunity</SelectItem>
-                          <SelectItem value="other">Other</SelectItem>
-                        </SelectContent>
-                      </Select>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                
-                <FormField
-                  control={form.control}
-                  name="message"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Message</FormLabel>
-                      <FormControl>
-                        <Textarea
-                          placeholder="Tell me about your project or how I can help you..."
-                          className="resize-vertical"
-                          rows={6}
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-                
-                <FormField
-                  control={form.control}
-                  name="privacy"
-                  render={({ field }) => (
-                    <FormItem className="flex flex-row items-start space-x-3 space-y-0">
-                      <FormControl>
-                        <Checkbox
-                          checked={field.value}
-                          onCheckedChange={field.onChange}
-                        />
-                      </FormControl>
-                      <div className="space-y-1 leading-none">
-                        <FormLabel className="text-sm text-slate-600">
-                          I agree to the{" "}
-                          <a href="#" className="text-primary-custom hover:underline">
-                            privacy policy
-                          </a>{" "}
-                          and{" "}
-                          <a href="#" className="text-primary-custom hover:underline">
-                            terms of service
-                          </a>
-                        </FormLabel>
-                        <FormMessage />
-                      </div>
-                    </FormItem>
-                  )}
-                />
-                
-                <Button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full bg-primary-custom hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-primary-custom/20"
+                {/* Social Links */}
+                <div>
+                  <motion.h4 
+                    className="text-lg font-semibold text-foreground mb-6"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                  >
+                    Follow Me
+                  </motion.h4>
+                  <div className="flex flex-wrap gap-4">
+                    {socialLinks.map((social, index) => {
+                      const Icon = social.icon;
+                      return (
+                        <motion.a
+                          key={index}
+                          href={social.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`${social.color} text-white w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-200`}
+                          initial={{ opacity: 0, scale: 0 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
+                          whileHover={{ scale: 1.1, rotate: 5 }}
+                          whileTap={{ scale: 0.9 }}
+                        >
+                          <Icon size={20} />
+                        </motion.a>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            </AnimatedSection>
+            
+            {/* Contact Form */}
+            <AnimatedSection delay={0.4}>
+              <div>
+                <motion.h3 
+                  className="text-2xl font-semibold text-foreground mb-8"
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6 }}
                 >
-                  <Send className="mr-2" size={18} />
-                  {isSubmitting ? "Sending..." : "Send Message"}
-                </Button>
-              </form>
-            </Form>
+                  Send Message
+                </motion.h3>
+                
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                >
+                  <Form {...form}>
+                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                      <div className="grid md:grid-cols-2 gap-6">
+                        <FormField
+                          control={form.control}
+                          name="firstName"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel className="text-foreground">First Name</FormLabel>
+                              <FormControl>
+                                <Input 
+                                  placeholder="Rishabh" 
+                                  className="bg-card border-border focus:border-primary" 
+                                  {...field} 
+                                />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                        <FormField
+                          control={form.control}
+                          name="lastName"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel className="text-foreground">Last Name</FormLabel>
+                              <FormControl>
+                                <Input 
+                                  placeholder="Kannaujiya" 
+                                  className="bg-card border-border focus:border-primary" 
+                                  {...field} 
+                                />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                      </div>
+                      
+                      <FormField
+                        control={form.control}
+                        name="email"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="text-foreground">Email Address</FormLabel>
+                            <FormControl>
+                              <Input 
+                                type="email" 
+                                placeholder="rishabh.kumar@example.com" 
+                                className="bg-card border-border focus:border-primary" 
+                                {...field} 
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                      
+                      <FormField
+                        control={form.control}
+                        name="subject"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="text-foreground">Subject</FormLabel>
+                            <Select onValueChange={field.onChange} defaultValue={field.value}>
+                              <FormControl>
+                                <SelectTrigger className="bg-card border-border">
+                                  <SelectValue placeholder="Select a subject" />
+                                </SelectTrigger>
+                              </FormControl>
+                              <SelectContent>
+                                <SelectItem value="project">Project Inquiry</SelectItem>
+                                <SelectItem value="collaboration">Collaboration</SelectItem>
+                                <SelectItem value="job">Job Opportunity</SelectItem>
+                                <SelectItem value="other">Other</SelectItem>
+                              </SelectContent>
+                            </Select>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                      
+                      <FormField
+                        control={form.control}
+                        name="message"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="text-foreground">Message</FormLabel>
+                            <FormControl>
+                              <Textarea
+                                placeholder="Tell me about your project or how I can help you..."
+                                className="resize-vertical bg-card border-border focus:border-primary"
+                                rows={6}
+                                {...field}
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                      
+                      <FormField
+                        control={form.control}
+                        name="privacy"
+                        render={({ field }) => (
+                          <FormItem className="flex flex-row items-start space-x-3 space-y-0">
+                            <FormControl>
+                              <Checkbox
+                                checked={field.value}
+                                onCheckedChange={field.onChange}
+                              />
+                            </FormControl>
+                            <div className="space-y-1 leading-none">
+                              <FormLabel className="text-sm text-muted-foreground">
+                                I agree to the{" "}
+                                <a href="#" className="text-primary hover:underline">
+                                  privacy policy
+                                </a>{" "}
+                                and{" "}
+                                <a href="#" className="text-primary hover:underline">
+                                  terms of service
+                                </a>
+                              </FormLabel>
+                              <FormMessage />
+                            </div>
+                          </FormItem>
+                        )}
+                      />
+                      
+                      <motion.div
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                      >
+                        <Button
+                          type="submit"
+                          disabled={isSubmitting}
+                          className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform focus:outline-none focus:ring-4 focus:ring-primary/20"
+                        >
+                          <Send className="mr-2" size={18} />
+                          {isSubmitting ? "Sending..." : "Send Message"}
+                        </Button>
+                      </motion.div>
+                    </form>
+                  </Form>
+                </motion.div>
+              </div>
+            </AnimatedSection>
           </div>
         </div>
       </div>
-    </div>
+    </PageTransition>
   );
 }
