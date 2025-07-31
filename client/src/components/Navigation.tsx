@@ -65,15 +65,15 @@ export default function Navigation() {
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-background border-t">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
                   className={`block px-3 py-2 text-base font-medium transition-colors ${
                     isActive(item.href) 
-                      ? "text-primary-custom" 
-                      : "text-slate-600 hover:text-primary-custom"
+                      ? "text-primary" 
+                      : "text-muted-foreground hover:text-primary"
                   }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
