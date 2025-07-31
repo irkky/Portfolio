@@ -101,84 +101,132 @@ export default function Projects() {
   );
 
   return (
-    <div className="py-16 bg-slate-50">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-secondary-custom mb-4">Featured Projects</h2>
-          <div className="w-24 h-1 bg-primary-custom mx-auto mb-8"></div>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            A collection of projects that showcase my skills and passion for creating exceptional digital experiences.
-          </p>
-        </div>
-        
-        {/* Project Filter Buttons */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {filters.map((filter) => (
-            <Button
-              key={filter.id}
-              onClick={() => setActiveFilter(filter.id)}
-              variant={activeFilter === filter.id ? "default" : "outline"}
-              className={`px-6 py-2 rounded-full font-medium transition-all duration-200 hover:shadow-lg ${
-                activeFilter === filter.id 
-                  ? "bg-primary-custom text-white" 
-                  : "bg-white text-slate-600 hover:text-primary-custom"
-              }`}
-            >
-              {filter.label}
-            </Button>
-          ))}
-        </div>
-        
-        {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project) => (
-            <div 
-              key={project.id} 
-              className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden"
-            >
-              <img 
-                src={project.image} 
-                alt={project.title} 
-                className="w-full h-48 object-cover"
+    <PageTransition>
+      <div className="py-16 bg-background">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <AnimatedSection>
+            <div className="text-center mb-16">
+              <motion.h2 
+                className="text-3xl md:text-4xl font-bold text-foreground mb-4"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+              >
+                Featured Projects
+              </motion.h2>
+              <motion.div 
+                className="w-24 h-1 bg-primary mx-auto mb-8"
+                initial={{ width: 0 }}
+                animate={{ width: 96 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
               />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-secondary-custom mb-2">{project.title}</h3>
-                <p className="text-slate-600 mb-4 leading-relaxed">{project.description}</p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech) => (
-                    <span 
-                      key={tech} 
-                      className={`px-3 py-1 rounded-full text-sm font-medium ${techColors[tech] || "bg-gray-100 text-gray-800"}`}
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                <div className="flex gap-4">
-                  <a 
-                    href={project.demoUrl} 
-                    className="text-primary-custom hover:text-blue-600 font-medium transition-colors flex items-center"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <ExternalLink size={16} className="mr-1" />
-                    Live Demo
-                  </a>
-                  <a 
-                    href={project.githubUrl} 
-                    className="text-slate-600 hover:text-secondary-custom font-medium transition-colors flex items-center"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Github size={16} className="mr-1" />
-                    GitHub
-                  </a>
-                </div>
-              </div>
+              <motion.p 
+                className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
+                A collection of projects that showcase my skills and passion for creating exceptional digital experiences.
+              </motion.p>
             </div>
-          ))}
+          </AnimatedSection>
+          
+          {/* Project Filter Buttons */}
+          <AnimatedSection delay={0.2}>
+            <div className="flex flex-wrap justify-center gap-4 mb-12">
+              {filters.map((filter, index) => (
+                <motion.div
+                  key={filter.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                >
+                  <Button
+                    onClick={() => setActiveFilter(filter.id)}
+                    variant={activeFilter === filter.id ? "default" : "outline"}
+                    className={`px-6 py-2 rounded-full font-medium transition-all duration-200 hover:shadow-lg transform hover:scale-105 ${
+                      activeFilter === filter.id 
+                        ? "bg-primary text-primary-foreground" 
+                        : "bg-card text-foreground hover:text-primary border-border hover:border-primary"
+                    }`}
+                  >
+                    {filter.label}
+                  </Button>
+                </motion.div>
+              ))}
+            </div>
+          </AnimatedSection>
+          
+          {/* Projects Grid */}
+          <motion.div 
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            {filteredProjects.map((project, index) => (
+              <motion.div 
+                key={project.id} 
+                className="bg-card rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden border border-border"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <div className="relative overflow-hidden">
+                  <img 
+                    src={project.image} 
+                    alt={project.title} 
+                    className="w-full h-48 object-cover transition-transform duration-300 hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-black opacity-0 hover:opacity-20 transition-opacity duration-300" />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-foreground mb-2">{project.title}</h3>
+                  <p className="text-muted-foreground mb-4 leading-relaxed">{project.description}</p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.technologies.map((tech) => (
+                      <motion.span 
+                        key={tech} 
+                        className={`px-3 py-1 rounded-full text-sm font-medium ${techColors[tech] || "bg-muted text-muted-foreground"}`}
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                      >
+                        {tech}
+                      </motion.span>
+                    ))}
+                  </div>
+                  <div className="flex gap-4">
+                    <motion.a 
+                      href={project.demoUrl} 
+                      className="text-primary hover:text-primary/80 font-medium transition-colors flex items-center"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <ExternalLink size={16} className="mr-1" />
+                      Live Demo
+                    </motion.a>
+                    <motion.a 
+                      href={project.githubUrl} 
+                      className="text-muted-foreground hover:text-foreground font-medium transition-colors flex items-center"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <Github size={16} className="mr-1" />
+                      GitHub
+                    </motion.a>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </div>
-    </div>
+    </PageTransition>
   );
 }
