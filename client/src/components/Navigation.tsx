@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
+import { ThemeToggle } from "./ui/theme-toggle";
 
 const navItems = [
   { href: "/", label: "Home" },
