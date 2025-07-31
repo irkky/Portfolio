@@ -1,6 +1,9 @@
 import { Link } from "wouter";
 import { Code, Mail, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import AnimatedSection from "@/components/AnimatedSection";
+import PageTransition from "@/components/PageTransition";
 
 const stats = [
   { value: "15+", label: "Projects Completed" },
