@@ -21,38 +21,40 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-sm z-50">
+    <nav className="fixed top-0 left-0 right-0 bg-background/95 backdrop-blur-sm shadow-sm z-50 border-b">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
             <Link href="/">
-              <h1 className="text-xl font-bold text-secondary-custom">Rishabh's Portfolio</h1>
+              <h1 className="text-xl font-bold text-foreground">Rishabh's Portfolio</h1>
             </Link>
           </div>
           
           {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
+          <div className="hidden md:flex items-center space-x-4">
+            <div className="flex items-baseline space-x-8">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`border-b-2 border-transparent hover:border-primary-custom transition-colors duration-200 px-1 py-2 ${
+                  className={`border-b-2 border-transparent hover:border-primary transition-colors duration-200 px-1 py-2 ${
                     isActive(item.href) 
-                      ? "text-primary-custom border-primary-custom" 
-                      : "text-slate-600 hover:text-primary-custom"
+                      ? "text-primary border-primary" 
+                      : "text-muted-foreground hover:text-primary"
                   }`}
                 >
                   {item.label}
                 </Link>
               ))}
             </div>
+            <ThemeToggle />
           </div>
           
-          {/* Mobile menu button */}
-          <div className="md:hidden">
+          {/* Mobile menu button and theme toggle */}
+          <div className="md:hidden flex items-center space-x-2">
+            <ThemeToggle />
             <button 
-              className="text-slate-600 hover:text-primary-custom"
+              className="text-muted-foreground hover:text-primary"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
