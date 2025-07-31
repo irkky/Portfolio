@@ -76,21 +76,21 @@ const filters = [
 ];
 
 const techColors: { [key: string]: string } = {
-  "React": "bg-blue-100 text-blue-800",
-  "Node.js": "bg-green-100 text-green-800",
-  "MongoDB": "bg-purple-100 text-purple-800",
-  "React Native": "bg-blue-100 text-blue-800",
-  "Firebase": "bg-yellow-100 text-yellow-800",
-  "Redux": "bg-red-100 text-red-800",
-  "Vue.js": "bg-blue-100 text-blue-800",
-  "D3.js": "bg-green-100 text-green-800",
-  "Python": "bg-orange-100 text-orange-800",
-  "Express.js": "bg-green-100 text-green-800",
-  "PostgreSQL": "bg-blue-100 text-blue-800",
-  "Docker": "bg-gray-100 text-gray-800",
-  "GraphQL": "bg-purple-100 text-purple-800",
-  "Socket.io": "bg-yellow-100 text-yellow-800",
-  "Flutter": "bg-blue-100 text-blue-800",
+  "React": "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200",
+  "Node.js": "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200",
+  "MongoDB": "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200",
+  "React Native": "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200",
+  "Firebase": "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200",
+  "Redux": "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200",
+  "Vue.js": "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200",
+  "D3.js": "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200",
+  "Python": "bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200",
+  "Express.js": "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200",
+  "PostgreSQL": "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200",
+  "Docker": "bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200",
+  "GraphQL": "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200",
+  "Socket.io": "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200",
+  "Flutter": "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200",
 };
 
 export default function Projects() {
