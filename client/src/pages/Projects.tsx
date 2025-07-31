@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+import AnimatedSection from "@/components/AnimatedSection";
+import PageTransition from "@/components/PageTransition";
 
 const projects = [
   {
