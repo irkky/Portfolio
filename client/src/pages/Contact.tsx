@@ -12,6 +12,9 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { useToast } from "@/hooks/use-toast";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
+import { motion } from "framer-motion";
+import AnimatedSection from "@/components/AnimatedSection";
+import PageTransition from "@/components/PageTransition";
 
 const contactSchema = z.object({
   firstName: z.string().min(1, "First name is required"),
