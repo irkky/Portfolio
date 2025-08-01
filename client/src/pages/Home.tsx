@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import AnimatedSection from "@/components/AnimatedSection";
 import PageTransition from "@/components/PageTransition";
+import Galaxy from "@/components/Galaxy";
 
 const stats = [
   { value: "15+", label: "Projects Completed" },
@@ -17,9 +18,26 @@ export default function Home() {
     <PageTransition>
       <div>
         {/* Hero Section */}
-        <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-background to-muted">
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-accent/10 dark:from-primary/5 dark:to-accent/5"></div>
-          <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <section className="relative min-h-screen flex items-center justify-center">
+          {/* Galaxy Background */}
+          <div className="absolute inset-0 z-0">
+            <Galaxy 
+              density={0.8}
+              starSpeed={0.3}
+              hueShift={200}
+              glowIntensity={0.4}
+              twinkleIntensity={0.5}
+              rotationSpeed={0.05}
+              mouseInteraction={true}
+              mouseRepulsion={true}
+              repulsionStrength={1.5}
+              transparent={true}
+            />
+          </div>
+          {/* Overlay for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-br from-background/80 to-muted/80 dark:from-background/90 dark:to-muted/90 z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-accent/5 dark:from-primary/3 dark:to-accent/3 z-10"></div>
+          <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-20">
             <motion.div 
               className="max-w-3xl mx-auto"
               initial={{ opacity: 0, y: 30 }}
@@ -76,7 +94,7 @@ export default function Home() {
           
           {/* Scroll indicator */}
           <motion.div 
-            className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+            className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20"
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           >
