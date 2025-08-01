@@ -107,3 +107,150 @@ Preferred communication style: Simple, everyday language.
 - `npm run build`: Build both frontend and backend for production
 - `npm run start`: Start production server
 - `npm run db:push`: Push database schema changes
+
+## Features
+
+### 🎨 Dark Theme Support
+- **Automatic Theme Detection**: Automatically detects user's system preference for light/dark mode
+- **Manual Theme Toggle**: Users can manually switch between light and dark themes
+- **Persistent Theme**: Theme preference is saved in localStorage
+- **Smooth Transitions**: All theme changes include smooth color transitions
+- **Comprehensive Dark Mode**: All components, pages, and sections support dark mode with proper contrast
+
+### ✨ Enhanced Animations
+- **Scroll-Triggered Animations**: Elements animate as they come into view
+- **Multiple Animation Variants**: 
+  - `fadeUp`: Elements fade in while moving up
+  - `fadeIn`: Simple fade in effect
+  - `scaleIn`: Elements scale in from 90% to 100%
+  - `slideInLeft`: Elements slide in from the left
+  - `slideInRight`: Elements slide in from the right
+- **Staggered Animations**: Sequential animations with configurable delays
+- **Smooth Transitions**: All animations use smooth easing functions
+- **Performance Optimized**: Animations only trigger once when elements come into view
+
+### 📱 Responsive Design
+- Mobile-first approach
+- Optimized for all screen sizes
+- Touch-friendly interactions
+
+### 🚀 Modern Tech Stack
+- React 18 with TypeScript
+- Tailwind CSS for styling
+- Framer Motion for animations
+- Vite for fast development
+- Wouter for routing
+
+## Pages with Dark Theme & Animations
+
+### Profile Page (`/profile`)
+- **Dark Theme**: Full dark mode support with proper contrast
+- **Animations**: 
+  - Header section with fade-up animation
+  - Profile image with scale-in effect and hover animations
+  - Personal info cards with staggered slide-in animations
+  - Experience timeline with sequential fade-up animations
+
+### Skills Page (`/skills`)
+- **Dark Theme**: All skill bars, tool cards, and soft skill cards support dark mode
+- **Animations**:
+  - Skill bars with progress animations
+  - Tool cards with hover effects and staggered animations
+  - Soft skill cards with gradient backgrounds that adapt to dark mode
+  - Section headers with fade-up animations
+
+### Activities Page (`/extracurricular`)
+- **Dark Theme**: Activity cards and achievement badges support dark mode
+- **Animations**:
+  - Activity cards with hover lift effects and image scaling
+  - Achievement badges with staggered animations
+  - Background gradients that adapt to theme changes
+
+## Theme Implementation
+
+The dark theme is implemented using CSS custom properties and Tailwind's dark mode support:
+
+```css
+:root {
+  --background: hsl(210, 40%, 98%);
+  --foreground: hsl(215, 25%, 27%);
+  /* ... other light theme variables */
+}
+
+.dark {
+  --background: hsl(222, 84%, 5%);
+  --foreground: hsl(210, 40%, 98%);
+  /* ... other dark theme variables */
+}
+```
+
+## Animation Implementation
+
+Animations are built using Framer Motion with a custom `AnimatedSection` component:
+
+```tsx
+<AnimatedSection delay={0.2} variant="fadeUp">
+  <YourContent />
+</AnimatedSection>
+```
+
+## Getting Started
+
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+2. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+3. Open your browser and navigate to the local development URL
+
+## Theme Toggle
+
+The theme toggle is located in the navigation bar and allows users to:
+- Switch between light and dark themes
+- Use system preference (default)
+- Persist their choice across sessions
+
+## Customization
+
+### Adding New Animation Variants
+
+To add new animation variants, modify the `AnimatedSection` component:
+
+```tsx
+const variants = {
+  // ... existing variants
+  yourNewVariant: {
+    initial: { opacity: 0, rotate: -10 },
+    animate: { opacity: 1, rotate: 0 }
+  }
+}
+```
+
+### Customizing Dark Mode Colors
+
+Modify the CSS custom properties in `client/src/index.css`:
+
+```css
+.dark {
+  --your-custom-color: hsl(your, values, here);
+}
+```
+
+## Browser Support
+
+- Chrome/Edge (latest)
+- Firefox (latest)
+- Safari (latest)
+- Mobile browsers
+
+## Performance
+
+- Animations are optimized for 60fps
+- Uses `transform` and `opacity` for smooth animations
+- Animations only trigger once per element
+- Lazy loading for better performance

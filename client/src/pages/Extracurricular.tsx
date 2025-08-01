@@ -1,4 +1,5 @@
 import { Heart, Mountain, Mic, Camera, Github, Book, Trophy, Award, Star, Medal } from "lucide-react";
+import AnimatedSection from "../components/AnimatedSection";
 
 const activities = [
   {
@@ -38,7 +39,7 @@ const activities = [
     description: "Active contributor to open source projects, particularly in React and Node.js ecosystems. Maintaining several packages and helping developers worldwide.",
     image: "https://images.unsplash.com/photo-1556075798-4825dfaaf498?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
     icon: Github,
-    iconColor: "text-slate-800",
+    iconColor: "text-slate-800 dark:text-slate-200",
     meta: "50+ contributions"
   },
   {
@@ -56,93 +57,99 @@ const achievements = [
     icon: Trophy,
     title: "Hackathon Winner",
     description: "1st place at SF TechCrunch Disrupt 2023",
-    color: "bg-primary-custom/10",
+    color: "bg-primary-custom/10 dark:bg-primary-custom/20",
     iconColor: "text-primary-custom"
   },
   {
     icon: Award,
     title: "AWS Certified",
     description: "Solutions Architect Professional",
-    color: "bg-accent-custom/10",
+    color: "bg-accent-custom/10 dark:bg-accent-custom/20",
     iconColor: "text-accent-custom"
   },
   {
     icon: Star,
     title: "Top Contributor",
     description: "React GitHub repository 2023",
-    color: "bg-purple-100",
-    iconColor: "text-purple-600"
+    color: "bg-purple-100 dark:bg-purple-900/30",
+    iconColor: "text-purple-600 dark:text-purple-400"
   },
   {
     icon: Medal,
     title: "Community Impact",
     description: "500+ students taught coding",
-    color: "bg-orange-100",
-    iconColor: "text-orange-600"
+    color: "bg-orange-100 dark:bg-orange-900/30",
+    iconColor: "text-orange-600 dark:text-orange-400"
   }
 ];
 
 export default function Extracurricular() {
   return (
-    <div className="py-16 bg-slate-50">
+    <div className="py-16 bg-muted/30 transition-colors duration-300">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-secondary-custom mb-4">Beyond Code</h2>
-          <div className="w-24 h-1 bg-primary-custom mx-auto mb-8"></div>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            Exploring interests and activities that shape my perspective and contribute to personal growth.
-          </p>
-        </div>
+        <AnimatedSection>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Beyond Code</h2>
+            <div className="w-24 h-1 bg-primary-custom mx-auto mb-8"></div>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Exploring interests and activities that shape my perspective and contribute to personal growth.
+            </p>
+          </div>
+        </AnimatedSection>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {activities.map((activity, index) => {
             const Icon = activity.icon;
             return (
-              <div 
-                key={index} 
-                className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden"
-              >
-                <img 
-                  src={activity.image} 
-                  alt={activity.title} 
-                  className="w-full h-48 object-cover"
-                />
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-3">
-                    <h3 className="text-xl font-semibold text-secondary-custom">{activity.title}</h3>
-                    <Icon className={activity.iconColor} size={20} />
-                  </div>
-                  <p className="text-slate-600 mb-4 leading-relaxed">{activity.description}</p>
-                  <div className="flex items-center text-sm text-slate-500">
-                    <span>{activity.meta}</span>
+              <AnimatedSection key={index} delay={0.2 + index * 0.1}>
+                <div 
+                  className="bg-card border border-border rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden hover:border-primary/20"
+                >
+                  <img 
+                    src={activity.image} 
+                    alt={activity.title} 
+                    className="w-full h-48 object-cover transition-transform duration-300 hover:scale-105"
+                  />
+                  <div className="p-6">
+                    <div className="flex items-center justify-between mb-3">
+                      <h3 className="text-xl font-semibold text-foreground">{activity.title}</h3>
+                      <Icon className={activity.iconColor} size={20} />
+                    </div>
+                    <p className="text-muted-foreground mb-4 leading-relaxed">{activity.description}</p>
+                    <div className="flex items-center text-sm text-muted-foreground">
+                      <span>{activity.meta}</span>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </AnimatedSection>
             );
           })}
         </div>
         
         {/* Achievements Section */}
-        <div>
-          <h3 className="text-2xl font-semibold text-secondary-custom mb-8 text-center">Recent Achievements</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {achievements.map((achievement, index) => {
-              const Icon = achievement.icon;
-              return (
-                <div 
-                  key={index} 
-                  className="bg-white p-6 rounded-xl shadow-lg text-center hover:shadow-xl transition-shadow duration-300"
-                >
-                  <div className={`w-16 h-16 ${achievement.color} rounded-full flex items-center justify-center mx-auto mb-4`}>
-                    <Icon className={achievement.iconColor} size={24} />
-                  </div>
-                  <h4 className="font-semibold text-secondary-custom mb-2">{achievement.title}</h4>
-                  <p className="text-sm text-slate-600">{achievement.description}</p>
-                </div>
-              );
-            })}
+        <AnimatedSection delay={0.8}>
+          <div>
+            <h3 className="text-2xl font-semibold text-foreground mb-8 text-center">Recent Achievements</h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {achievements.map((achievement, index) => {
+                const Icon = achievement.icon;
+                return (
+                  <AnimatedSection key={index} delay={1.0 + index * 0.1}>
+                    <div 
+                      className="bg-card border border-border p-6 rounded-xl shadow-lg text-center hover:shadow-xl transition-all duration-300 hover:border-primary/20"
+                    >
+                      <div className={`w-16 h-16 ${achievement.color} rounded-full flex items-center justify-center mx-auto mb-4`}>
+                        <Icon className={achievement.iconColor} size={24} />
+                      </div>
+                      <h4 className="font-semibold text-foreground mb-2">{achievement.title}</h4>
+                      <p className="text-sm text-muted-foreground">{achievement.description}</p>
+                    </div>
+                  </AnimatedSection>
+                );
+              })}
+            </div>
           </div>
-        </div>
+        </AnimatedSection>
       </div>
     </div>
   );
