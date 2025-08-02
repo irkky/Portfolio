@@ -161,8 +161,8 @@ const SplashCursor: React.FC<SplashCursorProps> = ({
     mouseRef.current.y = y;
     
     // Create splash if mouse is moving fast enough
-    if (velocity > 1) {
-      createSplash(x, y, Math.min(velocity * 0.1, 5));
+    if (velocity > 0.5) {
+      createSplash(x, y, Math.min(velocity * 0.15, 8));
       setIsMouseMoving(true);
       
       // Reset mouse timeout
@@ -171,7 +171,7 @@ const SplashCursor: React.FC<SplashCursorProps> = ({
       }
       mouseTimeoutRef.current = setTimeout(() => {
         setIsMouseMoving(false);
-      }, 100);
+      }, 150);
     }
   }, [createSplash]);
 
