@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import AnimatedSection from "@/components/AnimatedSection";
 import PageTransition from "@/components/PageTransition";
+import SplashCursor from "@/components/SplashCursor";
 
 const stats = [
   { value: "15+", label: "Projects Completed" },
