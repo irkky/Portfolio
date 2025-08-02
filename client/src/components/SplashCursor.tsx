@@ -227,8 +227,8 @@ const SplashCursor: React.FC<SplashCursorProps> = ({
         height: '100vh',
         pointerEvents: 'none',
         zIndex: 9999,
-        mixBlendMode: 'screen',
-        opacity: isMouseMoving ? 0.8 : 0.4
+        mixBlendMode: 'normal',
+        opacity: isMouseMoving ? 1.0 : 0.7
       }}
     />
   );
