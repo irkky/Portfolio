@@ -1,5 +1,6 @@
 import { GraduationCap, Briefcase, MapPin, Languages } from "lucide-react";
 import AnimatedSection, { AnimatedStagger, StaggerItem } from "../components/AnimatedSection";
+import ProfileCard from "../components/ProfileCard";
 
 const personalInfo = [
   {
