@@ -76,13 +76,24 @@ Successfully enhanced Rishabh Kumar Kannaujiya's portfolio website with dark mod
   - AnimatedSection: Provides scroll-based animations
 - **Performance**: Uses transform and opacity for smooth 60fps animations
 
-### NEW: Splash Cursor System
-- **Canvas Rendering**: HTML5 Canvas with 2D context for smooth particle rendering
-- **Particle Physics**: Each particle has position, velocity, size, life, and color properties
-- **Rainbow Color Generation**: HSL color space with time-based hue rotation
-- **Memory Management**: Automatic particle cleanup to prevent memory leaks
-- **Event Handling**: Optimized mouse move detection with velocity calculation
-- **Responsive**: Dynamic canvas resizing on window resize events
+### NEW: Authentic React-Bits Splash Cursor System
+- **WebGL2 Rendering**: Advanced GPU-accelerated fluid simulation using WebGL shaders
+- **Fluid Dynamics Engine**: Complete physics simulation including:
+  - Velocity field calculations with advection
+  - Pressure solving using Jacobi iterations  
+  - Curl/vorticity for realistic swirling effects
+  - Density dissipation for natural color fading
+- **Shader Programs**: Multiple specialized shaders for different simulation phases:
+  - Base vertex shader for geometry processing
+  - Splat shader for cursor interaction effects
+  - Advection shader for fluid movement
+  - Divergence shader for pressure calculation
+  - Curl shader for vorticity effects
+  - Display shader with optional lighting/shading
+- **Frame Buffer Objects**: Double buffering system for smooth animation
+- **Input Handling**: Unified mouse and touch event processing with proper coordinate mapping
+- **Color System**: HSV-based dynamic color generation for vibrant fluid effects
+- **Performance Optimizations**: Pixel ratio scaling, efficient texture formats, and GPU memory management
 
 ### Color Scheme
 - **Light Mode**: Clean, professional blue and gray palette
