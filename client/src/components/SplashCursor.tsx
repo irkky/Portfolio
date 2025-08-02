@@ -21,11 +21,11 @@ interface SplashCursorProps {
 }
 
 const SplashCursor: React.FC<SplashCursorProps> = ({
-  splatRadius = 60,
-  splatForce = 0.5,
-  particleCount = 15,
-  colorUpdateSpeed = 0.02,
-  dissipationRate = 0.95
+  splatRadius = 80,
+  splatForce = 0.8,
+  particleCount = 20,
+  colorUpdateSpeed = 0.03,
+  dissipationRate = 0.98
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const ctxRef = useRef<CanvasRenderingContext2D | null>(null);
