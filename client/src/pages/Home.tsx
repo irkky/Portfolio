@@ -16,6 +16,7 @@ const stats = [
 export default function Home() {
   return (
     <PageTransition>
+      <SplashCursor />
       <div>
         {/* Hero Section */}
         <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-background to-muted">
