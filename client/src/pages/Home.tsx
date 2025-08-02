@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import AnimatedSection from "@/components/AnimatedSection";
 import PageTransition from "@/components/PageTransition";
+import SplashCursor from "@/components/SplashCursor";
 
 const stats = [
   { value: "15+", label: "Projects Completed" },
@@ -15,6 +16,7 @@ const stats = [
 export default function Home() {
   return (
     <PageTransition>
+      <SplashCursor />
       <div>
         {/* Hero Section */}
         <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-background to-muted">
