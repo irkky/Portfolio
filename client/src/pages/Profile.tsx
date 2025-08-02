@@ -47,11 +47,18 @@ export default function Profile() {
         </AnimatedSection>
         
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-          <AnimatedSection variant="slideLeft" delay={0.2}>
-            <img 
-              src="https://photos.fife.usercontent.google.com/pw/AP1GczOjGVDPqWJstLdInL72kfIzTWLOS1_6g0v6KgevLau7bgc91pYsJ24vDw=w831-h1108-s-no-gm?authuser=0" 
-              alt="Rishabh Kannaujiya - AI/ML Developer" 
-              className="rounded-2xl shadow-2xl dark:shadow-gray-800/25 w-full max-w-md mx-auto lg:mx-0 hover:scale-105 transition-transform duration-300"
+          <AnimatedSection variant="slideLeft" delay={0.2} className="flex justify-center lg:justify-start">
+            <ProfileCard
+              name="Rishabh Kannaujiya"
+              title="AI/ML Developer"
+              handle="rishabhkann"
+              status="Available"
+              contactText="Contact Me"
+              avatarUrl="https://photos.fife.usercontent.google.com/pw/AP1GczOjGVDPqWJstLdInL72kfIzTWLOS1_6g0v6KgevLau7bgc91pYsJ24vDw=w831-h1108-s-no-gm?authuser=0"
+              showUserInfo={true}
+              enableTilt={true}
+              enableMobileTilt={false}
+              onContactClick={() => console.log('Contact clicked')}
             />
           </AnimatedSection>
           
