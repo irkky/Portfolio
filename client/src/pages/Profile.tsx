@@ -54,7 +54,7 @@ export default function Profile() {
               handle="rishabhkann"
               status="Available"
               contactText="Contact Me"
-              avatarUrl="https://photos.fife.usercontent.google.com/pw/AP1GczOjGVDPqWJstLdInL72kfIzTWLOS1_6g0v6KgevLau7bgc91pYsJ24vDw=w831-h1108-s-no-gm?authuser=0"
+              avatarUrl="/photo for profile.png"
               showUserInfo={true}
               enableTilt={true}
               enableMobileTilt={false}
