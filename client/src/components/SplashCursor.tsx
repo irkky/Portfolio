@@ -38,8 +38,8 @@ const SplashCursor: React.FC<SplashCursorProps> = ({
 
   // Generate rainbow colors
   const getRainbowColor = useCallback((time: number, offset: number = 0): string => {
-    const hue = ((time * 50 + offset * 60) % 360);
-    return `hsl(${hue}, 70%, 60%)`;
+    const hue = ((time * 80 + offset * 60) % 360);
+    return `hsl(${hue}, 85%, 65%)`;
   }, []);
 
   // Create splash particles
@@ -49,7 +49,7 @@ const SplashCursor: React.FC<SplashCursorProps> = ({
     for (let i = 0; i < particleCount; i++) {
       const angle = (Math.PI * 2 * i) / particleCount + Math.random() * 0.5;
       const speed = (Math.random() * 0.5 + 0.5) * velocity * splatForce;
-      const size = Math.random() * splatRadius * 0.3 + splatRadius * 0.2;
+      const size = Math.random() * splatRadius * 0.4 + splatRadius * 0.3;
       
       const particle: SplashParticle = {
         x,
@@ -58,7 +58,7 @@ const SplashCursor: React.FC<SplashCursorProps> = ({
         vy: Math.sin(angle) * speed,
         size,
         life: 1.0,
-        maxLife: Math.random() * 60 + 40,
+        maxLife: Math.random() * 80 + 60,
         color: getRainbowColor(currentTime, i),
         alpha: 1.0
       };
@@ -67,8 +67,8 @@ const SplashCursor: React.FC<SplashCursorProps> = ({
     }
     
     // Limit total particles for performance
-    if (particlesRef.current.length > 300) {
-      particlesRef.current = particlesRef.current.slice(-300);
+    if (particlesRef.current.length > 400) {
+      particlesRef.current = particlesRef.current.slice(-400);
     }
   }, [particleCount, splatRadius, splatForce, getRainbowColor]);
 
