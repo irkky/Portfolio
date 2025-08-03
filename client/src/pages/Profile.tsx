@@ -51,13 +51,15 @@ export default function Profile() {
             <ProfileCard
               name="Rishabh Kannaujiya"
               title="AI/ML Developer"
-              handle="rishabhkann"
+              handle="irkky"
               status="Available"
               contactText="Contact Me"
-              avatarUrl="https://photos.fife.usercontent.google.com/pw/AP1GczOjGVDPqWJstLdInL72kfIzTWLOS1_6g0v6KgevLau7bgc91pYsJ24vDw=w831-h1108-s-no-gm?authuser=0"
+              iconUrl="https://github.com/irkky/Portfolio/blob/main/public/iconpattern.png?raw=true"
+              avatarUrl="https://github.com/irkky/Portfolio/blob/246a7aafe69a8090988ef71de70e096337ad8552/public/photo%20for%20profile.png?raw=true"
+              grainUrl="https://github.com/irkky/Portfolio/blob/main/public/grain.webp?raw=true"
               showUserInfo={true}
               enableTilt={true}
-              enableMobileTilt={false}
+              enableMobileTilt={true}
               onContactClick={() => console.log('Contact clicked')}
             />
           </AnimatedSection>
