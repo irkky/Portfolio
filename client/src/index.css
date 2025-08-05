@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --background: hsl(210, 40%, 98%);
+  --background: lch(96.11% 24.09 101.07);
   --foreground: hsl(215, 25%, 27%);
-  --muted: hsl(210, 40%, 96%);
+  --muted: hsl(210, 79%, 95%);
   --muted-foreground: hsl(215, 16%, 47%);
   --popover: hsl(0, 0%, 100%);
   --popover-foreground: hsl(215, 25%, 27%);
@@ -149,6 +149,7 @@
 /* Glass morphism effect */
 .glass {
   background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }

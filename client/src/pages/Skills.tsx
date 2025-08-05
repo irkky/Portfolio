@@ -154,7 +154,7 @@ export default function Skills() {
               return (
                 <StaggerItem
                   key={tool.name}
-                  variant="bounce"
+                  variant="scale"
                   className="bg-card dark:bg-card hover:bg-accent/50 dark:hover:bg-accent/20 hover:shadow-lg dark:hover:shadow-gray-800/25 transition-all duration-300 p-4 rounded-xl text-center group border border-border hover:-translate-y-1"
                 >
                   <Icon className="text-3xl text-muted-foreground group-hover:text-primary-custom transition-colors mb-2 mx-auto" />
