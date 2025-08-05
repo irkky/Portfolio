@@ -9,8 +9,8 @@
   --rotate-y: 0deg;
   --background-x: 50%;
   --background-y: 50%;
-  --grain: url('https://github.com/irkky/Portfolio/blob/main/public/grain.webp?raw=true');
-  --icon: url('https://github.com/irkky/Portfolio/blob/main/public/iconpattern.png?raw=true');
+  --grain: url('https://github.com/irkky/Portfolio/blob/4f689a7eebf3562395b92000efbd9ec9a8614ea2/public/grain.webp');
+  --icon: url('<Paste your icon URL here>');
   --behind-gradient: none;
   --inner-gradient: none;
   --sunpillar-1: hsl(2, 100%, 73%);
@@ -65,7 +65,7 @@
 
 .pc-card {
   height: 80svh;
-  max-height: 540px;
+  max-height: 600px;
   display: grid;
   aspect-ratio: 0.718;
   border-radius: var(--card-radius);
