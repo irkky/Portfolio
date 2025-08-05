@@ -34,7 +34,7 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
-                Hi, I'm <span className="text-primary">Rishabh Kannaujiya</span>
+                Hi, I'm <span className="text-primary">Rishabh Kumar Kannaujiya</span>
               </motion.h1>
               <motion.h2 
                 className="text-xl sm:text-2xl lg:text-3xl text-muted-foreground mb-8 font-light"
@@ -50,7 +50,7 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
-                Crafting cutting‑edge AI/ML solutions with modern generative intelligence frameworks.
+                Crafting cutting-edge AI/ML solutions with modern generative intelligence frameworks.
                 Passionate about developing scalable GenAI applications that deliver meaningful impact.
               </motion.p>
               
@@ -81,6 +81,7 @@ export default function Home() {
             className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
           >
             <ChevronDown className="text-muted-foreground" size={24} />
           </motion.div>
@@ -103,8 +104,8 @@ export default function Home() {
                     className="text-center group"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.2, delay: index * 0.1 }}
+                    whileHover={{ scale: 1.1 }}
                     viewport={{ once: true }}
                   >
                     <div className="text-3xl font-bold text-primary mb-2 group-hover:text-accent transition-colors duration-200">{stat.value}</div>

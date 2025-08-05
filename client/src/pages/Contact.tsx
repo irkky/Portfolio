@@ -188,11 +188,11 @@ export default function Contact() {
                           className={`${social.color} text-white w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-200`}
                           initial={{ opacity: 0, scale: 0 }}
                           animate={{ opacity: 1, scale: 1 }}
-                          transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
-                          whileHover={{ scale: 1.1, rotate: 5 }}
+                          transition={{ duration: 0.01, delay: 0.01 + index * 0.01 }}
+                          whileHover={{ scale: 1.3, rotate: 5 }}
                           whileTap={{ scale: 0.9 }}
                         >
-                          <Icon size={20} />
+                          <Icon size={30} />
                         </motion.a>
                       );
                     })}
