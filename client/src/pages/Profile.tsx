@@ -27,10 +27,10 @@ const personalInfo = [
 
 const experience = [
   {
-    period: "Present",
-    role: "Developer",
-    company: "Lorem ipsum",
-    description: "Lorem ipsum"
+    period: "June, 2024 - July, 2024",
+    role: "Python Development Intern",
+    company: "Tehchtitude Tribe Pvt. Ltd.",
+    description: "Developed Python applications for various internal and client-facing projects. Assisted in deep learning tasks, including data preprocessing, model training, and data analysis."
   }
 ];
 
@@ -82,9 +82,9 @@ export default function Profile() {
                   <StaggerItem 
                     key={index} 
                     variant="scale"
-                    className="bg-card dark:bg-card p-4 rounded-lg border border-border hover:shadow-lg dark:hover:shadow-gray-800/25 transition-all duration-300 hover:-translate-y-1"
+                    className="bg-card dark:bg-card p-4 rounded-lg border border-border hover:shadow-lg dark:hover:shadow-gray-800/25 transition-all duration-100 hover:-translate-y-1"
                   >
-                    <Icon className="text-primary-custom mb-2" size={20} />
+                    <Icon className="text-primary-custom mb-3" size={20} />
                     <h4 className="font-semibold text-secondary-custom mb-1">{info.title}</h4>
                     <p className="text-sm text-muted-foreground whitespace-pre-line">{info.content}</p>
                   </StaggerItem>
@@ -95,17 +95,17 @@ export default function Profile() {
         </div>
         
         {/* Experience Timeline */}
-        <AnimatedSection variant="fadeUp" delay={0.6}>
+        <AnimatedSection variant="fadeUp" delay={0.2}>
           <h3 className="text-2xl font-semibold text-secondary-custom mb-8 text-center">Professional Experience</h3>
           <div className="space-y-8">
             {experience.map((exp, index) => (
               <AnimatedSection 
                 key={index}
                 variant="scale"
-                delay={0.8 + index * 0.1}
-                className="flex flex-col md:flex-row gap-4 p-6 bg-card dark:bg-card border border-border rounded-xl hover:shadow-lg dark:hover:shadow-gray-800/25 transition-all duration-300 hover:-translate-y-1"
+                delay={0.1 + index * 0.1}
+                className="flex flex-col md:flex-row gap-10 p-7 bg-card dark:bg-card border border-border rounded-xl hover:shadow-lg dark:hover:shadow-gray-800/25 transition-all duration-100 hover:-translate-y-150"
               >
-                <div className="md:w-48 flex-shrink-0">
+                <div className="md:w-50 flex-shrink-0">
                   <div className="text-sm text-primary-custom font-semibold">{exp.period}</div>
                   <div className="text-lg font-semibold text-secondary-custom">{exp.role}</div>
                   <div className="text-muted-foreground">{exp.company}</div>
