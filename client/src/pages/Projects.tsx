@@ -31,7 +31,7 @@ const projects = [
     title: "Multi Camera CCTV Video Processing",
     description: "A comprehensive system for processing and analyzing multi-camera CCTV footage using advanced computer vision techniques.",
     image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fas2.ftcdn.net%2Fv2%2Fjpg%2F02%2F95%2F45%2F83%2F1000_F_295458329_5acHhOLvs9ZLIpcsLlFmUyU44KKwITtE.jpg&f=1&nofb=1&ipt=e40d50462cc9c6ae0bed6727da1af15879eae2d64fce784b2ae829682d46fb3e&auto=format&fit=crop&w=800&h=500",
-    technologies: ["TensorFlow", "opencv", "Python", "NumPy", "Computer Vision"],
+    technologies: ["TensorFlow", "OpenCV", "Python", "NumPy", "Computer Vision"],
     category: "Computer Vision",
     demoUrl: "https://www.linkedin.com/posts/rishabh-kr-kannaujiya_computervision-python-tensorflow-activity-7220721661187170304-iCvG?utm_source=share&utm_medium=member_desktop&rcm=ACoAADSHLP4B3jdoLFGD8Jb2wdsg55ddJlGU3gE",
     githubUrl: "https://github.com/irkky/Multi-Camera-CCTV-Video-Processing"
