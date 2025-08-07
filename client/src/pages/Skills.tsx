@@ -1,29 +1,50 @@
-import { Code, Server, Users, Lightbulb, MessageCircle, Rocket } from "lucide-react";
-import { SiGit, SiDocker, SiAmazon, SiMongodb, SiFigma, SiReact } from "react-icons/si";
+import { Code, Server, Users, Lightbulb, MessageCircle, Rocket, Brain, Database } from "lucide-react";
+import { SiGit, SiMongodb, SiFigma, SiReact, SiPython, SiTensorflow, SiFlask, SiStreamlit, SiGooglecloud, SiLangchain, SiOpenai, SiOpencv, SiHuggingface, SiJupyter, SiMysql, SiJavascript, SiTypescript, SiHtml5, SiCss3, SiTailwindcss, SiNodedotjs, SiCanva } from "react-icons/si";
 import AnimatedSection, { AnimatedStagger, StaggerItem } from "../components/AnimatedSection";
 import { motion } from "framer-motion";
 
-const frontendSkills = [
-  { name: "React.js", level: 95 },
-  { name: "TypeScript", level: 90 },
-  { name: "Next.js", level: 85 },
-  { name: "Tailwind CSS", level: 92 },
+const aiMlSkills = [
+  { name: "Machine Learning", level: 90 },
+  { name: "Generative AI", level: 85 },
+  { name: "Deep Learning", level: 85 },
+  { name: "Natural Language Processing", level: 85 },
+  { name: "Computer Vision", level: 80 },
+  { name: "Prompt Engineering", level: 90 },
 ];
 
-const backendSkills = [
-  { name: "Node.js", level: 90 },
-  { name: "Python", level: 85 },
-  { name: "PostgreSQL", level: 88 },
-  { name: "GraphQL", level: 80 },
+const programmingSkills = [
+  { name: "Python", level: 95 },
+  { name: "HTML/CSS", level: 80 },
+  { name: "TypeScript", level: 70 },
+  { name: "JavaScript", level: 70 },
+];
+
+const frameworksLibraries = [
+  { name: "TensorFlow", level: 85 },
+  { name: "LangChain", level: 80 },
+  { name: "Streamlit", level: 90 },
+  { name: "Flask", level: 85 },
+  { name: "React.js", level: 75 },
+  { name: "OpenCV", level: 80 },
 ];
 
 const tools = [
+  { icon: SiPython, name: "Python" },
+  { icon: SiTensorflow, name: "TensorFlow" },
+  { icon: SiLangchain, name: "LangChain" },
+  { icon: SiFlask, name: "Flask" },
+  { icon: SiStreamlit, name: "Streamlit" },
+  { icon: SiGooglecloud, name: "Google Cloud" },
+  { icon: SiHuggingface, name: "Hugging Face" },
   { icon: SiGit, name: "Git" },
-  { icon: SiDocker, name: "Docker" },
-  { icon: SiAmazon, name: "AWS" },
+  { icon: SiOpenai, name: "OpenAI" },
+  { icon: SiOpencv, name: "OpenCV" },
+  { icon: SiJupyter, name: "Jupyter" },
   { icon: SiMongodb, name: "MongoDB" },
-  { icon: SiFigma, name: "Figma" },
-  { icon: SiReact, name: "React Native" },
+  { icon: SiMysql, name: "MySQL" },
+  { icon: SiReact, name: "React" },
+  { icon: SiJavascript, name: "JavaScript" },
+  { icon: SiCanva, name: "Canva" },
 ];
 
 const softSkills = [
@@ -37,21 +58,21 @@ const softSkills = [
   {
     icon: Lightbulb,
     title: "Problem Solving",
-    description: "Analytical thinking and creative solutions to complex challenges",
+    description: "Analytical thinking and creative solutions to complex AI/ML challenges",
     color: "from-green-50 to-green-100 dark:from-green-950/20 dark:to-green-900/20",
     iconColor: "text-accent-custom"
   },
   {
     icon: Users,
     title: "Team Collaboration",
-    description: "Working effectively in agile development teams",
+    description: "Working effectively in development teams and leading club activities",
     color: "from-purple-50 to-purple-100 dark:from-purple-950/20 dark:to-purple-900/20",
     iconColor: "text-purple-600"
   },
   {
     icon: Rocket,
     title: "Leadership",
-    description: "Mentoring junior developers and leading project initiatives",
+    description: "Secretary of Jagriti Club and Treasurer of Photography & Fine Arts Club",
     color: "from-orange-50 to-orange-100 dark:from-orange-950/20 dark:to-orange-900/20",
     iconColor: "text-orange-600"
   },
@@ -98,22 +119,22 @@ export default function Skills() {
           <h2 className="text-3xl md:text-4xl font-bold text-secondary-custom mb-4">Skills & Expertise</h2>
           <div className="w-24 h-1 bg-primary-custom mx-auto mb-8"></div>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            A comprehensive toolkit of modern technologies and methodologies for building exceptional digital products.
+            Specialized in AI/ML development with expertise in building intelligent systems, computer vision applications, and NLP solutions.
           </p>
         </AnimatedSection>
         
         {/* Technical Skills */}
         <AnimatedSection variant="fadeUp" delay={0.2} className="mb-16">
           <h3 className="text-2xl font-semibold text-secondary-custom mb-8 text-center">Technical Skills</h3>
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Frontend Skills */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* AI/ML Skills */}
             <AnimatedSection variant="slideLeft" delay={0.4}>
               <h4 className="text-lg font-semibold text-secondary-custom mb-6 flex items-center">
-                <Code className="text-primary-custom mr-3" size={20} />
-                Frontend Development
+                <Brain className="text-primary-custom mr-3" size={20} />
+                AI/ML & Data Science
               </h4>
               <div className="space-y-4">
-                {frontendSkills.map((skill, index) => (
+                {aiMlSkills.map((skill, index) => (
                   <SkillBar 
                     key={skill.name} 
                     name={skill.name} 
@@ -124,19 +145,38 @@ export default function Skills() {
               </div>
             </AnimatedSection>
             
-            {/* Backend Skills */}
-            <AnimatedSection variant="slideRight" delay={0.6}>
+            {/* Programming Languages */}
+            <AnimatedSection variant="fadeUp" delay={0.5}>
               <h4 className="text-lg font-semibold text-secondary-custom mb-6 flex items-center">
-                <Server className="text-primary-custom mr-3" size={20} />
-                Backend Development
+                <Code className="text-primary-custom mr-3" size={20} />
+                Programming Languages
               </h4>
               <div className="space-y-4">
-                {backendSkills.map((skill, index) => (
+                {programmingSkills.map((skill, index) => (
                   <SkillBar 
                     key={skill.name} 
                     name={skill.name} 
                     level={skill.level} 
                     color="bg-accent-custom"
+                    delay={index * 0.1}
+                  />
+                ))}
+              </div>
+            </AnimatedSection>
+
+            {/* Frameworks & Libraries */}
+            <AnimatedSection variant="slideRight" delay={0.6}>
+              <h4 className="text-lg font-semibold text-secondary-custom mb-6 flex items-center">
+                <Server className="text-primary-custom mr-3" size={20} />
+                Frameworks & Libraries
+              </h4>
+              <div className="space-y-4">
+                {frameworksLibraries.map((skill, index) => (
+                  <SkillBar 
+                    key={skill.name} 
+                    name={skill.name} 
+                    level={skill.level} 
+                    color="bg-green-500"
                     delay={index * 0.1}
                   />
                 ))}
@@ -148,7 +188,7 @@ export default function Skills() {
         {/* Tools & Technologies */}
         <AnimatedSection variant="fadeUp" delay={0.8} className="mb-16">
           <h3 className="text-2xl font-semibold text-secondary-custom mb-8 text-center">Tools & Technologies</h3>
-          <AnimatedStagger className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6" staggerDelay={0.1}>
+          <AnimatedStagger className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-6" staggerDelay={0.1}>
             {tools.map((tool) => {
               const Icon = tool.icon;
               return (
@@ -189,3 +229,4 @@ export default function Skills() {
     </div>
   );
 }
+
