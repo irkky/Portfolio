@@ -1,7 +1,15 @@
-import { Code, Server, Users, Lightbulb, MessageCircle, Rocket, Brain, Database, Star } from "lucide-react";
-import { SiGit, SiMongodb, SiFigma, SiReact, SiPython, SiTensorflow, SiFlask, SiStreamlit, SiGooglecloud, SiLangchain, SiOpenai, SiOpencv, SiHuggingface, SiJupyter, SiMysql, SiJavascript, SiTypescript, SiHtml5, SiCss3, SiTailwindcss, SiNodedotjs, SiCanva, SiGithub, SiPostman } from "react-icons/si";
+import { 
+  Code, Server, Users, Lightbulb, MessageCircle, Rocket, Brain, Database, Star 
+} from "lucide-react";
+import { 
+  SiGit, SiMongodb, SiFigma, SiReact, SiPython, SiTensorflow, SiFlask, 
+  SiStreamlit, SiGooglecloud, SiLangchain, SiOpenai, SiOpencv, SiHuggingface, 
+  SiJupyter, SiMysql, SiJavascript, SiTypescript, SiHtml5, SiCss3, SiTailwindcss, 
+  SiNodedotjs, SiCanva, SiGithub, SiPostman 
+} from "react-icons/si";
 import AnimatedSection, { AnimatedStagger, StaggerItem } from "../components/AnimatedSection";
 import { motion } from "framer-motion";
+
 const aiMlSkills = [
   { name: "Machine Learning", level: 4 },
   { name: "Generative AI", level: 4 },
@@ -52,30 +60,30 @@ const softSkills = [
   {
     icon: MessageCircle,
     title: "Communication",
-    description: "Clear and effective communication with team members and stakeholders",
+    description: "Articulate and effective interaction with team members and stakeholders.",
     color: "from-blue-50 to-blue-100 dark:from-blue-950/20 dark:to-blue-900/20",
-    iconColor: "text-primary-custom"
+    iconColor: "text-primary-custom",
   },
   {
     icon: Lightbulb,
     title: "Problem Solving",
-    description: "Analytical thinking and creative solutions to complex AI/ML challenges",
+    description: "Combining analytical thinking with creativity to address complex AI/ML challenges.",
     color: "from-green-50 to-green-100 dark:from-green-950/20 dark:to-green-900/20",
-    iconColor: "text-accent-custom"
+    iconColor: "text-accent-custom",
   },
   {
     icon: Users,
     title: "Team Collaboration",
-    description: "Working effectively in development teams and leading club activities",
+    description: "Thrives in collaborative environments and demonstrates leadership in group projects.",
     color: "from-purple-50 to-purple-100 dark:from-purple-950/20 dark:to-purple-900/20",
-    iconColor: "text-purple-600"
+    iconColor: "text-purple-600",
   },
   {
     icon: Rocket,
     title: "Leadership",
-    description: "Secretary of Jagriti Club and Treasurer of Photography & Fine Arts Club",
+    description: "Held leadership positions such as Secretary of Jagriti Club and Treasurer of Photography & Fine Arts Club.",
     color: "from-orange-50 to-orange-100 dark:from-orange-950/20 dark:to-orange-900/20",
-    iconColor: "text-orange-600"
+    iconColor: "text-orange-600",
   },
 ];
 
@@ -88,7 +96,7 @@ interface SkillBarProps {
 
 function SkillBar({ name, level, color = "text-primary-custom", delay = 0 }: SkillBarProps) {
   return (
-    <motion.div 
+    <motion.div
       className="skill-item"
       initial={{ opacity: 0, x: -20 }}
       whileInView={{ opacity: 1, x: 0 }}
@@ -106,9 +114,9 @@ function SkillBar({ name, level, color = "text-primary-custom", delay = 0 }: Ski
               transition={{ duration: 0.3, delay: delay + 0.1 + i * 0.1 }}
               viewport={{ once: true }}
             >
-              <Star 
-                className={`${i < level ? `${color} fill-current` : 'text-muted-foreground'} transition-colors duration-300`} 
-                size={16} 
+              <Star
+                className={`${i < level ? `${color} fill-current` : "text-muted-foreground"} transition-colors duration-300`}
+                size={16}
               />
             </motion.div>
           ))}
@@ -122,11 +130,13 @@ export default function Skills() {
   return (
     <div className="py-16 bg-background dark:bg-background transition-colors duration-300">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Header */}
         <AnimatedSection variant="fadeUp" className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-secondary-custom mb-4">Skills & Expertise</h2>
           <div className="w-24 h-1 bg-primary-custom mx-auto mb-8"></div>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Specialized in AI/ML development with expertise in building intelligent systems, computer vision applications, and NLP solutions.
+            Proficient in AI/ML development with a focus on intelligent systems, computer vision, and natural language processing solutions.
           </p>
         </AnimatedSection>
         
@@ -134,7 +144,8 @@ export default function Skills() {
         <AnimatedSection variant="fadeUp" delay={0.2} className="mb-16">
           <h3 className="text-2xl font-semibold text-secondary-custom mb-8 text-center">Technical Skills</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* AI/ML Skills */}
+            
+            {/* AI/ML & Data Science */}
             <AnimatedSection variant="slideLeft" delay={0.4}>
               <h4 className="text-lg font-semibold text-secondary-custom mb-6 flex items-center">
                 <Brain className="text-primary-custom mr-3" size={20} />
@@ -142,16 +153,11 @@ export default function Skills() {
               </h4>
               <div className="space-y-4">
                 {aiMlSkills.map((skill, index) => (
-                  <SkillBar 
-                    key={skill.name} 
-                    name={skill.name} 
-                    level={skill.level}
-                    delay={index * 0.1}
-                  />
+                  <SkillBar key={skill.name} name={skill.name} level={skill.level} delay={index * 0.1} />
                 ))}
               </div>
             </AnimatedSection>
-            
+
             {/* Programming Languages */}
             <AnimatedSection variant="fadeUp" delay={0.5}>
               <h4 className="text-lg font-semibold text-secondary-custom mb-6 flex items-center">
@@ -160,16 +166,11 @@ export default function Skills() {
               </h4>
               <div className="space-y-4">
                 {programmingSkills.map((skill, index) => (
-                  <SkillBar 
-                    key={skill.name} 
-                    name={skill.name} 
-                    level={skill.level} 
-                    color="text-accent-custom"
-                    delay={index * 0.1}
-                  />
+                  <SkillBar key={skill.name} name={skill.name} level={skill.level} color="text-accent-custom" delay={index * 0.1} />
                 ))}
               </div>
             </AnimatedSection>
+
             {/* Frameworks & Libraries */}
             <AnimatedSection variant="slideRight" delay={0.6}>
               <h4 className="text-lg font-semibold text-secondary-custom mb-6 flex items-center">
@@ -178,13 +179,7 @@ export default function Skills() {
               </h4>
               <div className="space-y-4">
                 {frameworksLibraries.map((skill, index) => (
-                  <SkillBar 
-                    key={skill.name} 
-                    name={skill.name} 
-                    level={skill.level} 
-                    color="text-green-500"
-                    delay={index * 0.1}
-                  />
+                  <SkillBar key={skill.name} name={skill.name} level={skill.level} color="text-green-500" delay={index * 0.1} />
                 ))}
               </div>
             </AnimatedSection>

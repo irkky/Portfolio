@@ -4,52 +4,84 @@ import { motion } from "framer-motion";
 
 const activities = [
   {
-    title: "Community Volunteering",
-    description: "Teaching coding basics to underprivileged youth at local community centers. Organizing tech workshops and mentoring aspiring developers.",
-    image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
+    title: "Secretary — Jagriti Club (Social & Welfare)",
+    description:
+      "Led a partnership with Koshish Foundation to run daily tutoring sessions and distribute study materials to underprivileged children; managed volunteer recruitment, scheduling and impact tracking.",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5u0eba9RcH6FfjAzdRA3aq1zrgbQPQpSU7w&s&auto=format&fit=crop&w=1200&h=600",
     icon: Heart,
     iconColor: "text-red-500",
-    meta: "6+ hours/week"
+    meta: "300+ students reached"
   },
   {
-    title: "Mountain Biking",
-    description: "Exploring nature trails and challenging mountain paths. Part of a local cycling group that organizes weekend adventures and environmental cleanups.",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
-    icon: Mountain,
-    iconColor: "text-green-600",
-    meta: "Bay Area Trails"
-  },
-  {
-    title: "Tech Speaking",
-    description: "Regular speaker at local meetups and conferences, sharing insights on modern web development and best practices. Passionate about knowledge sharing.",
-    image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
-    icon: Mic,
-    iconColor: "text-primary-custom",
-    meta: "12+ events"
-  },
-  {
-    title: "Photography",
-    description: "Capturing moments and landscapes through the lens. Specializing in nature and urban photography. Building an Instagram presence with travel and tech-themed content.",
-    image: "https://images.unsplash.com/photo-1606983340126-99ab4feaa64a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
-    icon: Camera,
-    iconColor: "text-purple-600",
-    meta: "Weekend hobby"
-  },
-  {
-    title: "Open Source",
-    description: "Active contributor to open source projects, particularly in React and Node.js ecosystems. Maintaining several packages and helping developers worldwide.",
-    image: "https://images.unsplash.com/photo-1556075798-4825dfaaf498?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
-    icon: Github,
-    iconColor: "text-foreground dark:text-muted-foreground",
-    meta: "50+ contributions"
-  },
-  {
-    title: "Continuous Learning",
-    description: "Constantly exploring new technologies, design patterns, and industry trends. Currently studying machine learning and AI integration in web applications.",
-    image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400",
+    title: "Editor-in-Chief — “Darpan” (Jagriti Club)",
+    description:
+      "Planned, edited and published the club magazine; coordinated writers, designers and production schedules to deliver each issue on time.",
+    image:
+      "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fjobsforeditors.com%2Fblog%2Fwp-content%2Fuploads%2F2017%2F11%2FEditor-in-Chief.png&f=1&nofb=1&ipt=60cec757af642ed875100f00200d4dde4e654223ad30b13fb35ac8289f2fbaf2&auto=format&fit=crop&w=1200&h=600",
     icon: Book,
     iconColor: "text-blue-600",
-    meta: "5+ courses/year"
+    meta: "Editor-in-Chief"
+  },
+  {
+    title: "Treasurer — Photography & Fine Arts Club",
+    description:
+      "Managed club finances, prepared budgets for events and equipment purchases, and ensured transparent expense tracking for faculty review.",
+    image:
+      "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fthumbs.dreamstime.com%2Fz%2Ftreasurer-text-blue-vintage-grungy-round-rubber-stamp-216936055.jpg&f=1&nofb=1&ipt=092bf2c7f0e032751d7ff74ca0a6cd999599cf5d612a35843d8fb4713b2e69cb&auto=format&fit=crop&w=1200&h=600",
+    icon: Camera,
+    iconColor: "text-purple-600",
+    meta: "Managed club budget"
+  },
+  {
+    title: "Coordinator — Literary Club",
+    description:
+      "Organized workshops, debates and literary events; handled publicity and member engagement to boost participation and enrich campus literary culture.",
+    image:
+      "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.rasischool.org%2Fwp-content%2Fuploads%2F2018%2F11%2Fliterary-club-2.jpg&f=1&nofb=1&ipt=98651763ce06b05a8b6e9b9774ad71e9510b7ae9c02dfb13d28e0450b1ceeb12&auto=format&fit=crop&w=1200&h=600",
+    icon: Book,
+    iconColor: "text-green-600",
+    meta: "Workshops & debates"
+  },
+  {
+    title: "Event Organizer & Anchor",
+    description:
+      "Planned and executed major campus events (college fest, Ambedkar Jayanti, Constitution Day); served as anchor/MC and coordinated logistics, volunteers and schedules.",
+    image:
+      "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fagievent.com%2Fpublic%2Fuploads%2F0000%2F1%2F2022%2F06%2F26%2Fevent-organizer-in-jakarta.jpg&f=1&nofb=1&ipt=c980290ca7a64f52d64a384a2c0bb59b9008ed397fa42d504dcdae26368751ba&auto=format&fit=crop&w=1200&h=600",
+    icon: Mic,
+    iconColor: "text-primary-custom",
+    meta: "Multiple campus events"
+  },
+  {
+    title: "Nukkad Natak — Team Leader",
+    description:
+      "Directed and led a 20-member theatre team to produce street plays addressing social issues; managed rehearsals, scripts, props and performances.",
+    image:
+      "https://i.ytimg.com/vi/xcJ9WKVfYmw/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAu24ew1J2MCfy8PVjpvjUvx_zHaA&auto=format&fit=crop&w=1200&h=600",
+    icon: Star,
+    iconColor: "text-orange-600",
+    meta: "Led 20 performers"
+  },
+  {
+    title: "Hackathon — SIH 2024 (Internal)",
+    description:
+      "Collaborated on a multidisciplinary team to analyze a problem, prototype a solution and present results — awarded 1st place in the college’s internal Smart India Hackathon (SIH) 2024.",
+    image:
+      "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdigitallearning.eletsonline.com%2Fwp-content%2Fuploads%2F2024%2F12%2FSmart-India-Hackathon-2024-1.jpg&f=1&nofb=1&ipt=b8aa212dc445b8564674e7e2d1a29025067134b9e0c44cfc19a1e6b6b66bae9a&auto=format&fit=crop&w=1200&h=600",
+    icon: Trophy,
+    iconColor: "text-yellow-600",
+    meta: "1st — SIH 2024 (internal)"
+  },
+  {
+    title: "Hobbies: Chess & Photography",
+    description:
+      "Play competitive chess to sharpen strategic thinking and pursue photography as a creative outlet; regularly capture campus and street photography.",
+    image:
+      "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F80%2F9c%2F5d%2F809c5d28212444fb0692f2018deda3d5.jpg&f=1&nofb=1&ipt=a7e84089225a16c173ded6985513edac2730de8e91ecf281a5c82fc96111db6f&auto=format&fit=crop&w=1200&h=600",
+    icon: Camera,
+    iconColor: "text-purple-600",
+    meta: "Chess & photography"
   }
 ];
 
@@ -57,30 +89,30 @@ const achievements = [
   {
     icon: Trophy,
     title: "Hackathon Winner",
-    description: "1st place at SF TechCrunch Disrupt 2023",
+    description: "1st place — Internal Smart India Hackathon (SIH) 2024",
     color: "bg-primary-custom/10 dark:bg-primary-custom/20",
     iconColor: "text-primary-custom"
   },
   {
+    icon: Medal,
+    title: "Community Impact",
+    description: "Helped 300+ underprivileged students through Jagriti × Koshish Foundation initiative",
+    color: "bg-orange-100 dark:bg-orange-950/20",
+    iconColor: "text-orange-600"
+  },
+  {
     icon: Award,
-    title: "AWS Certified",
-    description: "Solutions Architect Professional",
+    title: "Editor-in-Chief",
+    description: "Published the Jagriti Club magazine “Darpan” as Editor-in-Chief",
     color: "bg-accent-custom/10 dark:bg-accent-custom/20",
     iconColor: "text-accent-custom"
   },
   {
     icon: Star,
-    title: "Top Contributor",
-    description: "React GitHub repository 2023",
+    title: "Campus Events Lead",
+    description: "Organized and anchored the college fest and civic programs (Ambedkar Jayanti, Constitution Day)",
     color: "bg-purple-100 dark:bg-purple-950/20",
     iconColor: "text-purple-600"
-  },
-  {
-    icon: Medal,
-    title: "Community Impact",
-    description: "500+ students taught coding",
-    color: "bg-orange-100 dark:bg-orange-950/20",
-    iconColor: "text-orange-600"
   }
 ];
 
@@ -131,7 +163,7 @@ export default function Extracurricular() {
         </AnimatedStagger>
         
         {/* Achievements Section */}
-        <AnimatedSection variant="fadeUp" delay={0.6}>
+        <AnimatedSection variant="fadeUp" delay={0.2}>
           <h3 className="text-2xl font-semibold text-secondary-custom mb-8 text-center">Recent Achievements</h3>
           <AnimatedStagger className="grid md:grid-cols-2 lg:grid-cols-4 gap-6" staggerDelay={0.1}>
             {achievements.map((achievement, index) => {
@@ -139,7 +171,7 @@ export default function Extracurricular() {
               return (
                 <StaggerItem 
                   key={index}
-                  variant="bounce"
+                  variant="scale"
                   className="bg-card dark:bg-card p-6 rounded-xl shadow-lg dark:shadow-gray-800/25 text-center hover:shadow-xl dark:hover:shadow-gray-800/40 transition-all duration-300 border border-border hover:-translate-y-1 group"
                 >
                   <motion.div 
