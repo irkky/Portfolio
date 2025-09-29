@@ -3,8 +3,10 @@
 
   <h2>Rishabh Kumar Kannaujiya</h2>
   <p><strong>AI/ML Developer</strong> • Full‑Stack Engineer • Problem Solver</p>
-
-  <a href="#live-demo"><img src="https://img.shields.io/badge/Live%20Demo-Visit-0ea5e9?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo"/></a>
+  
+  <a href="https://rishabh-kumar-kannaujiya.vercel.app/">
+    <img src="https://img.shields.io/badge/🌐_Live_Portfolio-0EA5E9?style=for-the-badge&logoColor=white" alt="Portfolio" />
+  </a>
 </div>
 
 ---
@@ -17,65 +19,93 @@ I'm Rishabh Kumar Kannaujiya, an AI/ML Developer and a Generative AI enthusiast.
 - **GitHub:** [irkky](https://github.com/irkky)
 - **LinkedIn:** [Rishabh Kr. Kannaujiya](https://www.linkedin.com/in/rishabh-kr-kannaujiya/)
 
-## Live Demo
+---
 
-- App: <a id="live-demo" href="https://rishabh-kumar-kannaujiya.vercel.app/" target="_blank">Visit the live site</a>
+## 🌟 Portfolio Features
 
-## Portfolio Highlights
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <h3>🎨 Modern Design</h3>
+      <p>Smooth animations, page transitions, and tasteful motion effects</p>
+    </td>
+    <td align="center" width="50%">
+      <h3>📱 Fully Responsive</h3>
+      <p>Optimized for all devices - mobile, tablet, and desktop</p>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <h3>⚡ Lightning Fast</h3>
+      <p>Built with Vite + TypeScript for optimal performance</p>
+    </td>
+    <td align="center" width="50%">
+      <h3>♿ Accessible</h3>
+      <p>Keyboard-friendly navigation and ARIA compliant</p>
+    </td>
+  </tr>
+</table>
 
-- **Smooth, modern UI** with animations, page transitions, and tasteful motion
-- **Responsive design** that looks great on mobile, tablet, and desktop
-- **Accessible navigation** and keyboard‑friendly components
-- **Fast** development via Vite + TypeScript; **reliable** data via TanStack Query
-- **Contact form** with full validation and server handling
+### 📄 Portfolio Pages
 
-### Pages
+<details open>
+<summary><b>Click to explore all pages</b></summary>
 
-- 🏠 <strong>Home</strong>: Hero intro and quick CTAs
-- 👤 <strong>Profile</strong>: Bio, education, experience, achievements
-- 🧰 <strong>Projects</strong>: Work samples with descriptions and links
-- 🧩 <strong>Skills</strong>: Technical stack and proficiency overview
-- 🌱 <strong>Extracurricular</strong>: Activities and interests
-- ✉️ <strong>Contact</strong>: Validated form + social links
+| Page | Description | Features |
+|------|-------------|----------|
+| 🏠 **Home** | Hero introduction | Animated text, CTAs, smooth scrolling |
+| 👤 **Profile** | Comprehensive about section | Bio, education, experience, achievements |
+| 🚀 **Projects** | Showcase of work | Detailed descriptions, live demos, GitHub links |
+| 💪 **Skills** | Technical expertise | Interactive skill cards, proficiency levels |
+| 🎯 **Extracurricular** | Beyond coding | Activities, interests, community involvement |
+| 📬 **Contact** | Get in touch | Validated form, social links, instant response |
 
-## Skills
-
-### Technical Skills
-
-- **AI/ML & Data Science:** Machine Learning, Generative AI, Deep Learning, Natural Language Processing, Computer Vision, Prompt Engineering
-- **Programming Languages:** Python, HTML/CSS, TypeScript, JavaScript
-- **Frameworks & Libraries:** TensorFlow, LangChain, Streamlit, Flask, React.js, OpenCV
-
-### Tools & Technologies
-
-- Python, TensorFlow, LangChain, Flask, Streamlit, Google Cloud, Hugging Face, Git, OpenAI, OpenCV, Jupyter, MongoDB, MySQL, React, Github, JavaScript, Canva, Postman
-
-### Soft Skills
-
-- Communication
-- Problem Solving
-- Team Collaboration
-- Leadership
-
-## Website Technical Details
-
-This portfolio website is a modern React-based application with a full-stack architecture.
-
-- **Frontend:** React, TypeScript, Radix UI, shadcn/ui, Tailwind CSS, Vite
-- **Backend:** Node.js, Express.js, TypeScript
-- **Database:** PostgreSQL
-
-## License
-
-This project is released under the MIT License. See `LICENSE` for details.
+</details>
 
 ---
 
-<details>
-  <summary>Credits & Notes</summary>
-  <ul>
-    <li>Built with React, Vite, and Express</li>
-    <li>UI built with Tailwind + Radix primitives</li>
-    <li>Animations via Framer Motion / GSAP</li>
-  </ul>
-</details>
+## 🚀 Quick Start
+
+```bash
+# Clone the repository
+git clone https://github.com/irkky/portfolio.git
+
+# Navigate to project directory
+cd portfolio
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+```
+
+---
+
+## 📈 Project Statistics
+
+<div align="center">
+  <img src="https://img.shields.io/badge/Total%20Commits-500+-0ea5e9?style=flat-square" alt="Commits" />
+  <img src="https://img.shields.io/badge/Technologies-15+-0ea5e9?style=flat-square" alt="Technologies" />
+  <img src="https://img.shields.io/badge/Lines%20of%20Code-10k+-0ea5e9?style=flat-square" alt="Lines of Code" />
+  <img src="https://img.shields.io/badge/Coffee%20Consumed-∞-0ea5e9?style=flat-square" alt="Coffee" />
+</div>
+
+---
+
+## 📜 License
+
+<div align="center">
+  <img src="https://img.shields.io/badge/License-MIT-0ea5e9?style=for-the-badge" alt="MIT License" />
+  <p>This project is released under the MIT License. See <a href="LICENSE">LICENSE</a> for details.</p>
+</div>
+
+---
+
+<div align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0EA5E9&height=100&section=footer" alt="Footer" />
+  <p><b>Thanks for visiting! ⭐ Don't forget to star this repo if you found it helpful!</b></p>
+</div>
