@@ -15,6 +15,7 @@ import { apiRequest } from "@/lib/queryClient";
 import { motion, AnimatePresence } from "framer-motion";
 import AnimatedSection from "@/components/AnimatedSection";
 import PageTransition from "@/components/PageTransition";
+import { SiCredly, SiLeetcode } from "react-icons/si";
 
 const contactSchema = z.object({
   firstName: z.string().min(1, "First name is required"),
@@ -41,16 +42,17 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Location",
-    value: "Delhi, India",
+    value: "Bengaluru, India",
   },
 ];
 
 const socialLinks = [
   { icon: Linkedin, href: "https://www.linkedin.com/in/rishabh-kr-kannaujiya/", color: "bg-blue-600 hover:bg-blue-700", label: "LinkedIn" },
   { icon: Github, href: "https://github.com/irkky", color: "bg-slate-800 hover:bg-slate-900", label: "GitHub" },
+  { icon: SiCredly, href: "https://www.credly.com/users/rishabh-kumar-kannaujiya", color: "bg-red-600 hover:bg-red-700", label: "Credly" },
   { icon: Twitter, href: "https://x.com/i_rkky", color: "bg-blue-400 hover:bg-blue-500", label: "X (Twitter)" },
-  { icon: Youtube, href: "https://youtube.com", color: "bg-red-600 hover:bg-red-700", label: "YouTube" },
   { icon: Instagram, href: "https://www.instagram.com/i_rkky/", color: "bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700", label: "Instagram" },
+  { icon: SiLeetcode, href: "https://leetcode.com/irkky/", color: "bg-yellow-500 hover:bg-yellow-600", label: "LeetCode" },
 ];
 
 export default function Contact() {
@@ -263,7 +265,7 @@ export default function Contact() {
                   <div className="flex items-start gap-4">
                     <div className="flex-1">
                       <div className="font-semibold text-foreground">Want a quicker reply?</div>
-                      <div className="text-sm text-muted-foreground">Mention the timeline & budget in your message and I'll prioritize it.</div>
+                      <div className="text-sm text-muted-foreground">For a quicker reply and better connection, just drop me an email — I’ll get back to you as soon as possible!</div>
                     </div>
                     <div>
                       <Button onClick={() => window.open('mailto:rishabhkrkannaujiya@gmail.com')}>

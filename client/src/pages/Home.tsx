@@ -9,7 +9,6 @@ import SplashCursor from "@/components/SplashCursor";
 const stats = [
   { value: "15+", label: "Projects Completed" },
   { value: "1+", label: "Years Experience" },
-  { value: "25+", label: "Happy Clients" },
   { value: "15+", label: "Technologies" },
 ];
 
@@ -42,7 +41,7 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                GenAI Developer & AI/ML Engineer
+                AI/ML Developer | Generative AI Enthusiast 
               </motion.h2>
               <motion.p 
                 className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed"
@@ -92,7 +91,7 @@ export default function Home() {
           <section className="py-16 bg-card">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
               <motion.div 
-                className="grid grid-cols-2 md:grid-cols-4 gap-8"
+                className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 justify-center place-items-center"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.6, staggerChildren: 0.1 }}
@@ -108,7 +107,9 @@ export default function Home() {
                     whileHover={{ scale: 1.1 }}
                     viewport={{ once: true }}
                   >
-                    <div className="text-3xl font-bold text-primary mb-2 group-hover:text-accent transition-colors duration-200">{stat.value}</div>
+                    <div className="text-3xl font-bold text-primary mb-2 group-hover:text-accent transition-colors duration-200">
+                      {stat.value}
+                    </div>
                     <div className="text-muted-foreground">{stat.label}</div>
                   </motion.div>
                 ))}
