@@ -1,109 +1,188 @@
-# Portfolio Website
+<div align="center">
+  <img src="public/photo%20for%20profile.png" alt="Rishabh Kumar Kannaujiya" width="120" style="border-radius:9999px" />
 
-## Overview
+  <h2>Rishabh Kumar Kannaujiya</h2>
+  <p><strong>AI/ML Developer</strong> • Full‑Stack Engineer • Problem Solver</p>
 
-This is a modern React-based portfolio website designed to showcase a full-stack developer's skills, projects, and professional experience. The application is built using a full-stack architecture with React frontend, Express.js backend, and includes a contact form functionality. The website features a responsive design with modern UI components and smooth navigation.
+  <a href="#live-demo"><img src="https://img.shields.io/badge/Live%20Demo-Visit-0ea5e9?style=for-the-badge&logo=vercel&logoColor=white" alt="Live Demo"/></a>
+  <img src="https://img.shields.io/badge/React-18-61dafb?style=for-the-badge&logo=react&logoColor=black" alt="React"/>
+  <img src="https://img.shields.io/badge/TypeScript-5-3178c6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"/>
+  <img src="https://img.shields.io/badge/Vite-5-646cff?style=for-the-badge&logo=vite&logoColor=white" alt="Vite"/>
+  <img src="https://img.shields.io/badge/Express-4-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express"/>
+  <img src="https://img.shields.io/badge/TailwindCSS-3-38bdf8?style=for-the-badge&logo=tailwindcss&logoColor=white" alt="Tailwind"/>
+  <img src="https://img.shields.io/badge/TanStack%20Query-5-ef4444?style=for-the-badge" alt="TanStack Query"/>
+  <img src="https://img.shields.io/badge/Radix%20UI-Primitives-111827?style=for-the-badge" alt="Radix UI"/>
+  <img src="https://img.shields.io/badge/Drizzle%20ORM-Postgres-0f766e?style=for-the-badge" alt="Drizzle ORM"/>
+  <img src="https://img.shields.io/badge/Framer%20Motion-11-8b5cf6?style=for-the-badge&logo=framer&logoColor=white" alt="Framer Motion"/>
+</div>
 
-## User Preferences
+---
 
-Preferred communication style: Simple, everyday language.
+## About Me
 
-## System Architecture
+Hi, I’m <strong>Rishabh</strong> — an AI/ML Developer who enjoys shipping polished, performant products. I work across the stack: training and deploying ML models, building interactive user interfaces, and crafting reliable backends. I value clarity, accessibility, and delightful micro‑interactions.
 
-### Frontend Architecture
-- **Framework**: React 18 with TypeScript for type safety
-- **Routing**: Wouter for lightweight client-side routing
-- **UI Components**: Radix UI primitives with shadcn/ui component library
-- **Styling**: Tailwind CSS with custom design system and CSS variables
-- **State Management**: TanStack Query for server state management
-- **Form Handling**: React Hook Form with Zod validation
-- **Build Tool**: Vite for fast development and optimized builds
+- **Interests**: Generative AI, model deployment, data tooling, product engineering
+- **Strengths**: Pragmatic problem solving, clean abstractions, UX polish, iterative delivery
+- **Currently**: Exploring production‑ready ML workflows and AI‑assisted interfaces
 
-### Backend Architecture
-- **Runtime**: Node.js with Express.js framework
-- **Language**: TypeScript with ES modules
-- **API Design**: RESTful endpoints with proper error handling
-- **Validation**: Zod schema validation for request/response data
-- **Development**: Hot reload with Vite integration in development mode
+## Live Demo
 
-### Data Storage Solutions
-- **Database**: PostgreSQL configured with Drizzle ORM
-- **Database Connection**: Neon serverless PostgreSQL
-- **Migrations**: Drizzle Kit for database schema management
-- **Fallback Storage**: In-memory storage implementation for development
-- **Session Management**: PostgreSQL-based sessions with connect-pg-simple
+- App: <a id="live-demo" href="https://your-live-demo-link" target="_blank">Visit the live site</a>
+- Video Walkthrough: <a href="https://your-demo-video" target="_blank">Watch a quick tour</a>
 
-## Key Components
+> Replace the links above with your live deployment and demo video.
 
-### Page Structure
-1. **Home Page**: Hero section with introduction and call-to-action buttons
-2. **Profile Page**: Detailed personal information, education, and work experience
-3. **Projects Page**: Portfolio showcase with filtering capabilities
-4. **Skills Page**: Technical and soft skills visualization with progress bars
-5. **Extracurricular Page**: Activities, volunteering, and personal interests
-6. **Contact Page**: Contact form with validation and social media links
+## Portfolio Highlights
 
-### UI Components
-- **Navigation**: Fixed header with responsive mobile menu
-- **Layout**: Consistent layout wrapper with header and footer
-- **Footer**: Social links, quick navigation, and contact information
-- **Forms**: Validated contact form with proper error handling
-- **Toast Notifications**: User feedback for form submissions and actions
+- **Smooth, modern UI** with animations, page transitions, and tasteful motion
+- **Responsive design** that looks great on mobile, tablet, and desktop
+- **Accessible navigation** and keyboard‑friendly components
+- **Fast** development via Vite + TypeScript; **reliable** data via TanStack Query
+- **Contact form** with full validation and server handling
 
-### Technical Features
-- **Responsive Design**: Mobile-first approach with Tailwind breakpoints
-- **Dark Mode Support**: CSS variables for theme switching capability
-- **Form Validation**: Client-side validation with Zod schemas
-- **Loading States**: Proper loading and error states for async operations
-- **SEO Optimization**: Meta tags and semantic HTML structure
+### Pages
 
-## Data Flow
+- 🏠 <strong>Home</strong>: Hero intro and quick CTAs
+- 👤 <strong>Profile</strong>: Bio, education, experience, achievements
+- 🧰 <strong>Projects</strong>: Work samples with descriptions and links
+- 🧩 <strong>Skills</strong>: Technical stack and proficiency overview
+- 🌱 <strong>Extracurricular</strong>: Activities and interests
+- ✉️ <strong>Contact</strong>: Validated form + social links
 
-### Contact Form Flow
-1. User fills out contact form with validation
-2. Form data is validated client-side using Zod schema
-3. Validated data is sent to `/api/contact` endpoint
-4. Server validates the data again and logs the submission
-5. Success/error response is sent back to client
-6. Toast notification displays result to user
+## Tech Stack
 
-### Page Navigation
-1. User clicks navigation links or buttons
-2. Wouter handles client-side routing
-3. Components are rendered within the Layout wrapper
-4. Navigation state is maintained across page changes
+### Frontend
+- React 18 + TypeScript
+- Wouter (lightweight routing)
+- Radix UI primitives + Tailwind CSS
+- Framer Motion / GSAP for animation
+- TanStack Query for data fetching and caching
 
-## External Dependencies
+### Backend
+- Node.js + Express (TypeScript, ESM)
+- Zod for schema validation
+- Contact endpoint at `POST /api/contact`
 
-### Core Dependencies
-- **React Ecosystem**: React, React DOM, React Hook Form
-- **UI Library**: Radix UI components, Lucide React icons
-- **Styling**: Tailwind CSS, class-variance-authority for component variants
-- **Database**: Drizzle ORM, Neon serverless PostgreSQL
-- **Validation**: Zod for schema validation
-- **HTTP Client**: TanStack Query for data fetching
-- **Date Handling**: date-fns for date manipulation
-- **Build Tools**: Vite, ESBuild, TypeScript
+### Data
+- PostgreSQL (Neon) via Drizzle ORM
+- Drizzle Kit for schema migrations
 
-### Development Dependencies
-- **Replit Integration**: Custom Vite plugins for Replit environment
-- **Development Server**: Express middleware integration with Vite
-- **Type Checking**: TypeScript with strict configuration
+## Preview
 
-## Deployment Strategy
+<div align="center">
+  <img src="public/grain.webp" alt="Background grain" width="600" />
+  <br/>
+  <em>Subtle textures, clean typography, and motion‑driven interactions.</em>
+</div>
 
-### Build Process
-1. **Frontend Build**: Vite builds React application to `dist/public`
-2. **Backend Build**: ESBuild bundles Express server to `dist/index.js`
-3. **Static Assets**: Frontend assets are served from `dist/public`
+You can also add GIFs or screenshots here to showcase flows and animations.
 
-### Environment Configuration
-- **Development**: Uses Vite dev server with Express middleware
-- **Production**: Serves built assets through Express static middleware
-- **Database**: PostgreSQL connection via DATABASE_URL environment variable
+## Quick Start
 
-### Deployment Commands
-- `npm run dev`: Start development server with hot reload
-- `npm run build`: Build both frontend and backend for production
-- `npm run start`: Start production server
-- `npm run db:push`: Push database schema changes
+### Prerequisites
+- Node.js 18+
+- npm 9+
+
+### Setup
+
+```bash
+npm install
+# Optional: set up database before first run (see Environment)
+npm run dev
+```
+
+### Scripts
+
+```bash
+npm run dev     # Start dev server (Express + Vite)
+npm run build   # Build client and server
+npm run start   # Run production build
+npm run check   # Type check
+npm run db:push # Push Drizzle schema changes
+```
+
+## Environment
+
+Create a `.env` file in the project root:
+
+```bash
+DATABASE_URL="postgres://user:password@host:5432/dbname"  # Neon or any Postgres
+NODE_ENV="development"                                   # or production
+PORT=5000
+```
+
+> The app runs without a DB by using in‑memory storage for dev, but configure `DATABASE_URL` to enable Postgres + Drizzle.
+
+## API
+
+### POST /api/contact
+
+Request body (validated with Zod):
+
+```json
+{
+  "firstName": "Rishabh",
+  "lastName": "Kannaujiya",
+  "email": "you@example.com",
+  "subject": "Hello",
+  "message": "I would love to collaborate on...",
+  "privacy": true
+}
+```
+
+On success:
+
+```json
+{ "success": true, "message": "Message received successfully! We'll get back to you soon." }
+```
+
+## Project Structure
+
+```text
+client/
+  src/
+    pages/          # Home, Profile, Projects, Skills, Extracurricular, Contact
+    components/     # Navigation, Layout, Footer, animations, UI primitives
+    lib/            # Query client, utilities
+    hooks/          # use-toast, use-mobile, etc.
+server/
+  index.ts         # Express app bootstrap
+  routes.ts        # API routes (contact)
+shared/
+  schema.ts        # Shared types and schemas
+public/            # Static assets
+```
+
+## Deployment
+
+Production build outputs:
+
+- Client: `dist/public`
+- Server: `dist/index.js`
+
+Deploy to any Node‑capable host (e.g., Vercel, Railway, Render). Ensure `PORT` is set and the server serves static files from `dist/public`.
+
+## Contact
+
+- Email: <a href="mailto:your.email@example.com">your.email@example.com</a>
+- LinkedIn: <a href="https://www.linkedin.com/in/your-profile" target="_blank">linkedin.com/in/your-profile</a>
+- GitHub: <a href="https://github.com/your-username" target="_blank">github.com/your-username</a>
+- X/Twitter: <a href="https://x.com/your-handle" target="_blank">@your-handle</a>
+
+> Replace the placeholders above with your actual links.
+
+## License
+
+This project is released under the MIT License. See `LICENSE` for details.
+
+---
+
+<details>
+  <summary>Credits & Notes</summary>
+  <ul>
+    <li>Built with React, Vite, and Express</li>
+    <li>UI built with Tailwind + Radix primitives</li>
+    <li>Animations via Framer Motion / GSAP</li>
+  </ul>
+</details>
