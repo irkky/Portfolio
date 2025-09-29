@@ -15,11 +15,12 @@ const quickLinks = [
 ];
 
 const services = [
-  "Web Development",
-  "Mobile Apps",
-  "UI/UX Design",
-  "Consulting",
+  "AI/ML Solutions",
+  "GenAI & Prompt Engineering",
+  "Python Development",
+  "Deep Learning",
 ];
+
 
 export default function Footer() {
   return (

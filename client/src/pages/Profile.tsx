@@ -21,7 +21,7 @@ const personalInfo = [
   {
     icon: MapPin,
     title: "Location",
-    content: "Varanasi, India\nRemote Available",
+    content: "Bengaluru, India\nRemote Available",
   },
   {
     icon: Languages,
@@ -32,13 +32,13 @@ const personalInfo = [
 
 const experience = [
   {
-    period: "June, 2024 - July, 2024",
-    role: "Python Development Intern",
-    company: "Tehchtitude Tribe Pvt. Ltd.",
+    period: "Jul, 2024 - Jan, 2025",
+    role: "Python Developer Intern",
+    company: "Tehchtitude Tribe Services Pvt. Ltd.",
     description:
       "",
     highlights: [
-      "Developed Python applications for various internal and client-facing projects. Assisted in deep learning tasks, including data preprocessing, model training, and data analysis.",
+      "Worked on backend development and automation tasks using Python and other related frameworks. Assisted in gathering requirements and provided technical support to clients, improving overall project delivery and satisfaction",
     ],
   },
 ];
@@ -47,7 +47,7 @@ export default function Profile() {
   const [openExp, setOpenExp] = useState<number | null>(null);
   const { toast } = useToast();
 
-  const resumeUrl = "https://drive.google.com/file/d/1v9eyXKAhLOKmBCcF5o7a9k1RsgbbLIl1/view?usp=sharing"; // replace with your public resume path
+  const resumeUrl = "https://drive.google.com/file/d/10k3znO0bTmRdpbOj96PHj7fxMZCdx5mf/view?usp=sharing"; // replace with your public resume path
 
   const handleCopy = async (text: string, label?: string) => {
     try {
@@ -135,10 +135,15 @@ export default function Profile() {
               <div>
                 <h3 className="text-2xl font-semibold text-foreground mb-3">My Journey</h3>
                 <p className="text-muted-foreground leading-relaxed mb-3">
-                  My journey into AI and machine learning began during my B.Tech in Information Technology, where I discovered how powerful algorithms could transform raw data into actionable insights. What started as a keen interest in Python scripting soon grew into a passion for designing end-to-end AI solutions — from automating document analysis to building real-time detection systems for smart cities.
+                  Hey there! I'm Rishabh Kumar Kannaujiya, a tech guy who's always liked figuring out how computers can fix real-world stuff. 
+                  Grew up in a normal family, tinkering with simple programs in school. 
+                  That led me to study Information Technology at Dr. A.P.J. Abdul Kalam Technical University in Lucknow from 2021 to 2025. In college, 
+                  I got into machine learning because it made sense for solving problems. Joined clubs like Jagriti (as secretary, running events to help 300+ kids), 
+                  Developer Student Club (coordinating workshops), and Photography Club (handling budgets).
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  Through internships and self-driven projects, I've worked with TensorFlow, LangChain, Hugging Face, and cloud platforms like GCP. I prioritize clean, maintainable code and scalable pipelines that deliver tangible results.
+                  Did a Python internship at Techtitude Tribe for 6 months, working on backend and automation remotely. 
+                  Built several personal, academic, and client-facing projects. Now graduated, I'm excited to build more AI tools and team up on ideas. Hit me up!
                 </p>
 
                 <div className="mt-6 flex flex-wrap gap-3">
