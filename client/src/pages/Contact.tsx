@@ -13,9 +13,9 @@ import { useToast } from "@/hooks/use-toast";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { motion, AnimatePresence } from "framer-motion";
-import AnimatedSection from "@/components/AnimatedSection";
+import AnimatedSection, { StaggerItem } from "@/components/AnimatedSection";
 import PageTransition from "@/components/PageTransition";
-import { SiCredly, SiLeetcode } from "react-icons/si";
+import { SiCredly, SiLeetcode, SiKaggle } from "react-icons/si";
 
 const contactSchema = z.object({
   firstName: z.string().min(1, "First name is required"),
@@ -53,6 +53,7 @@ const socialLinks = [
   { icon: Twitter, href: "https://x.com/i_rkky", color: "bg-blue-400 hover:bg-blue-500", label: "X (Twitter)" },
   { icon: Instagram, href: "https://www.instagram.com/i_rkky/", color: "bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700", label: "Instagram" },
   { icon: SiLeetcode, href: "https://leetcode.com/irkky/", color: "bg-yellow-500 hover:bg-yellow-600", label: "LeetCode" },
+  { icon: SiKaggle, href: "https://www.kaggle.com/rishabhkannaujiya", color: "bg-sky-500 hover:bg-sky-600", label: "Kaggle" },
 ];
 
 export default function Contact() {
@@ -234,7 +235,7 @@ export default function Contact() {
                   <div>
                     <h4 className="text-lg font-semibold text-foreground mb-3">Follow Me</h4>
                     <div className="flex flex-wrap gap-3">
-                      {socialLinks.map((s, i) => {
+                                            {socialLinks.map((s, i) => {
                         const Icon = s.icon;
                         return (
                           <motion.a
@@ -243,8 +244,8 @@ export default function Contact() {
                             target="_blank"
                             rel="noopener noreferrer"
                             className={`${s.color} text-white w-11 h-11 rounded-lg flex items-center justify-center shadow-sm`}
-                            whileHover={{ scale: 1.12 }}
-                            whileTap={{ scale: 0.95 }}
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.9 }}
                             title={s.label}
                           >
                             <Icon size={18} />
