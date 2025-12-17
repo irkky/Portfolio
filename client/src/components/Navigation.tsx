@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
+import GooeyNav from "./GooeyNav";
 
 
 const navItems = [
@@ -32,22 +33,16 @@ export default function Navigation() {
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-4">
-            <div className="flex items-baseline space-x-8">
-              {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`border-b-2 border-transparent hover:border-primary transition-colors duration-200 px-1 py-2 ${
-                    isActive(item.href) 
-                      ? "text-primary border-primary" 
-                      : "text-muted-foreground hover:text-primary"
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              ))}
-            </div>
-
+            <GooeyNav 
+              items={navItems} 
+              particleCount={15}
+              particleDistances={[90, 10]}
+              particleR={100}
+              initialActiveIndex={0}
+              animationTime={600}
+              timeVariance={300}
+              colors={[1, 2, 3, 1, 2, 3, 1, 4]}
+            />
           </div>
           
           {/* Mobile menu button and theme toggle */}
