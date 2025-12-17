@@ -64,38 +64,6 @@ I'm Rishabh Kumar Kannaujiya, an AI/ML Developer and a Generative AI enthusiast.
 
 ---
 
-## 🚀 Quick Start
-
-```bash
-# Clone the repository
-git clone https://github.com/irkky/portfolio.git
-
-# Navigate to project directory
-cd portfolio
-
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-
-# Build for production
-npm run build
-```
-
----
-
-## 📈 Project Statistics
-
-<div align="center">
-  <img src="https://img.shields.io/badge/Total%20Commits-500+-0ea5e9?style=flat-square" alt="Commits" />
-  <img src="https://img.shields.io/badge/Technologies-15+-0ea5e9?style=flat-square" alt="Technologies" />
-  <img src="https://img.shields.io/badge/Lines%20of%20Code-10k+-0ea5e9?style=flat-square" alt="Lines of Code" />
-  <img src="https://img.shields.io/badge/Coffee%20Consumed-∞-0ea5e9?style=flat-square" alt="Coffee" />
-</div>
-
----
-
 ## 📜 License
 
 <div align="center">
