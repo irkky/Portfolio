@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
-import { ThemeToggle } from "./ui/theme-toggle";
+
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -47,12 +47,12 @@ export default function Navigation() {
                 </Link>
               ))}
             </div>
-            <ThemeToggle />
+
           </div>
           
           {/* Mobile menu button and theme toggle */}
           <div className="md:hidden flex items-center space-x-2">
-            <ThemeToggle />
+
             <button 
               className="text-muted-foreground hover:text-primary"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
