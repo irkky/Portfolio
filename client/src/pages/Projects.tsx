@@ -94,6 +94,39 @@ const projects = [
     demoUrl: "https://huggingface.co/irkky/my-pet-cat",
     githubUrl: "https://huggingface.co/irkky/my-pet-cat/tree/main",
   },
+  {
+    id: 8,
+    title: "Medical-RAG-Streamlit-Application",
+    description:
+      "An intelligent RAG-based Medical Assistant built with Streamlit, LangChain, and Llama 3.1.",
+    image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn-thumbnails.huggingface.co%2Fsocial-thumbnails%2Fspaces%2Fsubikshanand%2FRAG_Medical-Bot.png&f=1&nofb=1&ipt=5d0394d01778d1817f7ec0267465380cdcb19880a4f4bdb7dacc4093f6c82f1d",
+    technologies: ["Hugging Face", "Streamlit", "LangChain", "Llama 3.1", "Pinecone", "Python"],
+    category: "GenAI",
+    demoUrl: "https://github.com/irkky/Medical-RAG-Streamlit-Application",
+    githubUrl: "https://github.com/irkky/Medical-RAG-Streamlit-Application",
+  },
+  {
+    id: 8,
+    title: "AI-Blog-Agent",
+    description:
+      "A production-grade multi-agent content creation system powered by Google ADK and Gemini 2.5",
+    image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%2Fid%2FOVP.HH2vYHAA_iCXAovdyM3USgHgFo%3Fpid%3DApi%26ucfimg%3D1&f=1",
+    technologies: ["Streamlit", "Python", "Google ADK", "Gemini 2.5"],
+    category: "GenAI",
+    demoUrl: "https://www.kaggle.com/code/rishabhkannaujiya/ai-blog-agent-capstone-submission-concierge",
+    githubUrl: "https://github.com/irkky/AI-Blog-Agent",
+  },
+  {
+    id: 9,
+    title: "Autodialer-AI-Powered-Calling-System",
+    description:
+      "Ruby on Rails application that transforms outbound calling through seamless AI-driven automation.",
+    image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.nextiva.com%2Fblog%2Fwp-content%2Fuploads%2Fsites%2F10%2F2024%2F08%2FAI-Call-Center-2.webp&f=1&nofb=1&ipt=176d3df9bed6376d7bf971ef80f2fba792f5faf0fc4e0df0489c17f1c455a91e",
+    technologies: ["Ruby on Rails", "Gemini 2.5", "twilio", "PostgreSQL"],
+    category: "GenAI",
+    demoUrl: "https://github.com/irkky/Autodialer-AI-Powered-Calling-System",
+    githubUrl: "https://github.com/irkky/Autodialer-AI-Powered-Calling-System",
+  },
 ];
 
 const filters = [

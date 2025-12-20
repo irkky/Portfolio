@@ -1,11 +1,10 @@
 import { 
-  Code, Server, Users, Lightbulb, MessageCircle, Rocket, Brain, Database, Star 
+  Code, Server, Users, Lightbulb, MessageCircle, Rocket, Brain, Star 
 } from "lucide-react";
 import { 
-  SiGit, SiMongodb, SiFigma, SiReact, SiPython, SiTensorflow, SiFlask, 
-  SiStreamlit, SiGooglecloud, SiLangchain, SiOpenai, SiOpencv, SiHuggingface, 
-  SiJupyter, SiMysql, SiJavascript, SiTypescript, SiHtml5, SiCss3, SiTailwindcss, 
-  SiNodedotjs, SiCanva, SiGithub, SiPostman 
+  SiGit, SiMongodb, SiReact, SiPython, SiTensorflow, SiFlask, 
+  SiStreamlit, SiGooglecloud, SiLangchain, SiOpenai, SiHuggingface, 
+  SiJupyter, SiMysql, SiJavascript, SiCanva, SiGithub, SiPostman 
 } from "react-icons/si";
 import AnimatedSection, { AnimatedStagger, StaggerItem } from "../components/AnimatedSection";
 import { motion } from "framer-motion";
@@ -14,25 +13,23 @@ const aiMlSkills = [
   { name: "Machine Learning", level: 4 },
   { name: "Generative AI", level: 4 },
   { name: "Deep Learning", level: 4 },
-  { name: "Natural Language Processing", level: 4 },
   { name: "Computer Vision", level: 3 },
   { name: "Prompt Engineering", level: 5 },
 ];
 
 const programmingSkills = [
   { name: "Python", level: 5 },
-  { name: "HTML/CSS", level: 4 },
+  { name: "SQL", level: 4 },
+  { name: "C", level: 4 },
   { name: "TypeScript", level: 3 },
-  { name: "JavaScript", level: 3 },
 ];
 
 const frameworksLibraries = [
-  { name: "TensorFlow", level: 4 },
   { name: "LangChain", level: 4 },
+  { name: "TensorFlow", level: 4 },
   { name: "Streamlit", level: 4 },
   { name: "Flask", level: 3 },
-  { name: "React.js", level: 3 },
-  { name: "OpenCV", level: 3 },
+  { name: "Rest API", level: 3 },
 ];
 
 const tools = [
@@ -45,7 +42,6 @@ const tools = [
   { icon: SiHuggingface, name: "Hugging Face" },
   { icon: SiGit, name: "Git" },
   { icon: SiOpenai, name: "OpenAI" },
-  { icon: SiOpencv, name: "OpenCV" },
   { icon: SiJupyter, name: "Jupyter" },
   { icon: SiMongodb, name: "MongoDB" },
   { icon: SiMysql, name: "MySQL" },
