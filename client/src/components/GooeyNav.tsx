@@ -19,11 +19,11 @@ export interface GooeyNavProps {
 
 const GooeyNav: React.FC<GooeyNavProps> = ({
   items,
-  animationTime = 600,
-  particleCount = 15,
-  particleDistances = [90, 10],
-  particleR = 100,
-  timeVariance = 300,
+  animationTime = 500,
+  particleCount = 35,
+  particleDistances = [90, 50],
+  particleR = 200,
+  timeVariance = 500,
   colors = [1, 2, 3, 1, 2, 3, 1, 4],
   initialActiveIndex = 0
 }) => {
@@ -209,8 +209,8 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
           .point {
             display: block;
             opacity: 0;
-            width: 20px;
-            height: 20px;
+            width: 15px;
+            height: 15px;
             border-radius: 9999px;
             transform-origin: center;
           }

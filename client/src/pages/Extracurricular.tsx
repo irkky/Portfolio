@@ -1,4 +1,4 @@
-import { Heart, Mountain, Mic, Camera, Github, Book, Trophy, Award, Star, Medal } from "lucide-react";
+import { Heart, Mountain, Mic, Camera, Github, Book, Trophy, Award, Star, Medal, ExternalLink } from "lucide-react";
 import AnimatedSection, { AnimatedStagger, StaggerItem } from "../components/AnimatedSection";
 import { motion } from "framer-motion";
 
@@ -11,7 +11,8 @@ const activities = [
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5u0eba9RcH6FfjAzdRA3aq1zrgbQPQpSU7w&s&auto=format&fit=crop&w=1200&h=600",
     icon: Heart,
     iconColor: "text-red-500",
-    meta: "300+ students reached"
+    meta: "300+ students reached",
+    link: "https://www.instagram.com/jagriticlub/"
   },
   {
     title: "Editor-in-Chief — “Darpan” (Jagriti Club)",
@@ -21,7 +22,8 @@ const activities = [
       "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fjobsforeditors.com%2Fblog%2Fwp-content%2Fuploads%2F2017%2F11%2FEditor-in-Chief.png&f=1&nofb=1&ipt=60cec757af642ed875100f00200d4dde4e654223ad30b13fb35ac8289f2fbaf2&auto=format&fit=crop&w=1200&h=600",
     icon: Book,
     iconColor: "text-blue-600",
-    meta: "Editor-in-Chief"
+    meta: "Editor-in-Chief",
+    link: "https://libcatrecb.ltsinformatics.com/cgi-bin/koha/opac-page.pl?page_id=24"
   },
   {
     title: "Treasurer — Photography & Fine Arts Club",
@@ -31,7 +33,8 @@ const activities = [
       "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fthumbs.dreamstime.com%2Fz%2Ftreasurer-text-blue-vintage-grungy-round-rubber-stamp-216936055.jpg&f=1&nofb=1&ipt=092bf2c7f0e032751d7ff74ca0a6cd999599cf5d612a35843d8fb4713b2e69cb&auto=format&fit=crop&w=1200&h=600",
     icon: Camera,
     iconColor: "text-purple-600",
-    meta: "Managed club budget"
+    meta: "Managed club budget",
+    link: "https://drive.google.com/file/d/1p_VNU4WdH7_wLpZj70jIhANzrj1pfj8P/view?usp=sharing"
   },
   {
     title: "Coordinator — Literary Club",
@@ -41,7 +44,8 @@ const activities = [
       "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.rasischool.org%2Fwp-content%2Fuploads%2F2018%2F11%2Fliterary-club-2.jpg&f=1&nofb=1&ipt=98651763ce06b05a8b6e9b9774ad71e9510b7ae9c02dfb13d28e0450b1ceeb12&auto=format&fit=crop&w=1200&h=600",
     icon: Book,
     iconColor: "text-green-600",
-    meta: "Workshops & debates"
+    meta: "Workshops & debates",
+    link: "https://drive.google.com/file/d/1gQWEoCYJjaz7We0qud421sNimQsZhr3o/view?usp=sharing"
   },
   {
     title: "Event Organizer & Anchor",
@@ -51,17 +55,19 @@ const activities = [
       "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fagievent.com%2Fpublic%2Fuploads%2F0000%2F1%2F2022%2F06%2F26%2Fevent-organizer-in-jakarta.jpg&f=1&nofb=1&ipt=c980290ca7a64f52d64a384a2c0bb59b9008ed397fa42d504dcdae26368751ba&auto=format&fit=crop&w=1200&h=600",
     icon: Mic,
     iconColor: "text-primary-custom",
-    meta: "Multiple campus events"
+    meta: "Multiple campus events",
+    link: "https://www.youtube.com/@jagriticlub/videos"
   },
   {
-    title: "Nukkad Natak — Team Leader",
+    title: "Team Leader (Skit [Drama], Street Play)",
     description:
-      "Directed and led a 20-member theatre team to produce street plays addressing social issues; managed rehearsals, scripts, props and performances.",
+      "Directed and led a 20-member theatre team to produce street plays and Dramas addressing social issues for several times: managed rehearsals, scripts, props and performances.",
     image:
       "https://i.ytimg.com/vi/xcJ9WKVfYmw/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAu24ew1J2MCfy8PVjpvjUvx_zHaA&auto=format&fit=crop&w=1200&h=600",
     icon: Star,
     iconColor: "text-orange-600",
-    meta: "Led 20 performers"
+    meta: "Led 20 performers",
+    link: "https://www.youtube.com/watch?v=UV7qPCeuiLE"
   },
   {
     title: "Hackathon — SIH 2024 (Internal)",
@@ -71,7 +77,8 @@ const activities = [
       "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdigitallearning.eletsonline.com%2Fwp-content%2Fuploads%2F2024%2F12%2FSmart-India-Hackathon-2024-1.jpg&f=1&nofb=1&ipt=b8aa212dc445b8564674e7e2d1a29025067134b9e0c44cfc19a1e6b6b66bae9a&auto=format&fit=crop&w=1200&h=600",
     icon: Trophy,
     iconColor: "text-yellow-600",
-    meta: "1st — SIH 2024 (internal)"
+    meta: "1st — SIH 2024 (internal)",
+    link: "https://docs.google.com/presentation/d/1RDSj0EYyDZUFZ_p59S5dhJRVfOPCmqg3/edit?usp=sharing&ouid=109715324094134333979&rtpof=true&sd=true"
   },
   {
     title: "Hobbies: Chess & Photography",
@@ -81,7 +88,8 @@ const activities = [
       "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F80%2F9c%2F5d%2F809c5d28212444fb0692f2018deda3d5.jpg&f=1&nofb=1&ipt=a7e84089225a16c173ded6985513edac2730de8e91ecf281a5c82fc96111db6f&auto=format&fit=crop&w=1200&h=600",
     icon: Camera,
     iconColor: "text-purple-600",
-    meta: "Chess & photography"
+    meta: "Chess & photography",
+    link: "https://www.instagram.com/rikkyfeed/"
   }
 ];
 
@@ -124,7 +132,7 @@ export default function Extracurricular() {
           <h2 className="text-3xl md:text-4xl font-bold text-secondary-custom mb-4">Beyond Code</h2>
           <div className="w-24 h-1 bg-primary-custom mx-auto mb-8"></div>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Exploring interests and activities that shape my perspective and contribute to personal growth.
+            Well sometimes I switch from Syntax to Society, As you know: Code builds the product, but community builds the character.
           </p>
         </AnimatedSection>
         
@@ -153,8 +161,17 @@ export default function Extracurricular() {
                     <Icon className={activity.iconColor} size={20} />
                   </div>
                   <p className="text-muted-foreground mb-4 leading-relaxed">{activity.description}</p>
-                  <div className="flex items-center text-sm text-muted-foreground">
-                    <span className="bg-muted px-2 py-1 rounded-full">{activity.meta}</span>
+                  <div className="flex items-center justify-between mt-4">
+                    <span className="bg-muted px-2 py-1 rounded-full text-xs font-medium text-muted-foreground">{activity.meta}</span>
+                    <a 
+                      href={activity.link} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1 text-sm font-medium text-primary-custom hover:underline"
+                    >
+                      View
+                      <ExternalLink size={14} />
+                    </a>
                   </div>
                 </div>
               </StaggerItem>

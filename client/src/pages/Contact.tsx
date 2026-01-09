@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Checkbox } from "@/components/ui/checkbox";
+
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
 import { useMutation } from "@tanstack/react-query";
@@ -23,7 +23,7 @@ const contactSchema = z.object({
   email: z.string().email("Please enter a valid email address"),
   subject: z.string().min(1, "Please select a subject"),
   message: z.string().min(10, "Message must be at least 10 characters long"),
-  privacy: z.boolean().refine((val) => val === true, "You must agree to the privacy policy"),
+ 
 });
 
 type ContactFormData = z.infer<typeof contactSchema>;
@@ -70,7 +70,7 @@ export default function Contact() {
       email: "",
       subject: "",
       message: "",
-      privacy: false,
+
     },
   });
 
@@ -129,23 +129,9 @@ export default function Contact() {
     }
   };
 
-  // persist draft locally (very lightweight auto-save)
-  useEffect(() => {
-    const saved = localStorage.getItem("contact_draft_v1");
-    if (saved) {
-      try {
-        const parsed = JSON.parse(saved);
-        form.reset(parsed);
-      } catch (_) {}
-    }
-  }, []);
 
-  useEffect(() => {
-    const sub = form.watch((value) => {
-      localStorage.setItem("contact_draft_v1", JSON.stringify(value));
-    });
-    return () => sub.unsubscribe();
-  }, [form]);
+
+
 
   return (
     <PageTransition>
@@ -173,8 +159,7 @@ export default function Contact() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                Ready to collaborate or have a question? I'd love to hear from you. Let's create
-                something amazing together.
+                Ready to collaborate or have a question? I'd love to hear from you.
               </motion.p>
             </div>
           </AnimatedSection>
@@ -189,7 +174,7 @@ export default function Contact() {
                   transition={{ duration: 0.6 }}
                   className="p-6 rounded-2xl bg-card/80 backdrop-blur border border-border"
                 >
-                  <h3 className="text-2xl font-semibold text-foreground mb-4">Let's Connect</h3>
+                  <h3 className="text-2xl font-semibold text-foreground mb-4">Contacts</h3>
 
                   <div className="space-y-4 mb-6">
                     {contactInfo.map((info, idx) => {
@@ -233,9 +218,9 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <h4 className="text-lg font-semibold text-foreground mb-3">Follow Me</h4>
+                    <h4 className="text-lg font-semibold text-foreground mb-3">My Digital Footprint</h4>
                     <div className="flex flex-wrap gap-3">
-                                            {socialLinks.map((s, i) => {
+                      {socialLinks.map((s, i) => {
                         const Icon = s.icon;
                         return (
                           <motion.a
@@ -266,7 +251,7 @@ export default function Contact() {
                   <div className="flex items-start gap-4">
                     <div className="flex-1">
                       <div className="font-semibold text-foreground">Want a quicker reply?</div>
-                      <div className="text-sm text-muted-foreground">For a quicker reply and better connection, just drop me an email — I’ll get back to you as soon as possible!</div>
+                      <div className="text-sm text-muted-foreground">For a quicker reply and better connection, just drop me an email. I'll get back to you as soon as possible!</div>
                     </div>
                     <div>
                       <Button onClick={() => window.open('mailto:rishabhkrkannaujiya@gmail.com')}>
@@ -288,7 +273,7 @@ export default function Contact() {
               >
                 <div className="mb-4">
                   <h3 className="text-2xl font-semibold text-foreground mb-2">Send Message</h3>
-                  <div className="text-sm text-muted-foreground">I'll do my best to reply within 48 hours.</div>
+                  <div className="text-sm text-muted-foreground">Notifications here aren't always reliable here. To avoid any technical delays, please shoot me a mail instead.</div>
 
                   {/* progress bar */}
                   <div className="mt-4 w-full bg-muted-foreground/10 rounded-full h-2 overflow-hidden">
@@ -384,30 +369,7 @@ export default function Contact() {
                       )}
                     />
 
-                    <FormField
-                      control={form.control}
-                      name="privacy"
-                      render={({ field }) => (
-                        <FormItem className="flex flex-row items-start space-x-3 space-y-0">
-                          <FormControl>
-                            <Checkbox checked={field.value} onCheckedChange={field.onChange} />
-                          </FormControl>
-                          <div className="space-y-1 leading-none">
-                            <FormLabel className="text-sm text-muted-foreground">
-                              I agree to the{' '}
-                              <a href="#" className="text-primary hover:underline">
-                                privacy policy
-                              </a>{' '}
-                              and{' '}
-                              <a href="#" className="text-primary hover:underline">
-                                terms of service
-                              </a>
-                            </FormLabel>
-                            <FormMessage />
-                          </div>
-                        </FormItem>
-                      )}
-                    />
+
 
                     <div className="pt-2">
                       <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>

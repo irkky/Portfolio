@@ -1,10 +1,12 @@
 import { Link } from "wouter";
 import { Github, Linkedin, Twitter } from "lucide-react";
+import { SiKaggle } from "react-icons/si";
 
 const socialLinks = [
   { icon: Github, href: "https://github.com/irkky", label: "GitHub" },
   { icon: Linkedin, href: "https://www.linkedin.com/in/rishabh-kr-kannaujiya/", label: "LinkedIn" },
   { icon: Twitter, href: "https://x.com/i_rkky", label: "X formally-Twitter" },
+  { icon: SiKaggle, href: "https://www.kaggle.com/rishabhkannaujiya", label: "Kaggle" },
 ];
 
 const quickLinks = [
@@ -28,10 +30,11 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
-            <h3 className="text-xl font-bold mb-4 text-foreground">Rishabh Kumar Kannaujiya</h3>
+            <h3 className="text-xl font-semibold mb-4 text-foreground">Quote that makes me tick</h3>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              AI/ML Developer passionate about harnessing the power of data and advanced machine learning techniques to 
-              build intelligent solutions that drive business innovation and deliver impactful, user‑centric experiences.
+              Just as electricity transformed almost everything 100 years ago, 
+              today I actually have a hard time thinking of an industry that 
+              I don't think AI will transform in the next several years. -- Andrew Ng
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social) => {
@@ -80,7 +83,7 @@ export default function Footer() {
         
         <div className="border-t border-border mt-8 pt-8 text-center">
           <p className="text-muted-foreground">
-            © 2025 Rishabh Kumar Kannaujiya. All rights reserved.
+            © 2026 Rishabh Kumar Kannaujiya. All rights reserved.
           </p>
         </div>
       </div>

@@ -21,7 +21,7 @@ const programmingSkills = [
   { name: "Python", level: 5 },
   { name: "SQL", level: 4 },
   { name: "C", level: 4 },
-  { name: "TypeScript", level: 3 },
+  { name: "TypeScript", level: 2 },
 ];
 
 const frameworksLibraries = [
@@ -132,7 +132,7 @@ export default function Skills() {
           <h2 className="text-3xl md:text-4xl font-bold text-secondary-custom mb-4">Skills & Expertise</h2>
           <div className="w-24 h-1 bg-primary-custom mx-auto mb-8"></div>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Proficient in AI/ML development with a focus on intelligent systems, computer vision, and natural language processing solutions.
+            Teaching machines to see, read, and think - so I can focus on the important stuff (like fixing bugs).
           </p>
         </AnimatedSection>
         

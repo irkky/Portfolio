@@ -16,8 +16,7 @@ const projects = [
     technologies: ["React", "Node.js", "MongoDB", "Google Cloud Platform"],
     category: "Web",
     demoUrl: "https://legal-document-analysis-system.vercel.app/",
-    githubUrl:
-      "https://github.com/irkky/LegalMate---AI-Powered-Legal-Document-Analysis-System",
+    githubUrl: "https://github.com/irkky/LegalMate---AI-Powered-Legal-Document-Analysis-System",
   },
   {
     id: 2,
@@ -28,8 +27,7 @@ const projects = [
       "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftpp.hikvision.com%2FCommon%2FImages%2FCache%2F86c89780a40f4caf8e645812bac576c3.jpg&f=1&nofb=1&ipt=28dfd7ad300e505aa49cc3e5f104195ece71a7222522251f3ac5d71efe38e3e4&auto=format&fit=crop&w=800&h=500",
     technologies: ["Python", "Google Cloud Platform", "Streamlit", "Twilio"],
     category: "Computer Vision",
-    demoUrl:
-      "https://www.linkedin.com/posts/rishabh-kr-kannaujiya_ai-python-genai-activity-7321617472279769090-NIcF?utm_source=share&utm_medium=member_desktop&rcm=ACoAADSHLP4B3jdoLFGD8Jb2wdsg55ddJlGU3gE",
+    demoUrl: "https://www.linkedin.com/posts/rishabh-kr-kannaujiya_ai-python-genai-activity-7321617472279769090-NIcF?utm_source=share&utm_medium=member_desktop&rcm=ACoAADSHLP4B3jdoLFGD8Jb2wdsg55ddJlGU3gE",
     githubUrl: "https://github.com/irkky/AI-powered-Accident-Detection-System",
   },
   {
@@ -41,8 +39,7 @@ const projects = [
       "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fas2.ftcdn.net%2Fv2%2Fjpg%2F02%2F95%2F45%2F83%2F1000_F_295458329_5acHhOLvs9ZLIpcsLlFmUyU44KKwITtE.jpg&f=1&nofb=1&ipt=e40d50462cc9c6ae0bed6727da1af15879eae2d64fce784b2ae829682d46fb3e&auto=format&fit=crop&w=800&h=500",
     technologies: ["TensorFlow", "OpenCV", "Python", "NumPy", "Computer Vision"],
     category: "Computer Vision",
-    demoUrl:
-      "https://www.linkedin.com/posts/rishabh-kr-kannaujiya_computervision-python-tensorflow-activity-7220721661187170304-iCvG?utm_source=share&utm_medium=member_desktop&rcm=ACoAADSHLP4B3jdoLFGD8Jb2wdsg55ddJlGU3gE",
+    demoUrl: "https://www.linkedin.com/posts/rishabh-kr-kannaujiya_computervision-python-tensorflow-activity-7220721661187170304-iCvG?utm_source=share&utm_medium=member_desktop&rcm=ACoAADSHLP4B3jdoLFGD8Jb2wdsg55ddJlGU3gE",
     githubUrl: "https://github.com/irkky/Multi-Camera-CCTV-Video-Processing",
   },
   {
@@ -54,8 +51,7 @@ const projects = [
       "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.aiarty.com%2Fimages%2Fai-image-matting%2Findex%2Fgallery-img2.png&f=1&nofb=1&ipt=4b5576a92b237b27d76388f6b6457d523dfb73939bd4ec71cc54e64539cbc9ef&auto=format&fit=crop&w=800&h=500",
     technologies: ["PyTorch", "Python", "Streamlit", "Hugging Face", "NumPy", "Pandas", "OpenCV"],
     category: "Computer Vision",
-    demoUrl:
-      "https://ai-powered-background-remover-586czjzdqxbhwjzz3uugb9.streamlit.app/",
+    demoUrl: "https://ai-powered-background-remover-586czjzdqxbhwjzz3uugb9.streamlit.app/",
     githubUrl: "https://github.com/irkky/AI-Powered-Background-Remover",
   },
   {
@@ -67,20 +63,17 @@ const projects = [
       "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2FIO-Yc07Pifk%2Fmaxresdefault.jpg&f=1&nofb=1&ipt=56e233150968d0a5305d76d362632c57e526370f23bba9d28cf04bee236bd9ef&auto=format&fit=crop&w=800&h=500",
     technologies: ["Python", "NLTK", "Pandas", "Selenium"],
     category: "Web Scraping",
-    githubUrl:
-      "https://github.com/irkky/WebLexis-Scraping-and-Analyzing-the-Language-of-Articles",
+    githubUrl: "https://github.com/irkky/WebLexis-Scraping-and-Analyzing-the-Language-of-Articles",
   },
   {
     id: 6,
     title: "LangChain-ChatBot",
     description:
       "A chatbot application built using LangChain, integrating various AI models to provide intelligent responses and interactions.",
-    image:
-      "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.w3villa.com%2Fassets%2F400%2Foriginal%2F14-June-web-Blog.jpg&f=1&nofb=1&ipt=7d65fb73487bd5f43943db0285d805a283761ff1243de43be8e6c2f7c8e566f1&auto=format&fit=crop&w=800&h=500",
+    image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.w3villa.com%2Fassets%2F400%2Foriginal%2F14-June-web-Blog.jpg&f=1&nofb=1&ipt=7d65fb73487bd5f43943db0285d805a283761ff1243de43be8e6c2f7c8e566f1&auto=format&fit=crop&w=800&h=500",
     technologies: ["LangChain", "OpenAI", "Streamlit", "Python"],
     category: "GenAI",
-    demoUrl:
-      "https://www.linkedin.com/posts/rishabh-kr-kannaujiya_langchain-gpt-openai-activity-7107355860850421760-dJul?utm_source=share&utm_medium=member_desktop&rcm=ACoAADSHLP4B3jdoLFGD8Jb2wdsg55ddJlGU3gE",
+    demoUrl: "https://www.linkedin.com/posts/rishabh-kr-kannaujiya_langchain-gpt-openai-activity-7107355860850421760-dJul?utm_source=share&utm_medium=member_desktop&rcm=ACoAADSHLP4B3jdoLFGD8Jb2wdsg55ddJlGU3gE",
     githubUrl: "https://github.com/irkky/LangChain-ChatBot",
   },
   {
@@ -122,7 +115,7 @@ const projects = [
     description:
       "Ruby on Rails application that transforms outbound calling through seamless AI-driven automation.",
     image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.nextiva.com%2Fblog%2Fwp-content%2Fuploads%2Fsites%2F10%2F2024%2F08%2FAI-Call-Center-2.webp&f=1&nofb=1&ipt=176d3df9bed6376d7bf971ef80f2fba792f5faf0fc4e0df0489c17f1c455a91e",
-    technologies: ["Ruby on Rails", "Gemini 2.5", "twilio", "PostgreSQL"],
+    technologies: ["Ruby on Rails", "Gemini 2.5", "Twilio", "PostgreSQL"],
     category: "GenAI",
     demoUrl: "https://github.com/irkky/Autodialer-AI-Powered-Calling-System",
     githubUrl: "https://github.com/irkky/Autodialer-AI-Powered-Calling-System",
@@ -139,53 +132,49 @@ const filters = [
 
 const techColors: { [key: string]: string } = {
   React: "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200",
-  Streamlit: "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200",
-  "Computer Vision": "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200",
-  NLTK: "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200",
-  OpenAI: "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200",
-  Selenium: "bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200",
-  OpenCV: "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200",
-  Twilio: "bg-yellow-200 text-yellow-900 dark:bg-yellow-900 dark:text-yellow-400",
-  "Google Cloud Platform":
-    "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200",
-  "Next.js": "bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200",
-  "Tailwind CSS": "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200",
-  "TypeScript": "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200",
-  TensorFlow: "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200",
-  LangChain: "bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200",
-  "Hugging Face": "bg-pink-100 text-pink-800 dark:bg-pink-900 dark:text-pink-200",
-  FastAPI: "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200",
-  Flask: "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200",
-  Django: "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200",
-  NumPy: "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200",
-  Pandas: "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200",
-  "Scikit-learn": "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200",
-  PyTorch: "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200",
-  Keras: "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200",
-  JavaScript: "bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200",
-  HTML: "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200",
-  CSS: "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200",
-  Bootstrap: "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200",
-  Sass: "bg-pink-100 text-pink-800 dark:bg-pink-900 dark:text-pink-200",
-  jQuery: "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200",
-  Angular: "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200",
-  "Node.js": "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200",
-  MongoDB: "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200",
-  "React Native": "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200",
-  Python: "bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200",
-  "Express.js": "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200",
-  PostgreSQL: "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200",
-  Docker: "bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200",
-  GraphQL: "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200",
-  "Socket.io": "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200",
-  Flutter: "bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200",
+  Streamlit: "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200",
+  "Computer Vision": "bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200",
+  NLTK: "bg-amber-100 text-amber-800 dark:bg-amber-900 dark:text-amber-200",
+  OpenAI: "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200",
+  Selenium: "bg-lime-100 text-lime-800 dark:bg-lime-900 dark:text-lime-200",
+  OpenCV: "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200",
+  Twilio: "bg-emerald-100 text-emerald-800 dark:bg-emerald-900 dark:text-emerald-200",
+  "Google Cloud Platform": "bg-teal-100 text-teal-800 dark:bg-teal-900 dark:text-teal-200",
+  "Next.js": "bg-cyan-100 text-cyan-800 dark:bg-cyan-900 dark:text-cyan-200",
+  "Tailwind CSS": "bg-sky-100 text-sky-800 dark:bg-sky-900 dark:text-sky-200",
+  "TypeScript": "bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-200",
+  TensorFlow: "bg-violet-100 text-violet-800 dark:bg-violet-900 dark:text-violet-200",
+  LangChain: "bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200",
+  "Hugging Face": "bg-fuchsia-100 text-fuchsia-800 dark:bg-fuchsia-900 dark:text-fuchsia-200",
+  FastAPI: "bg-pink-100 text-pink-800 dark:bg-pink-900 dark:text-pink-200",
+  Flask: "bg-rose-100 text-rose-800 dark:bg-rose-900 dark:text-rose-200",
+  Django: "bg-slate-100 text-slate-800 dark:bg-slate-900 dark:text-slate-200",
+  NumPy: "bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200",
+  Pandas: "bg-zinc-100 text-zinc-800 dark:bg-zinc-900 dark:text-zinc-200",
+  "Scikit-learn": "bg-neutral-100 text-neutral-800 dark:bg-neutral-900 dark:text-neutral-200",
+  PyTorch: "bg-stone-100 text-stone-800 dark:bg-stone-900 dark:text-stone-200",
+  Keras: "bg-red-200 text-red-900 dark:bg-red-800 dark:text-red-100",
+  JavaScript: "bg-orange-200 text-orange-900 dark:bg-orange-800 dark:text-orange-100",
+  HTML: "bg-amber-200 text-amber-900 dark:bg-amber-800 dark:text-amber-100",
+  CSS: "bg-yellow-200 text-yellow-900 dark:bg-yellow-800 dark:text-yellow-100",
+  "Node.js": "bg-cyan-200 text-cyan-900 dark:bg-cyan-800 dark:text-cyan-100",
+  MongoDB: "bg-sky-200 text-sky-900 dark:bg-sky-800 dark:text-sky-100",
+  Python: "bg-indigo-200 text-indigo-900 dark:bg-indigo-800 dark:text-indigo-100",
+  PostgreSQL: "bg-purple-200 text-purple-900 dark:bg-purple-800 dark:text-purple-100",
+  Docker: "bg-fuchsia-200 text-fuchsia-900 dark:bg-fuchsia-800 dark:text-fuchsia-100",
+  GraphQL: "bg-pink-200 text-pink-900 dark:bg-pink-800 dark:text-pink-100",
+  "Google ADK": "bg-gray-200 text-gray-900 dark:bg-gray-800 dark:text-gray-100",
+  "Gemini 2.5": "bg-zinc-200 text-zinc-900 dark:bg-zinc-800 dark:text-zinc-100",
+  "Llama 3.1": "bg-neutral-200 text-neutral-900 dark:bg-neutral-800 dark:text-neutral-100",
+  Pinecone: "bg-stone-200 text-stone-900 dark:bg-stone-800 dark:text-stone-100",
+  "Ruby on Rails": "bg-blue-50 text-blue-900 dark:bg-blue-900 dark:text-blue-100",
 };
 
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState("all");
   const [search, setSearch] = useState("");
   const [selectedProject, setSelectedProject] = useState<any>(null);
-  const [hovered, setHovered] = useState<number | null>(null);
+
 
   useEffect(() => {
     // close modal on Escape
@@ -301,32 +290,33 @@ export default function Projects() {
                 key={project.id}
                 className="bg-card rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform overflow-hidden border border-border cursor-pointer relative"
                 initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.35, delay: index * 0.04 }}
-                onMouseEnter={() => setHovered(project.id)}
-                onMouseLeave={() => setHovered(null)}
-                onClick={() => setSelectedProject(project)}
-                whileHover={{ scale: 1.02 }}
+                animate={{ opacity: 1, y: 0, transition: { duration: 0.35, delay: index * 0.04 } }}
+                whileHover="hover"
+                variants={{ hover: { scale: 1.02 } }}
                 whileTap={{ scale: 0.98 }}
+                onClick={() => setSelectedProject(project)}
               >
                 <div className="relative overflow-hidden h-48">
-                  <img
+                  <motion.img
                     src={project.image}
                     alt={project.title}
                     loading="lazy"
-                    className={`w-full h-full object-cover transition-transform duration-500 ${
-                      hovered === project.id ? "scale-110" : ""
-                    }`}
+                    className="w-full h-full object-cover"
+                    variants={{
+                      hover: { scale: 1.1 }
+                    }}
+                    transition={{ duration: 0.3 }}
                     onError={(e) => {
                       (e.target as HTMLImageElement).src = "https://via.placeholder.com/800x500?text=Project+Image";
                     }}
                   />
 
                   {/* subtle gradient overlay + quick-actions */}
-                  <div
-                    className={`absolute inset-0 flex items-end p-4 transition-all duration-300 ${
-                      hovered === project.id ? "bg-black/30" : "bg-black/10"
-                    }`}
+                  <motion.div
+                    className="absolute inset-0 flex items-end p-4 bg-black/10"
+                    variants={{
+                      hover: { backgroundColor: "rgba(0,0,0,0.3)" }
+                    }}
                     aria-hidden
                   >
                     <div className="w-full flex justify-between items-center">
@@ -360,12 +350,12 @@ export default function Projects() {
                         )}
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
                 </div>
 
                 <div className="p-4">
                   <h3 className="text-lg font-semibold text-foreground mb-2">{project.title}</h3>
-                  <p className="text-sm text-muted-foreground mb-3 line-clamp-3">{project.description}</p>
+                  <p className="text-sm text-muted-foreground mb-3">{project.description}</p>
 
                   <div className="flex flex-wrap gap-2 mb-3">
                     {(project.technologies || []).map((tech: string) => (

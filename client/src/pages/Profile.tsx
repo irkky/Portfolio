@@ -109,7 +109,7 @@ export default function Profile() {
               transition={{ duration: 0.6 }}
             />
             <motion.p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.15 }}>
-              A passionate developer with a love for creating innovative solutions and exceptional user experiences — focused on practical, well-engineered AI/ML applications.
+              The closer I get to technology, the stronger I feel nature calling. Yet, my love for community and learning keeps me grounded in code.
             </motion.p>
           </AnimatedSection>
 
