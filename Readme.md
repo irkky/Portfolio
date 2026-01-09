@@ -75,5 +75,5 @@ I'm Rishabh Kumar Kannaujiya, an AI/ML Developer and a Generative AI enthusiast.
 
 <div align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0EA5E9&height=100&section=footer" alt="Footer" />
-  <p><b>Thanks for visiting! ⭐ Don't forget to star this repo if you found it helpful!</b></p>
+  <p><b>Thanks for visiting! ♥ </b></p>
 </div>
