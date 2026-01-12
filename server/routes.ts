@@ -8,21 +8,14 @@ const contactSchema = z.object({
   email: z.string().email(),
   subject: z.string().min(1),
   message: z.string().min(10),
-  privacy: z.boolean(),
 });
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Contact form submission endpoint
   app.post("/api/contact", async (req, res) => {
     try {
-      // Validate the request body
       const validatedData = contactSchema.parse(req.body);
-      
-      // In a real application, you would:
-      // 1. Send an email using a service like SendGrid, Nodemailer, etc.
-      // 2. Store the message in a database
-      // 3. Send notifications to admin/owner
-      
+            
       console.log("Contact form submission received:", {
         name: `${validatedData.firstName} ${validatedData.lastName}`,
         email: validatedData.email,
