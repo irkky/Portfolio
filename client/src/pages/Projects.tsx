@@ -99,7 +99,7 @@ const projects = [
     githubUrl: "https://github.com/irkky/Medical-RAG-Streamlit-Application",
   },
   {
-    id: 8,
+    id: 9,
     title: "AI-Blog-Agent",
     description:
       "A production-grade multi-agent content creation system powered by Google ADK and Gemini 2.5",
@@ -110,7 +110,7 @@ const projects = [
     githubUrl: "https://github.com/irkky/AI-Blog-Agent",
   },
   {
-    id: 9,
+    id: 10,
     title: "Autodialer-AI-Powered-Calling-System",
     description:
       "Ruby on Rails application that transforms outbound calling through seamless AI-driven automation.",
@@ -310,47 +310,6 @@ export default function Projects() {
                       (e.target as HTMLImageElement).src = "https://via.placeholder.com/800x500?text=Project+Image";
                     }}
                   />
-
-                  {/* subtle gradient overlay + quick-actions */}
-                  <motion.div
-                    className="absolute inset-0 flex items-end p-4 bg-black/10"
-                    variants={{
-                      hover: { backgroundColor: "rgba(0,0,0,0.3)" }
-                    }}
-                    aria-hidden
-                  >
-                    <div className="w-full flex justify-between items-center">
-                      <div className="text-sm text-white font-semibold drop-shadow">{project.title}</div>
-                      <div className="flex gap-2">
-                        {project.demoUrl && (
-                          <a
-                            href={project.demoUrl}
-                            onClick={(e) => e.stopPropagation()}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="rounded-full bg-white/20 px-3 py-1 text-xs flex items-center gap-2 backdrop-blur"
-                            title="Open demo in new tab"
-                          >
-                            <ExternalLink size={14} />
-                            Demo
-                          </a>
-                        )}
-                        {project.githubUrl && (
-                          <a
-                            href={project.githubUrl}
-                            onClick={(e) => e.stopPropagation()}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="rounded-full bg-white/20 px-3 py-1 text-xs flex items-center gap-2 backdrop-blur"
-                            title="View source on GitHub"
-                          >
-                            <Github size={14} />
-                            Code
-                          </a>
-                        )}
-                      </div>
-                    </div>
-                  </motion.div>
                 </div>
 
                 <div className="p-4">
@@ -361,8 +320,7 @@ export default function Projects() {
                     {(project.technologies || []).map((tech: string) => (
                       <motion.span
                         key={tech}
-                        className={`px-2 py-1 rounded-full text-sm font-medium ${techColors[tech] ||
-                          "bg-muted text-muted-foreground"}`}
+                        className={`px-2 py-1 rounded-full text-sm font-medium ${techColors[tech] || "bg-muted text-muted-foreground"}`}
                         whileHover={{ scale: 1.08 }}
                         transition={{ type: "spring", stiffness: 300, damping: 20 }}
                         onClick={(e) => e.stopPropagation()}

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { GraduationCap, Briefcase, MapPin, Languages, Download, ChevronDown, ChevronUp, Mail, Github, Linkedin } from "lucide-react";
+import { GraduationCap, Briefcase, MapPin, Languages, Download, ChevronDown, ChevronUp, Mail, Github, Linkedin, ExternalLink } from "lucide-react";
 import AnimatedSection, { AnimatedStagger, StaggerItem } from "@/components/AnimatedSection";
 import ProfileCard from "@/components/ProfileCard";
 import PageTransition from "@/components/PageTransition";
@@ -40,6 +40,7 @@ const experience = [
     highlights: [
       "Worked on backend development and automation tasks using Python and other related frameworks. Assisted in gathering requirements and provided technical support to clients, improving overall project delivery and satisfaction",
     ],
+    link: "https://drive.google.com/file/d/1f8mebSR2LJpT51T7m26uszG0BNEBBMVx/view?usp=sharing",
   },
 ];
 
@@ -169,9 +170,6 @@ export default function Profile() {
                     <span className="ml-2">LinkedIn</span>
                   </Button>
                 </div>
-
-                {/* Small interactive stats section removed as requested */}
-
               </div>
 
               <AnimatedStagger className="grid sm:grid-cols-2 gap-4" staggerDelay={0.08}>
@@ -189,17 +187,6 @@ export default function Profile() {
                           <h4 className="font-semibold text-foreground mb-1">{info.title}</h4>
                           <p className="text-sm text-muted-foreground whitespace-pre-line">{info.content}</p>
                         </div>
-                      </div>
-
-                      {/* copy action tucked into each info card */}
-                      <div className="absolute top-3 right-3">
-                        <button
-                          className="text-xs px-2 py-1 rounded-md border border-border bg-transparent hover:bg-muted-foreground/5"
-                          onClick={() => handleCopy(info.content.replace(/\n/g, ", "), info.title)}
-                          title={`Copy ${info.title}`}
-                        >
-                          Copy
-                        </button>
                       </div>
                     </StaggerItem>
                   );
@@ -229,7 +216,15 @@ export default function Profile() {
                       <div className="text-muted-foreground">{exp.company}</div>
                     </div>
 
-                    <div className="flex-shrink-0">
+                    <div className="flex-shrink-0 flex gap-2">
+                      {exp.link && (
+                        <Button variant="outline" size="sm" onClick={() => window.open(exp.link, "_blank")}>
+                          <span className="flex items-center gap-2">
+                            <ExternalLink size={14} />
+                            Certificate Link
+                          </span>
+                        </Button>
+                      )}
                       <Button variant="outline" size="sm" onClick={() => setOpenExp(openExp === index ? null : index)}>
                         {openExp === index ? (
                           <span className="flex items-center gap-2"><ChevronUp size={14} /> Hide</span>

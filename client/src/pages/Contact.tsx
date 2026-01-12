@@ -273,7 +273,7 @@ export default function Contact() {
               >
                 <div className="mb-4">
                   <h3 className="text-2xl font-semibold text-foreground mb-2">Send Message</h3>
-                  <div className="text-sm text-muted-foreground">Notifications here aren't always reliable here. To avoid any technical delays, please shoot me a mail instead.</div>
+                  <div className="text-sm text-muted-foreground">Notifications here aren't always reliable. To avoid any technical delays, please shoot me a mail instead.</div>
 
                   {/* progress bar */}
                   <div className="mt-4 w-full bg-muted-foreground/10 rounded-full h-2 overflow-hidden">
