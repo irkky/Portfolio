@@ -48,7 +48,7 @@ export default function Profile() {
   const [openExp, setOpenExp] = useState<number | null>(null);
   const { toast } = useToast();
 
-  const resumeUrl = "https://drive.google.com/file/d/13jHFBVQR8TlGZS0kIXYhQS2BJfMJlPaK/view?usp=sharing"; // replace with your public resume path
+  const resumeUrl = "https://drive.google.com/file/d/1xth3bmfxohKB_DeguAMM-UduXBpsuaxh/view?usp=sharing"; // replace with your public resume path
 
   const handleCopy = async (text: string, label?: string) => {
     try {
