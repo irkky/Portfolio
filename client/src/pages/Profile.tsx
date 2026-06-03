@@ -123,7 +123,7 @@ export default function Profile() {
                 status="Available"
                 contactText="Contact Me"
                 iconUrl=""
-                avatarUrl="https://github.com/irkky/Portfolio/blob/main/public/photo%20for%20profile.png?raw=true"
+                avatarUrl="https://github.com/irkky/Portfolio/blob/main/public/ProfileDP.png?raw=true"
                 grainUrl="https://raw.githubusercontent.com/irkky/Portfolio/refs/heads/main/public/grain.webp"
                 showUserInfo={true}
                 enableTilt={true}
