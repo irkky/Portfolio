@@ -58,7 +58,7 @@ I'm Rishabh Kumar Kannaujiya, an AI/ML Developer and a Generative AI enthusiast.
 | 🚀 **Projects** | Showcase of work | Detailed descriptions, live demos, GitHub links |
 | 💪 **Skills** | Technical expertise | Interactive skill cards, proficiency levels |
 | 🎯 **Extracurricular** | Beyond coding | Activities, interests, community involvement |
-| 📬 **Contact** | Get in touch | Validated form, social links, instant response |
+| 📬 **Contact** | Get in touch | Social links, Number, Mail |
 
 </details>
 
