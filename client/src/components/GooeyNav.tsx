@@ -85,11 +85,7 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
         requestAnimationFrame(() => {
           element.classList.add('active');
         });
-        setTimeout(() => {
-          try {
-            element.removeChild(particle);
-          } catch {}
-        }, t);
+        setTimeout(() => particle.remove(), t);
       }, 30);
     }
   };
@@ -107,17 +103,18 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
     Object.assign(textRef.current.style, styles);
     textRef.current.innerText = element.innerText;
   };
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, index: number) => {
-    const liEl = e.currentTarget;
+
+  const activateIndex = (element: HTMLElement, index: number) => {
     if (activeIndex === index) return;
     setActiveIndex(index);
-    updateEffectPosition(liEl);
+    updateEffectPosition(element);
     if (filterRef.current) {
       const particles = filterRef.current.querySelectorAll('.particle');
-      particles.forEach(p => filterRef.current!.removeChild(p));
+      particles.forEach(p => p.remove());
     }
     if (textRef.current) {
       textRef.current.classList.remove('active');
+      // Trigger DOM reflow to restart CSS animation
       void textRef.current.offsetWidth;
       textRef.current.classList.add('active');
     }
@@ -125,17 +122,21 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
       makeParticles(filterRef.current);
     }
   };
+
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, index: number) => {
+    activateIndex(e.currentTarget, index);
+    if (location === items[index].href) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   const handleKeyDown = (e: React.KeyboardEvent<HTMLAnchorElement>, index: number) => {
     if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      const liEl = e.currentTarget.parentElement;
-      if (liEl) {
-        handleClick(
-          {
-            currentTarget: liEl
-          } as unknown as React.MouseEvent<HTMLAnchorElement>,
-          index
-        );
+      // Prevent page scroll on Space. Standard anchor tags natively navigate on Enter.
+      if (e.key === ' ') e.preventDefault();
+      activateIndex(e.currentTarget, index);
+      if (location === items[index].href) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     }
   };
@@ -164,9 +165,6 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
     <>
       <style>
         {`
-          :root {
-            --linear-ease: linear(0, 0.068, 0.19 2.7%, 0.804 8.1%, 1.037, 1.199 13.2%, 1.245, 1.27 15.8%, 1.274, 1.272 17.4%, 1.249 19.1%, 0.996 28%, 0.949, 0.928 33.3%, 0.926, 0.933 36.8%, 1.001 45.6%, 1.013, 1.019 50.8%, 1.018 54.4%, 1 63.1%, 0.995 68%, 1.001 85%, 1);
-          }
           .effect {
             position: absolute;
             opacity: 1;

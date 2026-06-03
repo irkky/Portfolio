@@ -1,4 +1,4 @@
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { Github, Linkedin, Twitter } from "lucide-react";
 import { SiKaggle } from "react-icons/si";
 
@@ -25,6 +25,8 @@ const services = [
 
 
 export default function Footer() {
+  const [location] = useLocation();
+
   return (
     <footer className="bg-card border-t py-12">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -62,6 +64,11 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link 
                     href={link.href}
+                    onClick={() => {
+                      if (location === link.href) {
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                      }
+                    }}
                     className="text-muted-foreground hover:text-primary transition-colors duration-200"
                   >
                     {link.label}

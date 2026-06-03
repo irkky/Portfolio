@@ -26,7 +26,10 @@ export default function Navigation() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
-            <Link href="/">
+            <Link 
+              href="/"
+              onClick={() => location === '/' && window.scrollTo({ top: 0, behavior: 'smooth' })}
+            >
               <h1 className="text-xl font-bold text-foreground">Rishabh's Portfolio</h1>
             </Link>
           </div>
@@ -70,7 +73,12 @@ export default function Navigation() {
                       ? "text-primary" 
                       : "text-muted-foreground hover:text-primary"
                   }`}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={() => {
+                    setIsMobileMenuOpen(false);
+                    if (isActive(item.href)) {
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                  }}
                 >
                   {item.label}
                 </Link>

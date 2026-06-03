@@ -94,6 +94,15 @@ export default function PageTransition({
       exit="out"
       variants={variants}
       transition={transition}
+      onAnimationStart={(definition) => {
+        if (definition === "in") {
+          document.documentElement.style.scrollBehavior = "auto";
+          window.scrollTo(0, 0);
+          setTimeout(() => {
+            document.documentElement.style.scrollBehavior = "smooth";
+          }, 10);
+        }
+      }}
       style={{
         width: '100%',
         height: '100%',

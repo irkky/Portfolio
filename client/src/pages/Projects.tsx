@@ -1,11 +1,21 @@
 import { useEffect, useState } from "react";
 import { ExternalLink, Github, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import AnimatedSection from "@/components/AnimatedSection";
 import PageTransition from "@/components/PageTransition";
 
-const projects = [
+export interface Project {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  technologies: string[];
+  category: string;
+  demoUrl?: string;
+  githubUrl?: string;
+}
+
+const projects: Project[] = [
   {
     id: 1,
     title: "LegalMate",
@@ -173,7 +183,7 @@ const techColors: { [key: string]: string } = {
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState("all");
   const [search, setSearch] = useState("");
-  const [selectedProject, setSelectedProject] = useState<any>(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
 
   useEffect(() => {
@@ -259,9 +269,7 @@ export default function Projects() {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.25, delay: idx * 0.05 }}
-                      className={`px-4 py-1.5 rounded-full font-medium text-sm flex items-center gap-2 transition-all duration-200 shadow-sm focus:outline-none ${{
-                        true: "",
-                      }}`}
+                      className="px-4 py-1.5 rounded-full font-medium text-sm flex items-center gap-2 transition-all duration-200 shadow-sm focus:outline-none"
                       aria-pressed={active}
                       style={{
                         background: active ? "var(--primary)" : undefined,

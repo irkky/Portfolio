@@ -101,7 +101,7 @@ function SkillBar({ name, level, color = "text-primary-custom", delay = 0 }: Ski
     >
       <div className="flex justify-between items-center">
         <span className="font-medium text-foreground">{name}</span>
-        <div className="flex space-x-1">
+        <div className="flex space-x-1" aria-label={`${level} out of 5 stars`} title={`${level} out of 5`}>
           {[...Array(5)].map((_, i) => (
             <motion.div
               key={i}
@@ -124,7 +124,7 @@ function SkillBar({ name, level, color = "text-primary-custom", delay = 0 }: Ski
 
 export default function Skills() {
   return (
-    <div className="py-16 bg-background dark:bg-background transition-colors duration-300">
+    <div className="py-16 bg-background transition-colors duration-300">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
@@ -192,7 +192,7 @@ export default function Skills() {
                 <StaggerItem
                   key={tool.name}
                   variant="scale"
-                  className="bg-card dark:bg-card hover:bg-accent/50 dark:hover:bg-accent/20 hover:shadow-lg dark:hover:shadow-gray-800/25 transition-all duration-200 p-4 rounded-xl text-center group border border-border hover:-translate-y-1"
+                  className="bg-card hover:bg-accent/50 dark:hover:bg-accent/20 hover:shadow-lg dark:hover:shadow-gray-800/25 transition-all duration-200 p-4 rounded-xl text-center group border border-border hover:-translate-y-1"
                 >
                   <Icon className="text-3xl text-muted-foreground group-hover:text-primary-custom transition-colors mb-2 mx-auto" />
                   <div className="text-sm font-medium text-foreground">{tool.name}</div>
@@ -206,11 +206,11 @@ export default function Skills() {
         <AnimatedSection variant="fadeUp" delay={0.5}>
           <h3 className="text-2xl font-semibold text-secondary-custom mb-8 text-center">Soft Skills</h3>
           <AnimatedStagger className="grid md:grid-cols-2 lg:grid-cols-4 gap-6" staggerDelay={0.15}>
-            {softSkills.map((skill, index) => {
+            {softSkills.map((skill) => {
               const Icon = skill.icon;
               return (
                 <StaggerItem
-                  key={index}
+                  key={skill.title}
                   variant="scale"
                   className={`bg-gradient-to-br ${skill.color} p-6 rounded-xl text-center hover:shadow-lg dark:hover:shadow-gray-800/25 transition-all duration-300 border border-border/50 hover:-translate-y-1`}
                 >

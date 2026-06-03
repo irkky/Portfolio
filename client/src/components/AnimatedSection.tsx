@@ -46,7 +46,7 @@ export default function AnimatedSection({
   duration = 0.6,
   once = true
 }: AnimatedSectionProps) {
-  const ref = useRef(null)
+  const ref = useRef<HTMLDivElement>(null)
   const isInView = useInView(ref, { once, margin: "-100px" })
 
   const selectedVariant = variants[variant]
@@ -81,7 +81,7 @@ export function AnimatedStagger({
   className?: string
   staggerDelay?: number
 }) {
-  const ref = useRef(null)
+  const ref = useRef<HTMLDivElement>(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (

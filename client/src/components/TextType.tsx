@@ -1,6 +1,6 @@
 "use client";
 
-import { ElementType, useEffect, useRef, useState, createElement } from "react";
+import { ElementType, useEffect, useRef, useState, useMemo, createElement } from "react";
 import { gsap } from "gsap";
 import "./TextType.css";
 
@@ -54,7 +54,7 @@ const TextType = ({
   const cursorRef = useRef<HTMLSpanElement>(null);
   const containerRef = useRef<HTMLElement>(null);
 
-  const textArray = Array.isArray(text) ? text : [text];
+  const textArray = useMemo(() => Array.isArray(text) ? text : [text], [text]);
 
   const getRandomSpeed = () => {
     if (!variableSpeed) return typingSpeed;
@@ -86,9 +86,10 @@ const TextType = ({
   }, [startOnVisible]);
 
   useEffect(() => {
+    let tween: gsap.core.Tween | undefined;
     if (showCursor && cursorRef.current) {
       gsap.set(cursorRef.current, { opacity: 1 });
-      gsap.to(cursorRef.current, {
+      tween = gsap.to(cursorRef.current, {
         opacity: 0,
         duration: cursorBlinkDuration,
         repeat: -1,
@@ -96,6 +97,9 @@ const TextType = ({
         ease: "power2.inOut",
       });
     }
+    return () => {
+      if (tween) tween.kill();
+    };
   }, [showCursor, cursorBlinkDuration]);
 
   useEffect(() => {
