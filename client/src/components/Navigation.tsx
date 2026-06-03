@@ -30,7 +30,7 @@ export default function Navigation() {
               href="/"
               onClick={() => location === '/' && window.scrollTo({ top: 0, behavior: 'smooth' })}
             >
-              <h1 className="text-xl font-bold text-foreground">Rishabh's Portfolio</h1>
+              <h1 className="text-xl font-bold text-foreground">RKKY</h1>
             </Link>
           </div>
           

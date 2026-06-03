@@ -41,7 +41,7 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                AI/ML Developer | Generative AI Enthusiast 
+                AI/ML Developer
               </motion.h2>
               <motion.p 
                 className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed"
@@ -49,8 +49,8 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
-                Crafting cutting-edge AI/ML solutions with modern generative intelligence frameworks.
-                Passionate about developing scalable GenAI applications that deliver meaningful impact.
+                Building AI-powered experiences that bridge the gap between innovation 
+                and real-world impact - one model, one application and one idea at a time.
               </motion.p>
               
               <motion.div 
