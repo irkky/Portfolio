@@ -1,8 +1,8 @@
 <div align="center">
-  <img src="public/photo%20for%20profile.png" alt="Rishabh Kumar Kannaujiya" width="120" style="border-radius:9999px" />
+  <img src="public\ProfileDP.png" alt="Rishabh Kumar Kannaujiya" width="120" style="border-radius:9999px" />
 
   <h2>Rishabh Kumar Kannaujiya</h2>
-  <p><strong>AI/ML Developer</strong> • Full‑Stack Engineer • Problem Solver</p>
+  <p><strong>AI/ML Developer</strong> • Software Engineer • Problem Solver</p>
   
   <a href="https://rishabh-kumar-kannaujiya.vercel.app/">
     <img src="https://img.shields.io/badge/🌐_Live_Portfolio-0EA5E9?style=for-the-badge&logoColor=white" alt="Portfolio" />
