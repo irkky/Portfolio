@@ -77,7 +77,7 @@ export default function Contact() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                Ready to collaborate or have a question? I'd love to hear from you.
+                Have a question or any opportunities? I'd love to hear from you.
               </motion.p>
             </div>
           </AnimatedSection>
