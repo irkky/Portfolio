@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ExternalLink, Github, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import AnimatedSection from "@/components/AnimatedSection";
@@ -184,16 +184,57 @@ export default function Projects() {
   const [activeFilter, setActiveFilter] = useState("all");
   const [search, setSearch] = useState("");
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const modalRef = useRef<HTMLDivElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const previouslyFocusedRef = useRef<HTMLElement | null>(null);
 
 
   useEffect(() => {
-    // close modal on Escape
+    if (!selectedProject) return;
+
+    previouslyFocusedRef.current = document.activeElement as HTMLElement;
+    const focusTimer = window.setTimeout(() => closeButtonRef.current?.focus(), 0);
+
     function onKey(e: KeyboardEvent) {
-      if (e.key === "Escape") setSelectedProject(null);
+      if (e.key === "Escape") {
+        setSelectedProject(null);
+        return;
+      }
+
+      if (e.key !== "Tab" || !modalRef.current) return;
+      const focusable = Array.from(
+        modalRef.current.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+        )
+      );
+      if (focusable.length === 0) return;
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
     }
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, []);
+
+    document.addEventListener("keydown", onKey);
+    return () => {
+      window.clearTimeout(focusTimer);
+      document.removeEventListener("keydown", onKey);
+      previouslyFocusedRef.current?.focus();
+    };
+  }, [selectedProject]);
+
+  const handleProjectKeyDown = (event: React.KeyboardEvent<HTMLElement>, project: Project) => {
+    if (event.target !== event.currentTarget) return;
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      setSelectedProject(project);
+    }
+  };
 
   const filteredProjects = projects.filter((project) => {
     const matchesFilter = activeFilter === "all" || project.category === activeFilter;
@@ -297,12 +338,17 @@ export default function Projects() {
               <motion.article
                 key={project.id}
                 className="bg-card rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform overflow-hidden border border-border cursor-pointer relative"
+                tabIndex={0}
+                role="button"
+                aria-haspopup="dialog"
+                aria-label={`View details for ${project.title}`}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0, transition: { duration: 0.35, delay: index * 0.04 } }}
                 whileHover="hover"
                 variants={{ hover: { scale: 1.02 } }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => setSelectedProject(project)}
+                onKeyDown={(event) => handleProjectKeyDown(event, project)}
               >
                 <div className="relative overflow-hidden h-48">
                   <motion.img
@@ -315,7 +361,8 @@ export default function Projects() {
                     }}
                     transition={{ duration: 0.3 }}
                     onError={(e) => {
-                      (e.target as HTMLImageElement).src = "https://via.placeholder.com/800x500?text=Project+Image";
+                      e.currentTarget.onerror = null;
+                      e.currentTarget.src = "/iconpattern.png";
                     }}
                   />
                 </div>
@@ -388,17 +435,23 @@ export default function Projects() {
                 />
 
                 <motion.div
+                  ref={modalRef}
                   className="relative max-w-3xl w-full bg-card rounded-2xl shadow-2xl overflow-hidden border border-border"
+                  role="dialog"
+                  aria-modal="true"
+                  aria-labelledby="project-dialog-title"
                   initial={{ scale: 0.95, y: 20 }}
                   animate={{ scale: 1, y: 0 }}
                   exit={{ scale: 0.95, opacity: 0 }}
                 >
                   <div className="flex justify-between items-start p-4">
                     <div>
-                      <h3 className="text-xl font-bold">{selectedProject.title}</h3>
+                      <h3 id="project-dialog-title" className="text-xl font-bold">{selectedProject.title}</h3>
                       <p className="text-sm text-muted-foreground">{selectedProject.category}</p>
                     </div>
                     <button
+                      ref={closeButtonRef}
+                      type="button"
                       onClick={() => setSelectedProject(null)}
                       className="rounded-full p-2 hover:bg-muted"
                       aria-label="Close project details"
@@ -414,6 +467,10 @@ export default function Projects() {
                         alt={selectedProject.title}
                         className="w-full h-full object-cover rounded-lg"
                         loading="lazy"
+                        onError={(e) => {
+                          e.currentTarget.onerror = null;
+                          e.currentTarget.src = "/iconpattern.png";
+                        }}
                       />
                     </div>
                     <div>

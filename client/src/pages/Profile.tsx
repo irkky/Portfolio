@@ -34,7 +34,7 @@ const experience = [
   {
     period: "Jul, 2024 - Jan, 2025",
     role: "Python Developer Intern",
-    company: "Tehchtitude Tribe Services Pvt. Ltd.",
+    company: "Techtitude Tribe Services Pvt. Ltd.",
     description:
       "",
     highlights: [
@@ -123,8 +123,8 @@ export default function Profile() {
                 status="Available"
                 contactText="Contact Me"
                 iconUrl=""
-                avatarUrl="https://github.com/irkky/Portfolio/blob/main/public/ProfileDP.png?raw=true"
-                grainUrl="https://raw.githubusercontent.com/irkky/Portfolio/refs/heads/main/public/grain.webp"
+                avatarUrl="/ProfileDP.png"
+                grainUrl="/grain.webp"
                 showUserInfo={true}
                 enableTilt={true}
                 enableMobileTilt={true}
@@ -153,7 +153,7 @@ export default function Profile() {
                     Download Resume
                   </Button>
 
-                  <Button variant="ghost" onClick={() => handleCopy("Varanasi, India", "Location")}>Copy Location</Button>
+                  <Button variant="ghost" onClick={() => handleCopy("Bengaluru, India", "Location")}>Copy Location</Button>
 
                   <Button variant="outline" onClick={() => window.open("mailto:rishabhkrkannaujiya@gmail.com") } title="Email me">
                     <Mail size={14} />
