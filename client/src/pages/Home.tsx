@@ -76,14 +76,16 @@ export default function Home() {
           </div>
           
           {/* Scroll indicator */}
-          <motion.div 
+          <motion.button
+            type="button"
+            aria-label="Scroll to featured statistics"
             className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
           >
             <ChevronDown className="text-muted-foreground" size={24} />
-          </motion.div>
+          </motion.button>
         </section>
         
         {/* Quick Stats Section */}

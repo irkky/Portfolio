@@ -52,6 +52,10 @@ export default function Navigation() {
           <div className="md:hidden flex items-center space-x-2">
 
             <button 
+              type="button"
+              aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+              aria-expanded={isMobileMenuOpen}
+              aria-controls="mobile-navigation"
               className="text-muted-foreground hover:text-primary"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
@@ -63,7 +67,7 @@ export default function Navigation() {
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-background border-t">
+            <div id="mobile-navigation" className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-background border-t">
               {navItems.map((item) => (
                 <Link
                   key={item.href}

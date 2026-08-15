@@ -55,9 +55,9 @@ const easeInOutCubic = (x: number): number =>
   x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
 
 const ProfileCardComponent: React.FC<ProfileCardProps> = ({
-  avatarUrl = "https://github.com/irkky/Portfolio/blob/main/public/photo%20for%20profile.png?raw=true",
-  iconUrl = "<Paste your icon URL here>",
-  grainUrl = "https://github.com/irkky/Portfolio/blob/4f689a7eebf3562395b92000efbd9ec9a8614ea2/public/grain.webp?raw=true",
+  avatarUrl = "/ProfileDP.png",
+  iconUrl = "",
+  grainUrl = "/grain.webp",
   behindGradient,
   innerGradient,
   showBehindGradient = true,
@@ -323,7 +323,8 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
               loading="lazy"
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
-                target.style.display = "none";
+                target.onerror = null;
+                target.src = "/ProfileDP.png";
               }}
             />
             {showUserInfo && (
@@ -336,8 +337,8 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
                       loading="lazy"
                       onError={(e) => {
                         const target = e.target as HTMLImageElement;
-                        target.style.opacity = "0.5";
-                        target.src = avatarUrl;
+                        target.onerror = null;
+                        target.src = "/ProfileDP.png";
                       }}
                     />
                   </div>

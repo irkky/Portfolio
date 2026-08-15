@@ -4,6 +4,7 @@
 
 :root {
   --background: #ffffff;
+  --surface: hsl(210, 40%, 96%);
   --foreground: hsl(215, 25%, 27%);
   --muted: hsl(210, 79%, 95%);
   --muted-foreground: hsl(215, 16%, 47%);
@@ -31,6 +32,7 @@
 
 .dark {
   --background: hsl(222, 84%, 5%);
+  --surface: hsl(217, 32%, 12%);
   --foreground: hsl(210, 40%, 98%);
   --muted: hsl(217, 32%, 17%);
   --muted-foreground: hsl(215, 20%, 65%);
