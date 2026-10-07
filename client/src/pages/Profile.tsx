@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { GraduationCap, Briefcase, MapPin, Languages, Download, ChevronDown, ChevronUp, Mail, Github, Linkedin, ExternalLink } from "lucide-react";
 import AnimatedSection, { AnimatedStagger, StaggerItem } from "@/components/AnimatedSection";
 import ProfileCard from "@/components/ProfileCard";
@@ -58,32 +58,6 @@ export default function Profile() {
       toast({ title: "Copy failed", description: "Could not copy to clipboard.", variant: "destructive" });
     }
   };
-
-  // Small animated counters to add subtle interactivity (keeps structure unchanged)
-  const [projects, setProjects] = useState(12);
-  const [clients, setClients] = useState(3);
-  const [kLoC, setKLoC] = useState(42);
-  const [animatedProjects, setAnimatedProjects] = useState(0);
-  const [animatedClients, setAnimatedClients] = useState(0);
-  const [animatedKLoC, setAnimatedKLoC] = useState(0);
-
-  useEffect(() => {
-    // simple animation loops that count up when component mounts
-    let raf: number;
-    const start = performance.now();
-    const duration = 900; // ms
-
-    const loop = (now: number) => {
-      const t = Math.min(1, (now - start) / duration);
-      setAnimatedProjects(Math.floor(t * projects));
-      setAnimatedClients(Math.floor(t * clients));
-      setAnimatedKLoC(Math.floor(t * kLoC));
-      if (t < 1) raf = requestAnimationFrame(loop);
-    };
-    raf = requestAnimationFrame(loop);
-    return () => cancelAnimationFrame(raf);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   const handleResume = () => {
     // open resume and notify user

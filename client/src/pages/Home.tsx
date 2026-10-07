@@ -1,3 +1,4 @@
+import { scrollToPosition } from "@/lib/utils";
 import { Link } from "wouter";
 import { Code, Mail, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -59,18 +60,18 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
               >
+                  <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl">
                 <Link href="/projects">
-                  <Button className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl">
                     <Code className="mr-2" size={20} />
                     Explore Projects
-                  </Button>
                 </Link>
+                  </Button>
+                  <Button asChild variant="outline" className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-4 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105">
                 <Link href="/contact">
-                  <Button variant="outline" className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-4 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105">
                     <Mail className="mr-2" size={20} />
                     Get in Touch
-                  </Button>
                 </Link>
+                  </Button>
               </motion.div>
             </motion.div>
           </div>
@@ -82,7 +83,7 @@ export default function Home() {
             className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+            onClick={() => scrollToPosition(window.innerHeight)}
           >
             <ChevronDown className="text-muted-foreground" size={24} />
           </motion.button>

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { ExternalLink, Github, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import AnimatedSection from "@/components/AnimatedSection";
@@ -193,6 +194,8 @@ export default function Projects() {
     if (!selectedProject) return;
 
     previouslyFocusedRef.current = document.activeElement as HTMLElement;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
     const focusTimer = window.setTimeout(() => closeButtonRef.current?.focus(), 0);
 
     function onKey(e: KeyboardEvent) {
@@ -224,6 +227,7 @@ export default function Projects() {
     return () => {
       window.clearTimeout(focusTimer);
       document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = previousOverflow;
       previouslyFocusedRef.current?.focus();
     };
   }, [selectedProject]);
@@ -420,10 +424,10 @@ export default function Projects() {
           </motion.div>
 
           {/* Modal */}
-          <AnimatePresence>
+          {createPortal(<AnimatePresence>
             {selectedProject && (
               <motion.div
-                className="fixed inset-0 z-50 flex items-center justify-center p-6"
+                className="fixed inset-0 z-[60] flex items-center justify-center p-4 sm:p-6"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
@@ -436,7 +440,7 @@ export default function Projects() {
 
                 <motion.div
                   ref={modalRef}
-                  className="relative max-w-3xl w-full bg-card rounded-2xl shadow-2xl overflow-hidden border border-border"
+                  className="relative max-w-3xl w-full max-h-[calc(100dvh-3rem)] overflow-y-auto overscroll-contain bg-card rounded-2xl shadow-2xl border border-border"
                   role="dialog"
                   aria-modal="true"
                   aria-labelledby="project-dialog-title"
@@ -517,7 +521,7 @@ export default function Projects() {
                 </motion.div>
               </motion.div>
             )}
-          </AnimatePresence>
+          </AnimatePresence>, document.body)}
         </div>
       </div>
     </PageTransition>

@@ -11,11 +11,11 @@ export default function Layout({ children }: LayoutProps) {
   const [pathname] = useLocation();
 
   useEffect(() => {
-    document.documentElement.style.scrollBehavior = "auto";
+    const root = document.documentElement;
+    const previousBehavior = root.style.scrollBehavior;
+    root.style.scrollBehavior = "auto";
     window.scrollTo(0, 0);
-    setTimeout(() => {
-      document.documentElement.style.scrollBehavior = "smooth";
-    }, 10);
+    root.style.scrollBehavior = previousBehavior;
   }, [pathname]);
 
   return (

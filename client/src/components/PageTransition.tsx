@@ -1,4 +1,4 @@
-import { motion } from "framer-motion"
+import { motion, useReducedMotion } from "framer-motion"
 
 interface PageTransitionProps {
   children: React.ReactNode
@@ -81,7 +81,8 @@ export default function PageTransition({
   variant = 'slide',
   duration 
 }: PageTransitionProps) {
-  const variants = transitionVariants[variant]
+  const reducedMotion = useReducedMotion()
+  const variants = transitionVariants[reducedMotion ? 'fade' : variant]
   const transition = {
     ...transitionConfigs[variant],
     ...(duration && { duration }),
@@ -94,15 +95,6 @@ export default function PageTransition({
       exit="out"
       variants={variants}
       transition={transition}
-      onAnimationStart={(definition) => {
-        if (definition === "in") {
-          document.documentElement.style.scrollBehavior = "auto";
-          window.scrollTo(0, 0);
-          setTimeout(() => {
-            document.documentElement.style.scrollBehavior = "smooth";
-          }, 10);
-        }
-      }}
       style={{
         width: '100%',
         height: '100%',

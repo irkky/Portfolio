@@ -1,3 +1,4 @@
+import { scrollToPosition } from "@/lib/utils";
 import { Link, useLocation } from "wouter";
 import { Github, Linkedin, Twitter } from "lucide-react";
 import { SiKaggle } from "react-icons/si";
@@ -66,7 +67,7 @@ export default function Footer() {
                     href={link.href}
                     onClick={() => {
                       if (location === link.href) {
-                        window.scrollTo({ top: 0, behavior: "smooth" });
+                        scrollToPosition(0);
                       }
                     }}
                     className="text-muted-foreground hover:text-primary transition-colors duration-200"
