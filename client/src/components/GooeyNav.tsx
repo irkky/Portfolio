@@ -1,4 +1,6 @@
-import React, { useRef, useEffect, useState } from 'react';
+import { scrollToPosition } from "@/lib/utils";
+import React, { useRef, useEffect } from 'react';
+import { useReducedMotion } from 'framer-motion';
 import { Link, useLocation } from "wouter";
 
 interface GooeyNavItem {
@@ -32,15 +34,20 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
   const navRef = useRef<HTMLUListElement>(null);
   const filterRef = useRef<HTMLSpanElement>(null);
   const textRef = useRef<HTMLSpanElement>(null);
-  const [activeIndex, setActiveIndex] = useState<number>(initialActiveIndex);
-
-  // Sync active index with location
-  useEffect(() => {
-    const index = items.findIndex(item => item.href === location);
-    if (index !== -1) {
-      setActiveIndex(index);
-    }
-  }, [location, items]);
+  const activeIndex = items.findIndex(item => item.href === location);
+  const reducedMotion = useReducedMotion();
+  const timers = useRef(new Set<ReturnType<typeof setTimeout>>());
+  const schedule = (callback: () => void, delay: number) => {
+    const timer = setTimeout(() => {
+      timers.current.delete(timer);
+      callback();
+    }, delay);
+    timers.current.add(timer);
+  };
+  useEffect(() => () => {
+    timers.current.forEach(clearTimeout);
+    timers.current.clear();
+  }, []);
 
   const noise = (n = 1) => n / 2 - Math.random() * n;
   const getXY = (distance: number, pointIndex: number, totalPoints: number): [number, number] => {
@@ -67,7 +74,7 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
       const t = animationTime * 2 + noise(timeVariance * 2);
       const p = createParticle(i, t, d, r);
       element.classList.remove('active');
-      setTimeout(() => {
+      schedule(() => {
         const particle = document.createElement('span');
         const point = document.createElement('span');
         particle.classList.add('particle');
@@ -82,10 +89,8 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
         point.classList.add('point');
         particle.appendChild(point);
         element.appendChild(particle);
-        requestAnimationFrame(() => {
-          element.classList.add('active');
-        });
-        setTimeout(() => particle.remove(), t);
+        element.classList.add('active');
+        schedule(() => particle.remove(), t);
       }, 30);
     }
   };
@@ -106,8 +111,9 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
 
   const activateIndex = (element: HTMLElement, index: number) => {
     if (activeIndex === index) return;
-    setActiveIndex(index);
     updateEffectPosition(element);
+    timers.current.forEach(clearTimeout);
+    timers.current.clear();
     if (filterRef.current) {
       const particles = filterRef.current.querySelectorAll('.particle');
       particles.forEach(p => p.remove());
@@ -118,30 +124,23 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
       void textRef.current.offsetWidth;
       textRef.current.classList.add('active');
     }
-    if (filterRef.current) {
+    if (filterRef.current && !reducedMotion) {
       makeParticles(filterRef.current);
     }
   };
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, index: number) => {
+    if (e.ctrlKey || e.metaKey || e.shiftKey || e.altKey || e.button !== 0) return;
     activateIndex(e.currentTarget, index);
     if (location === items[index].href) {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      scrollToPosition(0);
     }
   };
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLAnchorElement>, index: number) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      // Prevent page scroll on Space. Standard anchor tags natively navigate on Enter.
-      if (e.key === ' ') e.preventDefault();
-      activateIndex(e.currentTarget, index);
-      if (location === items[index].href) {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-    }
-  };
   useEffect(() => {
     if (!navRef.current || !containerRef.current) return;
+    if (filterRef.current) filterRef.current.style.visibility = activeIndex < 0 ? "hidden" : "visible";
+    if (textRef.current) textRef.current.style.visibility = activeIndex < 0 ? "hidden" : "visible";
     const activeLi = navRef.current.querySelectorAll('li')[activeIndex];
     const activeLink = activeLi?.querySelector('a') as HTMLElement;
     
@@ -311,7 +310,7 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
                 <Link
                   href={item.href}
                   onClick={e => handleClick(e, index)}
-                  onKeyDown={e => handleKeyDown(e, index)}
+                  aria-current={activeIndex === index ? 'page' : undefined}
                   className="outline-none py-[0.6em] px-[1em] inline-block"
                 >
                   {item.label}
@@ -320,8 +319,8 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
             ))}
           </ul>
         </nav>
-        <span className="effect filter" ref={filterRef} />
-        <span className="effect text" ref={textRef} />
+        <span className="effect filter" ref={filterRef} aria-hidden="true" />
+        <span className="effect text" ref={textRef} aria-hidden="true" />
       </div>
     </>
   );

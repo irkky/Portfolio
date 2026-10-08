@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useCallback, useMemo } from "react";
+import { useReducedMotion } from "framer-motion";
 import "./ProfileCard.css";
 
 interface ProfileCardProps {
@@ -76,6 +77,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
 }) => {
   const wrapRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
+  const reducedMotion = useReducedMotion();
 
   const animationHandlers = useMemo(() => {
     if (!enableTilt) return null;
@@ -225,7 +227,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
   );
 
   useEffect(() => {
-    if (!enableTilt || !animationHandlers) return;
+    if (!enableTilt || !animationHandlers || reducedMotion) return;
 
     const card = cardRef.current;
     const wrap = wrapRef.current;
@@ -237,19 +239,26 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
     const pointerLeaveHandler = handlePointerLeave as EventListener;
     const deviceOrientationHandler = handleDeviceOrientation as EventListener;
 
-    const handleClick = () => {
+    let disposed = false;
+    let permissionPending = false;
+    const handleClick = async () => {
       if (!enableMobileTilt || location.protocol !== 'https:') return;
-      if (typeof (window.DeviceMotionEvent as any).requestPermission === 'function') {
-        (window.DeviceMotionEvent as any)
-          .requestPermission()
-          .then((state: string) => {
-            if (state === 'granted') {
-              window.addEventListener('deviceorientation', deviceOrientationHandler);
-            }
-          })
-          .catch((err: any) => console.error(err));
-      } else {
-        window.addEventListener('deviceorientation', deviceOrientationHandler);
+      const orientation = window.DeviceOrientationEvent as (typeof DeviceOrientationEvent & {
+        requestPermission?: () => Promise<string>;
+      }) | undefined;
+      if (!orientation || permissionPending) return;
+      permissionPending = true;
+      try {
+        const permission = orientation.requestPermission
+          ? await orientation.requestPermission()
+          : 'granted';
+        if (!disposed && permission === 'granted') {
+          window.addEventListener('deviceorientation', deviceOrientationHandler);
+        }
+      } catch {
+        // Tilt is optional; denied or unavailable sensors leave the card usable.
+      } finally {
+        permissionPending = false;
       }
     };
 
@@ -271,6 +280,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
     );
 
     return () => {
+      disposed = true;
       card.removeEventListener("pointerenter", pointerEnterHandler);
       card.removeEventListener("pointermove", pointerMoveHandler);
       card.removeEventListener("pointerleave", pointerLeaveHandler);
@@ -279,6 +289,7 @@ const ProfileCardComponent: React.FC<ProfileCardProps> = ({
       animationHandlers.cancelAnimation();
     };
   }, [
+    reducedMotion,
     enableTilt,
     enableMobileTilt,
     animationHandlers,

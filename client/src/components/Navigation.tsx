@@ -1,3 +1,4 @@
+import { scrollToPosition } from "@/lib/utils";
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
@@ -28,7 +29,7 @@ export default function Navigation() {
           <div className="flex-shrink-0">
             <Link 
               href="/"
-              onClick={() => location === '/' && window.scrollTo({ top: 0, behavior: 'smooth' })}
+              onClick={() => location === '/' && scrollToPosition(0)}
             >
               <h1 className="text-xl font-bold text-foreground">RKKY</h1>
             </Link>
@@ -80,7 +81,7 @@ export default function Navigation() {
                   onClick={() => {
                     setIsMobileMenuOpen(false);
                     if (isActive(item.href)) {
-                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                      scrollToPosition(0);
                     }
                   }}
                 >

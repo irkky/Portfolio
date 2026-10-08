@@ -11,6 +11,51 @@
 
 ---
 
+## Run locally
+
+From `C:\Users\Rishabh kumar\Portfolio`, open PowerShell. Use Node.js 20.19 or newer.
+
+```powershell
+npm ci
+npm run dev
+```
+
+Open the local address for the port printed by the server (5000 by default).
+Use the navigation to explore pages, search/filter projects, and open project details.
+Press Escape to close project details. Stop the server with Ctrl+C.
+No environment file is required. To choose another port, set `$env:PORT = "5001"` before starting.
+
+## Check and build
+
+```powershell
+npm run check
+npm run build
+npm start
+```
+
+The build creates the static site in `dist/public` and the Express server in `dist/index.js`.
+Vercel serves the static output using `vercel.json`.
+For an Express production deployment, build with development dependencies installed,
+then deploy `dist`, `scripts/start.mjs`, `package.json`, and `package-lock.json`.
+Run `npm ci --omit=dev` followed by `npm start` on the deployment host.
+Production startup does not require Vite, TypeScript, or cross-env.
+
+After building, run `npm run test:browser` for the local browser regression checks.
+The test starts its own temporary server and hidden Chrome session and closes them afterward.
+On Windows it uses Chrome's standard installation path; set `BROWSER_PATH` to your
+Chrome or Edge executable if needed. It uses a separate temporary browser profile.
+Checks include mobile popup bounds, keyboard navigation, graphics fallbacks and cleanup,
+reduced motion, lazy pages, and production startup with development imports blocked.
+
+If Windows reports `spawn EPERM` during a build, check whether the terminal or sandbox
+blocks child processes; retry from an authorized terminal. For a port conflict, inspect
+the existing listener before selecting a different `PORT`.
+
+The animated cursor requires compatible WebGL support and is skipped when unavailable.
+Reduced-motion preferences disable decorative motion. Sensor tilt is optional;
+permission denial leaves the profile card usable. Browser layout and physical sensor
+behavior need separate verification from TypeScript/build checks.
+
 ## About Me
 
 I'm Rishabh Kumar Kannaujiya, an AI/ML Developer and a Generative AI enthusiast. I am passionate about crafting cutting-edge AI/ML solutions and developing scalable GenAI applications that deliver meaningful impact. I hold a B.Tech in Information Technology from Dr. A.P.J. Abdul Kalam Technical University.

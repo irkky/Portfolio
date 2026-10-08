@@ -2,6 +2,7 @@
 
 import { ElementType, useEffect, useRef, useState, useMemo, createElement } from "react";
 import { gsap } from "gsap";
+import { useReducedMotion } from "framer-motion";
 import "./TextType.css";
 
 interface TextTypeProps {
@@ -47,6 +48,7 @@ const TextType = ({
   ...props
 }: TextTypeProps & React.HTMLAttributes<HTMLElement>) => {
   const [displayedText, setDisplayedText] = useState("");
+  const reducedMotion = useReducedMotion();
   const [currentCharIndex, setCurrentCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
@@ -87,7 +89,7 @@ const TextType = ({
 
   useEffect(() => {
     let tween: gsap.core.Tween | undefined;
-    if (showCursor && cursorRef.current) {
+    if (showCursor && cursorRef.current && !reducedMotion) {
       gsap.set(cursorRef.current, { opacity: 1 });
       tween = gsap.to(cursorRef.current, {
         opacity: 0,
@@ -100,10 +102,10 @@ const TextType = ({
     return () => {
       if (tween) tween.kill();
     };
-  }, [showCursor, cursorBlinkDuration]);
+  }, [showCursor, cursorBlinkDuration, reducedMotion]);
 
   useEffect(() => {
-    if (!isVisible) return;
+    if (!isVisible || reducedMotion || textArray.length === 0) return;
 
     let timeout: NodeJS.Timeout;
 
@@ -159,6 +161,7 @@ const TextType = ({
 
     return () => clearTimeout(timeout);
   }, [
+    reducedMotion,
     currentCharIndex,
     displayedText,
     isDeleting,
@@ -177,7 +180,7 @@ const TextType = ({
 
   const shouldHideCursor =
     hideCursorWhileTyping &&
-    (currentCharIndex < textArray[currentTextIndex].length || isDeleting);
+    (currentCharIndex < (textArray[currentTextIndex]?.length ?? 0) || isDeleting);
 
   return createElement(
     Component,
@@ -190,9 +193,9 @@ const TextType = ({
       className="text-type__content"
       style={{ color: getCurrentTextColor() }}
     >
-      {displayedText}
+      {reducedMotion ? textArray.join(" / ") : displayedText}
     </span>,
-    showCursor && (
+    showCursor && !reducedMotion && (
       <span
         ref={cursorRef}
         className={`text-type__cursor ${cursorClassName} ${shouldHideCursor ? "text-type__cursor--hidden" : ""}`}
