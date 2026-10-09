@@ -78,7 +78,7 @@ const transitionConfigs = {
 
 export default function PageTransition({ 
   children, 
-  variant = 'slide',
+  variant = 'fade',
   duration 
 }: PageTransitionProps) {
   const reducedMotion = useReducedMotion()

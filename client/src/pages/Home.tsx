@@ -29,7 +29,7 @@ export default function Home() {
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               <motion.h1 
-                className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6"
+                className="text-4xl sm:text-5xl lg:text-7xl font-bold text-foreground mb-6"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
@@ -60,7 +60,7 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
               >
-                  <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                  <Button asChild className="bg-[#315fc5] hover:bg-[#3b6bd4] text-white px-8 py-4 rounded-lg font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl">
                 <Link href="/projects">
                     <Code className="mr-2" size={20} />
                     Explore Projects

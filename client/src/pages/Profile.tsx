@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { GraduationCap, Briefcase, MapPin, Languages, Download, ChevronDown, ChevronUp, Mail, Github, Linkedin, ExternalLink } from "lucide-react";
+import { GraduationCap, Briefcase, MapPin, Languages, FileText, ChevronDown, ChevronUp, Mail, Github, Linkedin, ExternalLink } from "lucide-react";
 import AnimatedSection, { AnimatedStagger, StaggerItem } from "@/components/AnimatedSection";
 import ProfileCard from "@/components/ProfileCard";
 import PageTransition from "@/components/PageTransition";
@@ -67,7 +67,7 @@ export default function Profile() {
 
   return (
     <PageTransition>
-      <div className="py-16 bg-background transition-colors duration-300">
+      <div className="reveal-boundary py-16 bg-background transition-colors duration-300">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection variant="fadeUp" className="text-center mb-12">
             <motion.h2
@@ -106,7 +106,7 @@ export default function Profile() {
               />
             </AnimatedSection>
 
-            <AnimatedSection variant="slideRight" delay={0.25} className="space-y-6">
+            <AnimatedSection variant="slideRight" delay={0.25} className="space-y-6 min-w-0">
               <div>
                 <h3 className="text-2xl font-semibold text-foreground mb-3">My Journey</h3>
                 <p className="text-muted-foreground leading-relaxed mb-3">
@@ -123,8 +123,8 @@ export default function Profile() {
 
                 <div className="mt-6 flex flex-wrap gap-3">
                   <Button onClick={handleResume} className="flex items-center gap-2">
-                    <Download size={16} />
-                    Download Resume
+                    <FileText size={16} />
+                    View resume
                   </Button>
 
                   <Button variant="ghost" onClick={() => handleCopy("Bengaluru, India", "Location")}>Copy Location</Button>
@@ -172,7 +172,7 @@ export default function Profile() {
           {/* Experience Timeline */}
           <AnimatedSection variant="fadeUp" delay={0.12}>
             <h3 className="text-2xl font-semibold text-foreground mb-8 text-center">Professional Experience</h3>
-            <div className="space-y-6">
+            <div className="space-y-6 min-w-0">
               {experience.map((exp, index) => (
                 <motion.div
                   key={index}
@@ -183,7 +183,7 @@ export default function Profile() {
                 >
                   <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-primary to-accent opacity-20" />
 
-                  <div className="flex items-start justify-between gap-6">
+                  <div className="flex flex-col sm:flex-row items-start justify-between gap-6">
                     <div>
                       <div className="text-sm text-primary font-semibold">{exp.period}</div>
                       <div className="text-lg font-semibold text-foreground">{exp.role}</div>

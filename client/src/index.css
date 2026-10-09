@@ -2,55 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --surface: hsl(210, 40%, 96%);
-  --foreground: hsl(215, 25%, 27%);
-  --muted: hsl(210, 79%, 95%);
-  --muted-foreground: hsl(215, 16%, 47%);
-  --popover: hsl(0, 0%, 100%);
-  --popover-foreground: hsl(215, 25%, 27%);
-  --card: hsl(0, 0%, 100%);
-  --card-foreground: hsl(215, 25%, 27%);
-  --border: hsl(214, 32%, 91%);
-  --input: hsl(214, 32%, 91%);
-  --primary: hsl(221, 83%, 53%);
-  --primary-foreground: hsl(210, 40%, 98%);
-  --secondary: hsl(210, 40%, 96%);
-  --secondary-foreground: hsl(222, 84%, 5%);
-  --accent: hsl(142, 76%, 36%);
-  --accent-foreground: hsl(355, 7%, 97%);
-  --destructive: hsl(0, 84%, 60%);
-  --destructive-foreground: hsl(210, 40%, 98%);
-  --ring: hsl(221, 83%, 53%);
-  --radius: 0.5rem;
-  --color-1: hsl(221, 83%, 53%);
-  --color-2: hsl(195, 85%, 45%);
-  --color-3: hsl(180, 88%, 26%);
-  --color-4: hsl(210, 25%, 25%);
-}
-
-.dark {
-  --background: hsl(222, 84%, 5%);
-  --surface: hsl(217, 32%, 12%);
-  --foreground: hsl(210, 40%, 98%);
-  --muted: hsl(217, 32%, 17%);
-  --muted-foreground: hsl(215, 20%, 65%);
-  --popover: hsl(222, 84%, 5%);
-  --popover-foreground: hsl(210, 40%, 98%);
-  --card: hsl(222, 84%, 5%);
-  --card-foreground: hsl(210, 40%, 98%);
-  --border: hsl(217, 32%, 17%);
-  --input: hsl(217, 32%, 17%);
-  --primary: hsl(221, 83%, 53%);
-  --primary-foreground: hsl(210, 40%, 98%);
-  --secondary: hsl(217, 32%, 17%);
-  --secondary-foreground: hsl(210, 40%, 98%);
-  --accent: hsl(142, 76%, 36%);
-  --accent-foreground: hsl(355, 7%, 97%);
-  --destructive: hsl(0, 62%, 30%);
-  --destructive-foreground: hsl(210, 40%, 98%);
-  --ring: hsl(221, 83%, 53%);
+:root, .dark {
+  color-scheme: dark;
+  --background: #0b1020;
+  --surface: #11192b;
+  --foreground: #f4f7fb;
+  --muted: #19243a;
+  --muted-foreground: #a9b6ca;
+  --popover: #141d30;
+  --popover-foreground: #f4f7fb;
+  --card: #141d30;
+  --card-foreground: #f4f7fb;
+  --border: #2a3650;
+  --input: #2a3650;
+  --primary: #9ab9ff;
+  --primary-foreground: #0b1020;
+  --secondary: #1c2940;
+  --secondary-foreground: #f4f7fb;
+  --accent: #b6adff;
+  --accent-foreground: #0b1020;
+  --destructive: #c83b4d;
+  --destructive-foreground: #ffffff;
+  --ring: #b6caff;
+  --radius: 1rem;
+  --color-1: #f4f7fb;
+  --color-2: #d8e4ff;
+  --color-3: #b6caff;
+  --color-4: #c9c0ff;
+  --nav-pill: #f4f7fb;
+  --nav-ink: #0b1020;
 }
 
 @layer base {
@@ -93,27 +73,27 @@
 
 /* Custom color classes matching the design */
 .text-primary-custom {
-  color: hsl(221, 83%, 53%);
+  color: var(--primary);
 }
 
 .text-secondary-custom {
-  color: hsl(215, 25%, 27%);
+  color: var(--foreground);
 }
 
 .text-accent-custom {
-  color: hsl(142, 76%, 36%);
+  color: var(--accent);
 }
 
 .bg-primary-custom {
-  background-color: hsl(221, 83%, 53%);
+  background-color: var(--primary);
 }
 
 .bg-secondary-custom {
-  background-color: hsl(215, 25%, 27%);
+  background-color: var(--foreground);
 }
 
 .bg-accent-custom {
-  background-color: hsl(142, 76%, 36%);
+  background-color: var(--accent);
 }
 
 /* Dark mode variants */
@@ -181,3 +161,23 @@
   background: rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
+
+/* Presentation only: existing page content and section order are preserved. */
+body { line-height: 1.65; }
+h1, h2, h3 { letter-spacing: -0.035em; line-height: 1.18; }
+::selection { background: #b6caff; color: #0b1020; }
+main > div { min-width: 0; }
+main .shadow-lg, main .shadow-2xl { box-shadow: 0 12px 36px #03071324; }
+main .rounded-xl { border-radius: 1.125rem; }
+main .text-green-500, main .text-green-600, main .text-orange-600,
+main .text-purple-600, main .text-yellow-600, main .text-blue-600 { color: var(--primary); }
+main .to-emerald-400 { --tw-gradient-to: var(--accent); }
+.project-chip { background: #202d45; color: #c4d0e4; border: 1px solid #34425c; }
+.project-button { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; padding: .65rem 1rem; border: 1px solid var(--border); border-radius: .7rem; font-size: .875rem; font-weight: 600; transition: background .2s, border-color .2s; }
+.project-button:hover { background: #24324c; border-color: #657ba4; }
+.project-button-primary { background: #315fc5; color: #fff; border-color: #527bdb; }
+.project-button-primary:hover { background: #3b6bd4; }
+.project-cover { background: radial-gradient(ellipse at top right, #34456d66, transparent 65%), #11192b; }
+.case-panel { border: 1px solid var(--border); border-radius: 1.25rem; background: var(--card); padding: clamp(1.25rem, 3vw, 2rem); }
+.case-label { font-size: .7rem; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--primary); }
+.reveal-boundary { overflow-x: clip; }

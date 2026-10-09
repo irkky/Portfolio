@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 
 const Profile = lazy(() => import("./pages/Profile"));
 const Projects = lazy(() => import("./pages/Projects"));
+const CaseStudy = lazy(() => import("./pages/CaseStudy"));
 const Skills = lazy(() => import("./pages/Skills"));
 const Extracurricular = lazy(() => import("./pages/Extracurricular"));
 const Contact = lazy(() => import("./pages/Contact"));
@@ -21,6 +22,7 @@ function Router() {
         <Switch>
           <Route path="/" component={Home} />
           <Route path="/profile" component={Profile} />
+          <Route path="/projects/:slug" component={CaseStudy} />
           <Route path="/projects" component={Projects} />
           <Route path="/skills" component={Skills} />
           <Route path="/activities" component={Extracurricular} />
@@ -34,7 +36,7 @@ function Router() {
 
 function App() {
   return (
-    <ThemeProvider defaultTheme="dark" storageKey="portfolio-theme">
+    <ThemeProvider>
       <MotionConfig reducedMotion="user">
         <TooltipProvider>
           <Toaster />

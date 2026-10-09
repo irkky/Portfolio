@@ -124,7 +124,7 @@ function SkillBar({ name, level, color = "text-primary-custom", delay = 0 }: Ski
 
 export default function Skills() {
   return (
-    <div className="py-16 bg-background transition-colors duration-300">
+    <div className="reveal-boundary py-16 bg-background transition-colors duration-300">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}

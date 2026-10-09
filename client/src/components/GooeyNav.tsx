@@ -34,7 +34,7 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
   const navRef = useRef<HTMLUListElement>(null);
   const filterRef = useRef<HTMLSpanElement>(null);
   const textRef = useRef<HTMLSpanElement>(null);
-  const activeIndex = items.findIndex(item => item.href === location);
+  const activeIndex = items.findIndex(item => item.href === location || (item.href !== "/" && location.startsWith(item.href + "/")));
   const reducedMotion = useReducedMotion();
   const timers = useRef(new Set<ReturnType<typeof setTimeout>>());
   const schedule = (callback: () => void, delay: number) => {
@@ -147,6 +147,7 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
     if (activeLink) {
       updateEffectPosition(activeLink);
       textRef.current?.classList.add('active');
+      filterRef.current?.classList.add('active');
     }
     
     const resizeObserver = new ResizeObserver(() => {
@@ -164,7 +165,7 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
     <>
       <style>
         {`
-          .effect {
+          .gooey-nav .effect {
             position: absolute;
             opacity: 1;
             pointer-events: none;
@@ -172,28 +173,28 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
             place-items: center;
             z-index: 1;
           }
-          .effect.text {
+          .gooey-nav .effect.text {
             color: var(--foreground);
             transition: color 0.3s ease;
           }
-          .effect.text.active {
-            color: var(--primary-foreground);
+          .gooey-nav .effect.text.active {
+            color: var(--nav-ink);
           }
-          .effect.filter {
-            filter: blur(7px) contrast(20);
+          .gooey-nav .effect.filter {
+            filter: blur(6px) contrast(12);
             background: transparent;
           }
-          .effect.filter::after {
+          .gooey-nav .effect.filter::after {
             content: "";
             position: absolute;
             inset: 0;
-            background: var(--primary);
+            background: var(--nav-pill);
             transform: scale(0);
             opacity: 0;
             z-index: -1;
             border-radius: 9999px;
           }
-          .effect.active::after {
+          .gooey-nav .effect.active::after {
             animation: pill 0.3s ease both;
           }
           @keyframes pill {
@@ -269,20 +270,20 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
               opacity: 0;
             }
           }
-          li.active {
-            color: var(--primary-foreground);
+          .gooey-nav li.active {
+            color: var(--nav-ink);
             text-shadow: none;
           }
-          li.active::after {
+          .gooey-nav li.active::after {
             opacity: 1;
             transform: scale(1);
           }
-          li::after {
+          .gooey-nav li::after {
             content: "";
             position: absolute;
             inset: 0;
-            border-radius: 8px;
-            background: transparent;
+            border-radius: 9999px;
+            background: var(--nav-pill);
             opacity: 0;
             transform: scale(0);
             transition: all 0.3s ease;
@@ -290,11 +291,11 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
           }
         `}
       </style>
-      <div className="relative" ref={containerRef}>
+      <div className="gooey-nav relative isolate" ref={containerRef}>
         <nav className="flex relative" style={{ transform: 'translate3d(0,0,0.01px)' }}>
           <ul
             ref={navRef}
-            className="flex gap-8 list-none p-0 px-4 m-0 relative z-[3]"
+            className="flex gap-1 lg:gap-3 list-none p-0 px-4 m-0 relative z-[3]"
             style={{
               color: 'white',
               textShadow: '0 1px 1px hsl(205deg 30% 10% / 0.2)'
@@ -303,7 +304,7 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
             {items.map((item, index) => (
               <li
                 key={index}
-                className={`rounded-full relative cursor-pointer transition-[background-color_color_box-shadow] duration-300 ease shadow-[0_0_0.5px_1.5px_transparent] text-foreground ${
+                className={`rounded-full relative cursor-pointer transition-[background-color_color_box-shadow] duration-300 ease shadow-[0_0_0.5px_1.5px_transparent] ${
                   activeIndex === index ? 'active' : ''
                 }`}
               >

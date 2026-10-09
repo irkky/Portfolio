@@ -145,7 +145,7 @@ export default function Contact() {
                             href={s.href}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className={`${s.color} text-white w-11 h-11 rounded-lg flex items-center justify-center shadow-sm`}
+                            className={`bg-secondary hover:bg-muted border border-border text-foreground w-11 h-11 rounded-lg flex items-center justify-center shadow-sm`}
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.9 }}
                             title={s.label}
