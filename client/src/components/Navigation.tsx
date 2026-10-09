@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import GooeyNav from "./GooeyNav";
+import RkkyLogo from "./RkkyLogo";
 
 
 const navItems = [
@@ -29,9 +30,11 @@ export default function Navigation() {
           <div className="flex-shrink-0">
             <Link 
               href="/"
+              aria-label="RKKY — home"
+              className="inline-flex min-h-11 items-center rounded-md text-foreground transition-colors duration-200 hover:text-primary focus-visible:text-primary"
               onClick={() => location === '/' && scrollToPosition(0)}
             >
-              <h1 className="text-xl font-bold text-foreground">RKKY</h1>
+              <RkkyLogo />
             </Link>
           </div>
           
